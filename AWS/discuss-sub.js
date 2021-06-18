@@ -37,7 +37,7 @@
         var table = document.getElementById('table1')
         
         var row = "<tr><td colspan="+ncols+">차수 : <input type='text' id='seq' value='" + id + 
-                  "' size=3 onkeyup='if(window.event.keyCode==13){changeTable();}' />&nbsp <input type='button' id='btn' onclick='changeTable();' value='Change'/> &nbsp <input type='button' id='x' onclick='remindTable();' value='오답'/> </td></tr>"
+                  "' size=3 onkeyup='if(window.event.keyCode==13){changeTable();}' />&nbsp <input type='button' id='btn' onclick='changeTable();' value='Change'/> &nbsp <input type='button' id='xx' onclick='remindTable();' value='오답'/> </td></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
