@@ -14,21 +14,22 @@
         {'QID':'441','DID':'53845'}, {'QID':'442','DID':'53877'}, {'QID':'443','DID':'53893'}, {'QID':'444','DID':'53895'}, {'QID':'445','DID':'53923'}, {'QID':'446','DID':'53908'}, {'QID':'447','DID':'53909'}, {'QID':'448','DID':'53910'}, {'QID':'449','DID':'53926'}, {'QID':'450','DID':'53911'}, {'QID':'451','DID':'53927'}, {'QID':'452','DID':'54004'}, {'QID':'453','DID':'53928'}, {'QID':'454','DID':'53881'}, {'QID':'455','DID':'53879'}, {'QID':'456','DID':'53854'}, {'QID':'457','DID':'53852'},
     ] 
     
-    function changeTable1() {
-        buildTable(document.getElementById("seq").innerHTML, myArray)
-    }
-
-    function remindTable() {
-        document.getElementById("seq").innerHTML="X"
-        buildTable(document.getElementById("seq").innerHTML, myArray)
+    function changeTable() {
+        if (document.getElementById("seq").innerHTML == "X") {
+            buildTable(seq, myArray)
+        } else {
+            buildTable("X", myArray)
+        }
     }
 
     function buildTable(id, data) {
         var nrows = 25;
         var ncols = 19;
         var table = document.getElementById('table1')
-        
-        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='remindTable();' value='오답노트'/>&nbsp;차수: <label id='seq'>" + id + 
+        var btnText = "오답노트"
+
+        if (id == "X") { btnText = "문제풀이" }
+        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
