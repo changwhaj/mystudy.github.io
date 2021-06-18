@@ -28,7 +28,7 @@
         var ncols = 19;
         var table = document.getElementById('table1')
         
-        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='remindTable();' value='오답노트'/>&nbsp;&nbsp;차수: <label id='seq'>" + id + 
+        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='remindTable();' value='오답노트'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
