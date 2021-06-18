@@ -22,6 +22,7 @@
     
     function changeTable() {
         buildTable(document.getElementById("seq").value, myArray)
+        document.getElementById("seq").focus()
     }
 
     function buildTable(id, data) {
