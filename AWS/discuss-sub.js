@@ -30,7 +30,7 @@
         var table = document.getElementById('table1')
         
         var row = "<tr><td colspan="+ncols+">차수 : <input type='text' id='seq' value=" + id + 
-                  " size=5 size="40" onkeypress="JavaScript:changeTable()" />&nbsp <input type='button' id='btn' onclick='changeTable();' value='Change'/> </td></tr>"
+                  " size=5 onkeypress='JavaScript:changeTable()' />&nbsp <input type='button' id='btn' onclick='changeTable();' value='Change'/> </td></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
