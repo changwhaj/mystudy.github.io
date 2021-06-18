@@ -42,6 +42,6 @@
             row += "</tr>" 
         }
         table.innerHTML = row 
-        document.getElementById("id").focus()
+        document.getElementById("seq").focus()
     } 
 
