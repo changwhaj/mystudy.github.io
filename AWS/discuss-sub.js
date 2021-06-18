@@ -42,6 +42,5 @@
             row += "</tr>" 
         }
         table.innerHTML = row 
-        document.getElementById("showSrc").value=row; 
     } 
 
