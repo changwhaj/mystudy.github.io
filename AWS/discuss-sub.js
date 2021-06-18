@@ -1,9 +1,3 @@
-    function NewTab(discuss_id) {
-        url = "https://www.examtopics.com/discussions/amazon/view/" 
-            + discuss_id +
-            "-exam-aws-certified-solutions-architect-associate-saa-c02/";
-        window.open(url, "discuss");
-    }
 
     var myArray = [ 
         {'QID':'001','DID':'21738'}, {'QID':'002','DID':'21739'}, {'QID':'003','DID':'21740'}, {'QID':'004','DID':'21741'}, {'QID':'005','DID':'27683'}, {'QID':'006','DID':'46385'}, {'QID':'007','DID':'21808'}, {'QID':'008','DID':'21997'}, {'QID':'009','DID':'27701'}, {'QID':'010','DID':'21754'}, {'QID':'011','DID':'21757'}, {'QID':'012','DID':'21845'}, {'QID':'013','DID':'21769'}, {'QID':'014','DID':'21963'}, {'QID':'015','DID':'22024'}, {'QID':'016','DID':'21860'}, {'QID':'017','DID':'21774'}, {'QID':'018','DID':'22025'}, {'QID':'019','DID':'27677'}, {'QID':'020','DID':'21775'}, {'QID':'021','DID':'21954'}, {'QID':'022','DID':'22040'}, {'QID':'023','DID':'22175'}, {'QID':'024','DID':'21959'}, {'QID':'025','DID':'21790'}, {'QID':'026','DID':'21791'}, {'QID':'027','DID':'22044'}, {'QID':'028','DID':'27713'}, {'QID':'029','DID':'27714'}, {'QID':'030','DID':'21793'}, {'QID':'031','DID':'21965'}, {'QID':'032','DID':'27686'}, {'QID':'033','DID':'27688'}, {'QID':'034','DID':'21795'}, {'QID':'035','DID':'22041'}, {'QID':'036','DID':'21851'}, {'QID':'037','DID':'21797'}, {'QID':'038','DID':'21966'}, {'QID':'039','DID':'21798'}, {'QID':'040','DID':'21820'},
@@ -20,15 +14,13 @@
         {'QID':'441','DID':'53845'}, {'QID':'442','DID':'53877'}, {'QID':'443','DID':'53893'}, {'QID':'444','DID':'53895'}, {'QID':'445','DID':'53923'}, {'QID':'446','DID':'53908'}, {'QID':'447','DID':'53909'}, {'QID':'448','DID':'53910'}, {'QID':'449','DID':'53926'}, {'QID':'450','DID':'53911'}, {'QID':'451','DID':'53927'}, {'QID':'452','DID':'54004'}, {'QID':'453','DID':'53928'}, {'QID':'454','DID':'53881'}, {'QID':'455','DID':'53879'}, {'QID':'456','DID':'53854'}, {'QID':'457','DID':'53852'},
     ] 
     
-    function changeTable() {
-        buildTable(document.getElementById("seq").value, myArray)
-        document.getElementById("seq").focus()
+    function changeTable1() {
+        buildTable(document.getElementById("seq").innerHTML, myArray)
     }
 
     function remindTable() {
-        document.getElementById("seq").value="X"
-        buildTable(document.getElementById("seq").value, myArray)
-        document.getElementById("seq").focus()
+        document.getElementById("seq").innerHTML="X"
+        buildTable(document.getElementById("seq").innerHTML, myArray)
     }
 
     function buildTable(id, data) {
@@ -36,8 +28,8 @@
         var ncols = 19;
         var table = document.getElementById('table1')
         
-        var row = "<tr><td colspan="+ncols+">차수 : <input type='text' id='seq' value='" + id + 
-                  "' size=3 onkeyup='if(window.event.keyCode==13){changeTable();}' />&nbsp <input type='button' id='btn' onclick='changeTable();' value='Change'/> &nbsp <input type='button' id='xx' onclick='remindTable();' value='오답'/> </td></tr>"
+        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='remindTable();' value='오답'/>&nbsp;&nbsp;차수: <label id='seq'>" + id + 
+                  "</label>&nbsp </th></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
@@ -49,6 +41,11 @@
             row += "</tr>" 
         }
         table.innerHTML = row 
-        document.getElementById("seq").focus()
     } 
+    function NewTab(discuss_id) {
+        url = "https://www.examtopics.com/discussions/amazon/view/" 
+            + discuss_id +
+            "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+        window.open(url, "discuss");
+    }
 
