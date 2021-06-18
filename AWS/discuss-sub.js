@@ -29,7 +29,7 @@
         var btnText = "오답노트"
 
         if (id == "X") { btnText = "문제풀이" }
-        var row = "<tr><th align=left colspan="+ncols+"><in put type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
+        var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn" onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
 
         for (var i=0; i < (data.length/ncols); i++) { 
