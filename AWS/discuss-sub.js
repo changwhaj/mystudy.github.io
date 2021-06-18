@@ -24,7 +24,7 @@
     }
 
     function buildTable(id, data) {
-        var nrows = 25;
+        var nrows = 24;
         var ncols = 19;
         var table = document.getElementById('table1')
         
