@@ -65,7 +65,8 @@
         var vlist = getCookie("E"+seq);
         var varray = vlist.split(',');
         
-        if (varray.indexOf(question_id) >= 0) {
+        console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
+        if (varray.indexOf(question_id) < 0) {
             vlist = vlist + "," + question_id
             console.log("Cookie E"+seq + ": " + vlist)
             setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
