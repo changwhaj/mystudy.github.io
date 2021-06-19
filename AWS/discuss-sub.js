@@ -93,7 +93,7 @@
                 if (idx < data.length) {
                     var astyle = ""
                     if (varray.indexOf(data[idx].QID) >= 0) {
-                        console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
+                        // console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
                         astyle = " style='color:" + txtColor + "; font-weight:bold; '"
                     }
                     row += "<td onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a " + astyle + " href='#"+id+"-"+data[idx].QID+"'>#"+data[idx].QID+"</a></td>"
@@ -113,14 +113,14 @@
         if (vlist != undefined) {
             varray = vlist.split(',');
         }
-        console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
+        // console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
         if (varray.indexOf(qid) < 0) {
             if (vlist == undefined) {
                 vlist = qid
             } else {
                 vlist = vlist + "," + qid
             }
-            console.log("Cookie E"+seq + ": " + vlist)
+            // console.log("Cookie E"+seq + ": " + vlist)
             var date = new Date();
             date.setMonth(date.getMonth() + 1);
             date = date.toUTCString();
