@@ -119,8 +119,8 @@
         if (varray.indexOf(qid) < 0) {
             vlist = vlist + "," + qid
             console.log("Cookie E"+seq + ": " + vlist)
-            var expiryDate = new Date();
-            expiryDate.setMonth(expiryDate.getMonth() + 1);
+            var date = new Date();
+            date.setMonth(date.getMonth() + 1);
             date = date.toUTCString();
             setCookie("E"+seq, vlist, {secure: true, 'expires': date});
             buildTable(seq, myArray)
