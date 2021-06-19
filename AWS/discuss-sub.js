@@ -29,7 +29,7 @@
         var btnText = "오답노트"
         var txtColor = "green"
 
-        var vlist = getCookie(id);
+        var vlist = getCookie("E"+id);
         var varray = vlist.split(',');
         if (id == "X") { 
             btnText = "문제풀이"
@@ -107,8 +107,8 @@
       
     // Example of use:
     setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
-    setCookie('1', '002,020,420', {secure: true, 'max-age': 3600});
-    setCookie('2', '012,220,400', {secure: true, 'max-age': 3600});
-    setCookie('X', '102,120,300', {secure: true, 'max-age': 3600});
+    setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
+    setCookie('E2', '012,220,400', {secure: true, 'max-age': 3600});
+    setCookie('EX', '102,120,300', {secure: true, 'max-age': 3600});
 
         
