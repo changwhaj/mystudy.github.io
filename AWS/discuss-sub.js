@@ -70,7 +70,11 @@
         if (varray.indexOf(qid) < 0) {
             vlist = vlist + "," + qid
             console.log("Cookie E"+seq + ": " + vlist)
-            setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
+            var expiryDate = new Date();
+            expiryDate.setMonth(expiryDate.getMonth() + 1);
+            date = date.toUTCString();
+            setCookie("E"+seq, vlist, {secure: true, 'expires': date});
+            buildTable(seq, myArray)
         }
         url = "https://www.examtopics.com/discussions/amazon/view/" 
             + discuss_id +
@@ -124,6 +128,6 @@
     // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
     // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
     // setCookie('E2', '012,220,400', {secure: true, 'max-age': 3600});
-    // setCookie('EX', '102,120,300', {secure: true, 'max-age': 3600});
+    // setCookie('EX', '102,120,300', {secure: true, 'max-age': 0});
 
         
