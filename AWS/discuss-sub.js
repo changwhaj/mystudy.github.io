@@ -47,7 +47,8 @@
                     var rtag = ""
                     if (qid in varray) {
                         ltag = "<B>";
-                        rtag = "</B>";    
+                        rtag = "</B>";
+                    }
                     row += "<td onClick='NewTab("+data[i+nrows*c].DID+");'><a href='#"+id+"-"+data[i+nrows*c].QID+"'>"+ltag+"#"+data[i+nrows*c].QID+rtag+"</a></td>"
                 }
             }
