@@ -82,7 +82,7 @@
         var vlist = getCookie("E"+id);
         var varray = [];
         
-        if (vlist != undefined ) {
+        if (vlist != undefined) {
             varray = vlist.split(',');
         }
 
@@ -112,12 +112,16 @@
         var vlist = getCookie("E"+seq);
         var varray = []
                 
-        if (vlist != undefined ) {
+        if (vlist != undefined) {
             varray = vlist.split(',');
         }
         console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
         if (varray.indexOf(qid) < 0) {
-            vlist = vlist + "," + qid
+            if (vlist == undefined) {
+                vlist = qid
+            } else {
+                vlist = vlist + "," + qid
+            }
             console.log("Cookie E"+seq + ": " + vlist)
             var date = new Date();
             date.setMonth(date.getMonth() + 1);
