@@ -95,10 +95,8 @@
                     if (varray.indexOf(data[idx].QID) >= 0) {
                         console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
                         astyle = " style='color:" + txtColor + "; font-weight:bold; '"
-                        ltag = "";
-                        rtag = "";
                     }
-                    row += "<td onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a " + astyle + " href='#"+id+"-"+data[idx].QID+"'>"+ltag+"#"+data[idx].QID+rtag+"</a></td>"
+                    row += "<td onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a " + astyle + " href='#"+id+"-"+data[idx].QID+"'>#"+data[idx].QID"</a></td>"
                 }
             }
             row += "</tr>" 
