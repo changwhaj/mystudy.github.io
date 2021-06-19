@@ -113,7 +113,7 @@
         if (vlist != undefined) {
             varray = vlist.split(',');
         }
-        // console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
+        console.log("Clicked QID: " + qid + ", DID: " + discuss_id + ", question_id: " + question_id)
         if (varray.indexOf(qid) < 0) {
             if (vlist == undefined) {
                 vlist = qid
