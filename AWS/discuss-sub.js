@@ -14,6 +14,48 @@
         {'QID':'441','DID':'53845'}, {'QID':'442','DID':'53877'}, {'QID':'443','DID':'53893'}, {'QID':'444','DID':'53895'}, {'QID':'445','DID':'53923'}, {'QID':'446','DID':'53908'}, {'QID':'447','DID':'53909'}, {'QID':'448','DID':'53910'}, {'QID':'449','DID':'53926'}, {'QID':'450','DID':'53911'}, {'QID':'451','DID':'53927'}, {'QID':'452','DID':'54004'}, {'QID':'453','DID':'53928'}, {'QID':'454','DID':'53881'}, {'QID':'455','DID':'53879'}, {'QID':'456','DID':'53854'}, {'QID':'457','DID':'53852'},
     ] 
     
+    // Usage
+    // zeroPad(1,10);   //=> 01
+    // zeroPad(1,100);   //=> 001
+    function zeroPad(nr,base){
+      var  len = (String(base).length - String(nr).length)+1;
+      return len > 0? new Array(len).join('0')+nr : nr;
+    }
+
+    // 주어진 이름의 쿠키를 반환하는데,
+    // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
+    function getCookie(name) {
+      let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value, options = {}) {
+
+        options = {
+          path: '/',
+          // 필요한 경우, 옵션 기본값을 설정할 수도 있습니다.
+          ...options
+        };
+      
+        if (options.expires instanceof Date) {
+          options.expires = options.expires.toUTCString();
+        }
+      
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      
+        for (let optionKey in options) {
+          updatedCookie += "; " + optionKey;
+          let optionValue = options[optionKey];
+          if (optionValue !== true) {
+            updatedCookie += "=" + optionValue;
+          }
+        }
+      
+        document.cookie = updatedCookie;
+    }
+      
     function changeTable() {
         if (document.getElementById("seq").innerHTML == "X") {
             buildTable(seq, myArray)
@@ -39,6 +81,7 @@
         
         // alert(document.cookie); // 모든 쿠키 보여주기
         var vlist = getCookie("E"+id);
+        
         var varray = vlist.split(',');
         
         for (var i=0; i < (data.length/ncols); i++) { 
@@ -82,48 +125,6 @@
         window.open(url, "discuss");
     }
 
-    // Usage
-    // zeroPad(1,10);   //=> 01
-    // zeroPad(1,100);   //=> 001
-    function zeroPad(nr,base){
-      var  len = (String(base).length - String(nr).length)+1;
-      return len > 0? new Array(len).join('0')+nr : nr;
-    }
-
-    // 주어진 이름의 쿠키를 반환하는데,
-    // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
-    function getCookie(name) {
-      let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-      ));
-      return matches ? decodeURIComponent(matches[1]) : undefined;
-    }
-
-    function setCookie(name, value, options = {}) {
-
-        options = {
-          path: '/',
-          // 필요한 경우, 옵션 기본값을 설정할 수도 있습니다.
-          ...options
-        };
-      
-        if (options.expires instanceof Date) {
-          options.expires = options.expires.toUTCString();
-        }
-      
-        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-      
-        for (let optionKey in options) {
-          updatedCookie += "; " + optionKey;
-          let optionValue = options[optionKey];
-          if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
-          }
-        }
-      
-        document.cookie = updatedCookie;
-    }
-      
     // Example of use:
     // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
     // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
