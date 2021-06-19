@@ -91,11 +91,10 @@
             for (var c=0; c < ncols; c++) {
                 var idx = i+nrows*c
                 if (idx < data.length) {
-                    var ltag = ""
-                    var rtag = ""
+                    var astyle = ""
                     if (varray.indexOf(data[idx].QID) >= 0) {
                         console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
-                        var astyle = " style='color:red; font-weight:bold; '"
+                        astyle = " style='color:" + txtColor + "; font-weight:bold; '"
                         ltag = "<B>";
                         rtag = "</B>";
                     }
