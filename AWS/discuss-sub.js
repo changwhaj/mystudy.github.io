@@ -63,10 +63,13 @@
     function NewTab(question_id, discuss_id) {
         var seq = document.getElementById("seq").innerHTML
         var vlist = getCookie("E"+seq);
+        var varray = vlist.split(',');
         
-        vlist += "," + question_id
-        setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
-        
+        if (varray.indexOf(question_id) >= 0) {
+            vlist = vlist + "," + question_id
+            console.log("Cookie E"+seq + ": " + vlist)
+            setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
+        }
         url = "https://www.examtopics.com/discussions/amazon/view/" 
             + discuss_id +
             "-exam-aws-certified-solutions-architect-associate-saa-c02/";
