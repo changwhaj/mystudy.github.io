@@ -136,7 +136,7 @@
         } else if (seq == "X") {
             varray.splice(idx, 1)
             let vlist = varray.join(",");
-            console.log("varray: " + newarr + ", vlist: " + vlist)
+            console.log("varray: " + varray + ", vlist: " + vlist)
             // console.log("Cookie E"+seq + ": " + vlist)
             var expDate = new Date();
             expDate.setMonth(expDate.getMonth() + 1);
