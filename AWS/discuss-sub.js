@@ -71,11 +71,6 @@
         var btnText = "오답노트"
         var txtColor = "green"
 
-        if (id == "X") { 
-            btnText = "문제풀이"
-            txtColor = "red"
-        }
-
         var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
         
@@ -84,6 +79,11 @@
         
         var varray = vlist.split(',');
         
+        if (id == "X") { 
+            btnText = "문제풀이"
+            txtColor = "red"
+        }
+
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
             for (var c=0; c < ncols; c++) {
