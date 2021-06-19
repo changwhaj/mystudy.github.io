@@ -29,12 +29,14 @@
         var btnText = "오답노트"
         var txtColor = "green"
 
-        var vlist = getCookie("E"+id);
-        var varray = vlist.split(',');
         if (id == "X") { 
             btnText = "문제풀이"
             txtColor = "red"
         }
+
+        alert(document.cookie); // 모든 쿠키 보여주기
+        var vlist = getCookie("E"+id);
+        var varray = vlist.split(',');
         var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
 
