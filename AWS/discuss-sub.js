@@ -127,6 +127,7 @@
             setCookie("E"+seq, vlist, {secure: true, 'expires': date});
             buildTable(seq, myArray)
         }
+        var url = "https://aws.amazon.com/"
         if (passwd == "tssdba") {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
