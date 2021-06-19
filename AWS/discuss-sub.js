@@ -44,13 +44,22 @@
             row += "</tr>" 
         }
         table.innerHTML = row 
-        alert(document.cookie); // 모든 쿠키 보여주기
+        alert(getCookie('user'); // 모든 쿠키 보여주기
     } 
     function NewTab(discuss_id) {
         url = "https://www.examtopics.com/discussions/amazon/view/" 
             + discuss_id +
             "-exam-aws-certified-solutions-architect-associate-saa-c02/";
         window.open(url, "discuss");
+    }
+
+    // 주어진 이름의 쿠키를 반환하는데,
+    // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
+    function getCookie(name) {
+      let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
     }
 
     function setCookie(name, value, options = {}) {
