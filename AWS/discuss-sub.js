@@ -44,7 +44,7 @@
             row += "</tr>" 
         }
         table.innerHTML = row 
-        alert(getCookie('user'); // 모든 쿠키 보여주기
+        alert(getCookie('user')); // 모든 쿠키 보여주기
     } 
     function NewTab(discuss_id) {
         url = "https://www.examtopics.com/discussions/amazon/view/" 
