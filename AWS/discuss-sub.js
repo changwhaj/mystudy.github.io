@@ -55,7 +55,13 @@
       
         document.cookie = updatedCookie;
     }
-      
+
+    function deleteCookie(name) {
+      setCookie(name, "", {
+        'max-age': -1
+      })
+    }
+
     function changeTable() {
         if (document.getElementById("seq").innerHTML == "X") {
             buildTable(seq, myArray)
