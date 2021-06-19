@@ -49,7 +49,7 @@
                     var ltag = ""
                     var rtag = ""
                     console.log(qid);
-                    if (qid in varray) {
+                    if (varray.indexOf(qid) >= 0) {
                         alert(qid + " found!!!");
                         ltag = "<B>";
                         rtag = "</B>";
