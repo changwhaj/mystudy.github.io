@@ -76,9 +76,11 @@
         
         // alert(document.cookie); // 모든 쿠키 보여주기
         var vlist = getCookie("E"+id);
+        var varray = [];
         
-        var varray = vlist.split(',');
-        
+        if (vlist != undefined ) {
+            vlist.split(',');
+        }
         if (id == "X") { 
             btnText = "문제풀이"
             txtColor = "red"
