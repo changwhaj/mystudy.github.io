@@ -95,11 +95,11 @@
                     var rtag = ""
                     if (varray.indexOf(data[idx].QID) >= 0) {
                         console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
-                        var tdstyle = " style='color:red; font-weight:bold; '"
+                        var astyle = " style='color:red; font-weight:bold; '"
                         ltag = "<B>";
                         rtag = "</B>";
                     }
-                    row += "<td "+tdstyle+" onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a href='#"+id+"-"+data[idx].QID+"'>"+ltag+"#"+data[idx].QID+rtag+"</a></td>"
+                    row += "<td onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a " + astyle + " href='#"+id+"-"+data[idx].QID+"'>"+ltag+"#"+data[idx].QID+rtag+"</a></td>"
                 }
             }
             row += "</tr>" 
