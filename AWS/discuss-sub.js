@@ -134,9 +134,9 @@
             setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
             buildTable(seq, myArray)
         } else if (seq == "X") {
-            varray = varray.splice(idx, 1)
-            console.log("varray: " + varray + ", vlist: " + vlist)
-            vlist = varray.join(",");
+            var newarr = varray.splice(idx, 1)
+            vlist = newarr.join(",");
+            console.log("varray: " + newarr + ", vlist: " + vlist)
             // console.log("Cookie E"+seq + ": " + vlist)
             var expDate = new Date();
             expDate.setMonth(expDate.getMonth() + 1);
