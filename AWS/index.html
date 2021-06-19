@@ -9,6 +9,8 @@
             #arrowUp::before { content: '▲'; }        
             #arrowDown { height: 9px; width: 14px; color: green; position: relative; top: 10px; left: 140px; cursor: pointer; }        
             #arrowDown::before { content: '▼'; }
+            #clearBtn { height: 9px; width: 14px; color: red; position: relative; top: 10px; left: 180px; cursor: pointer; }        
+            #clearBtn::before { content: '■'; }
         </style>
         <script type="text/javascript" src="./discuss-sub.js"></script>
     </head>
@@ -44,6 +46,11 @@
                     buildTable(seq, myArray)
                 };
 
+                clearBtn.onclick = function() {
+
+                    buildTable(seq, myArray)
+                };
+		
                 buildTable(seq, myArray)
             -->
         </script>
