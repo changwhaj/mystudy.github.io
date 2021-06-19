@@ -48,6 +48,7 @@
                     var qid = zeroPad(i+nrows*c+1, 100)
                     var ltag = ""
                     var rtag = ""
+                    alert(qid);
                     if (qid in varray) {
                         alert(qid + " found!!!");
                         ltag = "<B>";
