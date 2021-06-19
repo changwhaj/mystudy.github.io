@@ -127,12 +127,23 @@
             setCookie("E"+seq, vlist, {secure: true, 'expires': date});
             buildTable(seq, myArray)
         }
-        url = "https://www.examtopics.com/discussions/amazon/view/" 
-            + discuss_id +
-            "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+        if (passwd == "tssdba") {
+            url = "https://www.examtopics.com/discussions/amazon/view/" 
+                + discuss_id +
+                "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+        }
         window.open(url, "discuss");
     }
+    
+    var passwd = getCookie('password');
 
+    if (passwd == undefined) {
+        let passwd = prompt("Please enter password for use this page");
+
+        if (passwd.toLowerCase() == "tssadm") {
+            setCookie('password', passwd, {secure: true, 'max-age': 3600});
+        }
+    }
     // Example of use:
     // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
     // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
