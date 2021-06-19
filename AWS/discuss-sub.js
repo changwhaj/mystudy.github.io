@@ -128,7 +128,7 @@
             buildTable(seq, myArray)
         }
         var url = "https://aws.amazon.com/"
-        if (passwd == "tssdba") {
+        if (passwd == "tssadm") {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
                 "-exam-aws-certified-solutions-architect-associate-saa-c02/";
