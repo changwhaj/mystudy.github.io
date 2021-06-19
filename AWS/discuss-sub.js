@@ -27,13 +27,13 @@
         var ncols = 19;
         var table = document.getElementById('table1')
         var btnText = "오답노트"
-        var txtColor = green
+        var txtColor = "green"
 
         var vlist = getCookie(id);
         var varray = vlist.split(',');
         if (id == "X") { 
             btnText = "문제풀이"
-            txtColor = red
+            txtColor = "red"
         }
         var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
