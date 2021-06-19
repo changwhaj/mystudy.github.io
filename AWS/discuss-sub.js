@@ -34,12 +34,14 @@
             txtColor = "red"
         }
 
-        alert(document.cookie); // 모든 쿠키 보여주기
-        var vlist = getCookie("E"+id);
-        var varray = vlist.split(',');
         var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
-
+        
+        // alert(document.cookie); // 모든 쿠키 보여주기
+        var vlist = getCookie("E"+id);
+        var varray = vlist.split(',');
+        alert(varray)
+        
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
             for (var c=0; c < ncols; c++) {
