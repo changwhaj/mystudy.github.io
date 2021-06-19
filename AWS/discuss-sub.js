@@ -40,7 +40,6 @@
         // alert(document.cookie); // 모든 쿠키 보여주기
         var vlist = getCookie("E"+id);
         var varray = vlist.split(',');
-        alert(varray.length)
         
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
@@ -50,6 +49,7 @@
                     var ltag = ""
                     var rtag = ""
                     if (qid in varray) {
+                        alert(qid + " found!!!");
                         ltag = "<B>";
                         rtag = "</B>";
                     }
