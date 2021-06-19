@@ -44,24 +44,29 @@
         for (var i=0; i < (data.length/ncols); i++) { 
             row += "<tr>"
             for (var c=0; c < ncols; c++) {
-                if (i+nrows*c < data.length) {
-                    var qid = zeroPad(i+nrows*c+1, 100)
+                var idx = i+nrows*c
+                if (idx < data.length) {
                     var ltag = ""
                     var rtag = ""
-                    console.log(qid + ":" + varray.indexOf(qid))
-                    if (varray.indexOf(qid) >= 0) {
-                        alert(qid + " found!!!");
+                    if (varray.indexOf(data[idx].QID) >= 0) {
+                        console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
                         ltag = "<B>";
                         rtag = "</B>";
                     }
-                    row += "<td onClick='NewTab("+data[i+nrows*c].DID+");'><a href='#"+id+"-"+data[i+nrows*c].QID+"'>"+ltag+"#"+data[i+nrows*c].QID+rtag+"</a></td>"
+                    row += "<td onClick='NewTab("+data[idx].QID+", "+data[idx].DID+");'><a href='#"+id+"-"+data[idx].QID+"'>"+ltag+"#"+data[idx].QID+rtag+"</a></td>"
                 }
             }
             row += "</tr>" 
         }
         table.innerHTML = row 
     } 
-    function NewTab(discuss_id) {
+    function NewTab(question_id, discuss_id) {
+        var seq = document.getElementById("seq").innerHTML
+        var vlist = getCookie("E"+seq);
+        
+        vlist += "," + question_id
+        setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
+        
         url = "https://www.examtopics.com/discussions/amazon/view/" 
             + discuss_id +
             "-exam-aws-certified-solutions-architect-associate-saa-c02/";
@@ -111,9 +116,9 @@
     }
       
     // Example of use:
-    setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
-    setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
-    setCookie('E2', '012,220,400', {secure: true, 'max-age': 3600});
-    setCookie('EX', '102,120,300', {secure: true, 'max-age': 3600});
+    // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
+    // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
+    // setCookie('E2', '012,220,400', {secure: true, 'max-age': 3600});
+    // setCookie('EX', '102,120,300', {secure: true, 'max-age': 3600});
 
         
