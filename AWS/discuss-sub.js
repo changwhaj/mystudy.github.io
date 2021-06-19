@@ -79,7 +79,7 @@
         var varray = [];
         
         if (vlist != undefined ) {
-            vlist.split(',');
+            varray = vlist.split(',');
         }
         if (id == "X") { 
             btnText = "문제풀이"
@@ -105,12 +105,16 @@
         }
         table.innerHTML = row 
     } 
+
     function NewTab(question_id, discuss_id) {
         var seq = document.getElementById("seq").innerHTML
-        var vlist = getCookie("E"+seq);
-        var varray = vlist.split(',');
         var qid = zeroPad(question_id, 100)
-        
+        var vlist = getCookie("E"+seq);
+        var varray = []
+                
+        if (vlist != undefined ) {
+            varray = vlist.split(',');
+        }
         console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
         if (varray.indexOf(qid) < 0) {
             vlist = vlist + "," + qid
