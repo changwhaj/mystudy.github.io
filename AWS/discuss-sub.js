@@ -48,7 +48,7 @@
                     var qid = zeroPad(i+nrows*c+1, 100)
                     var ltag = ""
                     var rtag = ""
-                    console.log(qid);
+                    console.log(qid + ":" + varray.indexOf(qid))
                     if (varray.indexOf(qid) >= 0) {
                         alert(qid + " found!!!");
                         ltag = "<B>";
