@@ -153,6 +153,7 @@
             setCookie('password', passwd, {secure: true, 'expires': expDate});
         }
     }
+    passwd = getCookie('password');
     // Example of use:
     // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
     // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
