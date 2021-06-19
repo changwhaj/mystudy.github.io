@@ -42,7 +42,7 @@
             row += "<tr>"
             for (var c=0; c < ncols; c++) {
                 if (i+nrows*c < data.length) {
-                    var qid = (i+nrows*c+1).zeroPad(100)
+                    var qid = zeroPad(i+nrows*c+1, 100)
                     var ltag = ""
                     var rtag = ""
                     if (qid in varray) {
@@ -63,14 +63,13 @@
         window.open(url, "discuss");
     }
 
-    // usage:
-    // (1).zeroPad(10);   //=> 01
-    // (1).zeroPad(100);  //=> 001
-    Number.prototype.zeroPad = Number.prototype.zeroPad || 
-        function(base){
-            var nr = this, len = (String(base).length - String(nr).length)+1;
-            return len > 0? new Array(len).join('0')+nr : nr;
-        };
+    // Usage
+    // zeroPad(1,10);   //=> 01
+    // zeroPad(1,100);   //=> 001
+    function zeroPad(nr,base){
+      var  len = (String(base).length - String(nr).length)+1;
+      return len > 0? new Array(len).join('0')+nr : nr;
+    }
 
     // 주어진 이름의 쿠키를 반환하는데,
     // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
