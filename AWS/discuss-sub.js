@@ -27,9 +27,13 @@
         var ncols = 19;
         var table = document.getElementById('table1')
         var btnText = "오답노트"
+        var txtColor = green
 
+        var vlist = getCookie(id);
+        var varray = vlist.split(',');
         if (id == "X") { 
-            btnText = "문제풀이" 
+            btnText = "문제풀이"
+            txtColor = red
         }
         var row = "<tr><th align=left colspan="+ncols+"><input type='button' id='btn' onclick='changeTable();' value='" + btnText + "'/>&nbsp;차수: <label id='seq'>" + id + 
                   "</label>&nbsp </th></tr>"
@@ -38,13 +42,18 @@
             row += "<tr>"
             for (var c=0; c < ncols; c++) {
                 if (i+nrows*c < data.length) {
-                    row += "<td onClick='NewTab("+data[i+nrows*c].DID+");'><a href='#"+id+"-"+data[i+nrows*c].QID+"'>#"+data[i+nrows*c].QID+"</a></td>"
+                    var qid = (i+nrows*c+1).zeroPad(100)
+                    var ltag = ""
+                    var rtag = ""
+                    if (qid in varray) {
+                        ltag = "<B>";
+                        rtag = "</B>";    
+                    row += "<td onClick='NewTab("+data[i+nrows*c].DID+");'><a href='#"+id+"-"+data[i+nrows*c].QID+"'>"+ltag+"#"+data[i+nrows*c].QID+rtag+"</a></td>"
                 }
             }
             row += "</tr>" 
         }
         table.innerHTML = row 
-        alert(getCookie('user')); // 모든 쿠키 보여주기
     } 
     function NewTab(discuss_id) {
         url = "https://www.examtopics.com/discussions/amazon/view/" 
@@ -52,6 +61,15 @@
             "-exam-aws-certified-solutions-architect-associate-saa-c02/";
         window.open(url, "discuss");
     }
+
+    // usage:
+    // (1).zeroPad(10);   //=> 01
+    // (1).zeroPad(100);  //=> 001
+    Number.prototype.zeroPad = Number.prototype.zeroPad || 
+        function(base){
+            var nr = this, len = (String(base).length - String(nr).length)+1;
+            return len > 0? new Array(len).join('0')+nr : nr;
+        };
 
     // 주어진 이름의 쿠키를 반환하는데,
     // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
@@ -89,3 +107,8 @@
       
     // Example of use:
     setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
+    setCookie('1', '002,020,420', {secure: true, 'max-age': 3600});
+    setCookie('2', '012,220,400', {secure: true, 'max-age': 3600});
+    setCookie('X', '102,120,300', {secure: true, 'max-age': 3600});
+
+        
