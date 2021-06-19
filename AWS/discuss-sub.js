@@ -119,7 +119,9 @@
             varray = vlist.split(',');
         }
         // console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
-        if (varray.indexOf(question_id) < 0) {
+        var idx = varray.indexOf(question_id);
+        
+        if (idx < 0) {  // New select
             if (vlist == undefined) {
                 vlist = question_id
             } else {
@@ -131,14 +133,25 @@
             expDate = expDate.toUTCString();
             setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
             buildTable(seq, myArray)
+        } else if (seq == "X") {
+            vlist = varray.splice(idx, 1).join(",");
+            // console.log("Cookie E"+seq + ": " + vlist)
+            var expDate = new Date();
+            expDate.setMonth(expDate.getMonth() + 1);
+            expDate = expDate.toUTCString();
+            setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
+            buildTable(seq, myArray)
         }
+        
         var url = "https://aws.amazon.com/"
         if (passwd == "tssadm") {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
                 "-exam-aws-certified-solutions-architect-associate-saa-c02/";
         }
-        window.open(url, "discuss");
+        if (seq != "X") {
+            window.open(url, "discuss");
+        }
     }
     
     var passwd = getCookie('password');
