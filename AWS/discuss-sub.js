@@ -106,25 +106,24 @@
 
     function NewTab(question_id, discuss_id) {
         var seq = document.getElementById("seq").innerHTML
-        var qid = zeroPad(question_id, 100)
         var vlist = getCookie("E"+seq);
         var varray = []
                 
         if (vlist != undefined) {
             varray = vlist.split(',');
         }
-        console.log("Clicked QID: " + qid + ", DID: " + discuss_id + ", question_id: " + question_id)
-        if (varray.indexOf(qid) < 0) {
+        // console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
+        if (varray.indexOf(question_id) < 0) {
             if (vlist == undefined) {
-                vlist = qid
+                vlist = question_id
             } else {
-                vlist = vlist + "," + qid
+                vlist = vlist + "," + question_id
             }
             // console.log("Cookie E"+seq + ": " + vlist)
-            var date = new Date();
-            date.setMonth(date.getMonth() + 1);
-            date = date.toUTCString();
-            setCookie("E"+seq, vlist, {secure: true, 'expires': date});
+            var expDate = new Date();
+            expDate.setMonth(expDate.getMonth() + 1);
+            expDate = expDate.toUTCString();
+            setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
             buildTable(seq, myArray)
         }
         var url = "https://aws.amazon.com/"
@@ -142,7 +141,10 @@
         let passwd = prompt("Please enter password for use this page");
 
         if (passwd.toLowerCase() == "tssadm") {
-            setCookie('password', passwd, {secure: true, 'max-age': 3600});
+            var expDate = new Date();
+            expDate.setMonth(expDate.getMonth() + 1);
+            expDate = expDate.toUTCString();
+            setCookie('password', passwd, {secure: true, 'expires': expDate});
         }
     }
     // Example of use:
