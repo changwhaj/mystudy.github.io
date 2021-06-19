@@ -64,10 +64,11 @@
         var seq = document.getElementById("seq").innerHTML
         var vlist = getCookie("E"+seq);
         var varray = vlist.split(',');
+        var qid = zeroPad(question_id, 100)
         
-        console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
-        if (varray.indexOf(question_id) < 0) {
-            vlist = vlist + "," + question_id
+        console.log("Clicked QID: " + qid + ", DID: " + discuss_id)
+        if (varray.indexOf(qid) < 0) {
+            vlist = vlist + "," + qid
             console.log("Cookie E"+seq + ": " + vlist)
             setCookie("E"+seq, vlist, {secure: true, 'max-age': 3600});
         }
