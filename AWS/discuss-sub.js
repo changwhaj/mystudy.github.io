@@ -135,7 +135,7 @@
             buildTable(seq, myArray)
         } else if (seq == "X") {
             var newarr = varray.splice(idx, 1)
-            vlist = newarr.join(",");
+            let vlist = newarr.join(",");
             console.log("varray: " + newarr + ", vlist: " + vlist)
             // console.log("Cookie E"+seq + ": " + vlist)
             var expDate = new Date();
