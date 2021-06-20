@@ -176,6 +176,8 @@
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+            } else {
+                deleteCookie('password')
             }
             window.open(url, "discuss");
         }
@@ -196,10 +198,4 @@
         }
     }
     passwd = getCookie('password');
-    // Example of use:
-    // setCookie('user', 'Changwha Jeong', {secure: true, 'max-age': 3600});
-    // setCookie('E1', '002,020,420', {secure: true, 'max-age': 3600});
-    // setCookie('E2', '012,220,400', {secure: true, 'max-age': 3600});
-    // setCookie('EX', '102,120,300', {secure: true, 'max-age': 0});
-
         
