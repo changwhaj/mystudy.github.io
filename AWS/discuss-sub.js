@@ -160,10 +160,10 @@
         // console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
         
         if (cntrlIsPressed || seq == "X") {
-            let newList = toggleNumber(question_id, vlist, true);
+            let newList = setVlist(question_id, vlist, true);
             setSequence(seq, newList)
         } else {
-            let newList = toggleNumber(question_id, vlist, false);
+            let newList = setVlist(question_id, vlist, false);
             if (vlist != newList) {
                 setSequence(seq, newList)
             }
