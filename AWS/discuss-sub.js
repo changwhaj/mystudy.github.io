@@ -22,16 +22,17 @@
       return len > 0? new Array(len).join('0')+nr : nr;
     }
 
-    $(document).keydown(function(event){
+    document.keydown(function(event){
         if(event.which=="17")
             cntrlIsPressed = true;
     });
 
-    $(document).keyup(function(){
+    document.keyup(function(){
         cntrlIsPressed = false;
     });
 
     var cntrlIsPressed = false;
+    //document.addEventListener("keydown", keyDownTextField, false);
 
     // 주어진 이름의 쿠키를 반환하는데,
     // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
@@ -167,6 +168,7 @@
             if (vlist != newList) {
                 setSequence(seq, newList)
             }
+            console.log("passwd: " + passwd)
             var url = "https://aws.amazon.com/"
             if (passwd == "tssadm") {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
