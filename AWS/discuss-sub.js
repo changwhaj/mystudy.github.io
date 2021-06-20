@@ -171,7 +171,7 @@
             }
 
             var url = "https://aws.amazon.com/"
-            if (passwd == "tssadm") {
+            if (passwd.toLowerCase() == "icttss") {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-associate-saa-c02/";
@@ -187,7 +187,7 @@
     if (passwd == undefined) {
         let passwd = prompt("Please enter password for use this page");
 
-        if (passwd.toLowerCase() == "tssadm") {
+        if (passwd.toLowerCase() == "icttss") {
             var expDate = new Date();
             expDate.setMonth(expDate.getMonth() + 1);
             expDate = expDate.toUTCString();
