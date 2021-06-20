@@ -113,7 +113,7 @@
                         // console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
                         astyle = " style='color:" + txtColor + "; font-weight:bold; '"
                     }
-                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><a " + astyle + " href='#"+id+"-"+data[idx].QID+"' target='_self'>#"+data[idx].QID+"</a></td>"
+                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font " + astyle + " href='#"+id+"-"+data[idx].QID+"' target='_self'>#"+data[idx].QID+"</font></td>"
                 }
             }
             row += "</tr>" 
