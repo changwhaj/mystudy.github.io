@@ -140,7 +140,7 @@
         var idx = varray.indexOf(question_id);
         if (idx < 0) {
             return vlist + "," + question_id 
-        } else if (toogle == true) {
+        } else if (toggle == true) {
             varray.splice(idx, 1)
             // console.log("varray: " + varray + ", vlist: " + vlist)
             return varray.join(",");
