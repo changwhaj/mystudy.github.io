@@ -22,6 +22,17 @@
       return len > 0? new Array(len).join('0')+nr : nr;
     }
 
+    $(document).keydown(function(event){
+        if(event.which=="17")
+            cntrlIsPressed = true;
+    });
+
+    $(document).keyup(function(){
+        cntrlIsPressed = false;
+    });
+
+    var cntrlIsPressed = false;
+
     // 주어진 이름의 쿠키를 반환하는데,
     // 조건에 맞는 쿠키가 없다면 undefined를 반환합니다.
     function getCookie(name) {
@@ -110,6 +121,34 @@
         table.innerHTML = row 
     } 
 
+    function setSequence(seq, vlist) {
+        var expDate = new Date();
+        expDate.setMonth(expDate.getMonth() + 1);
+        expDate = expDate.toUTCString();
+        setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
+    }
+
+    function setVlist(question_id, vlist, toggle) {
+        var varray = [];
+        
+        if (vlist != undefined) {
+            varray = vlist.split(',');
+        } else {
+            return question_id
+        }
+        
+        var idx = varray.indexOf(question_id);
+        if (idx < 0) {
+            return vlist + "," + question_id 
+        } else if (toogle == true) {
+            varray.splice(idx, 1)
+            // console.log("varray: " + varray + ", vlist: " + vlist)
+            return varray.join(",");
+        } else {
+            return vlist
+        }
+    }
+
     function NewTab(question_id, discuss_id) {
         var seq = document.getElementById("seq").innerHTML
         var vlist = getCookie("E"+seq);
@@ -119,40 +158,31 @@
             varray = vlist.split(',');
         }
         // console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
-        var idx = varray.indexOf(question_id);
         
-        if (idx < 0) {  // New select
-            if (vlist == undefined) {
-                vlist = question_id
-            } else {
-                vlist = vlist + "," + question_id
+        if (cntrlIsPressed || seq == "X") {
+            let newList = toggleNumber(question_id, vlist, true);
+            setSequence(seq, newList)
+        } else {
+            let newList = toggleNumber(question_id, vlist, false);
+            if (vlist != newList) {
+                setSequence(seq, newList)
             }
-            // console.log("Cookie E"+seq + ": " + vlist)
-            var expDate = new Date();
-            expDate.setMonth(expDate.getMonth() + 1);
-            expDate = expDate.toUTCString();
-            setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
-            buildTable(seq, myArray)
-        } else if (seq == "X") {
-            varray.splice(idx, 1)
-            let vlist = varray.join(",");
-            // console.log("varray: " + varray + ", vlist: " + vlist)
-            var expDate = new Date();
-            expDate.setMonth(expDate.getMonth() + 1);
-            expDate = expDate.toUTCString();
-            setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
-            buildTable(seq, myArray)
-        }
-        
-        var url = "https://aws.amazon.com/"
-        if (passwd == "tssadm") {
-            url = "https://www.examtopics.com/discussions/amazon/view/" 
-                + discuss_id +
-                "-exam-aws-certified-solutions-architect-associate-saa-c02/";
-        }
-        if (seq != "X") {
+            var url = "https://aws.amazon.com/"
+            if (passwd == "tssadm") {
+                url = "https://www.examtopics.com/discussions/amazon/view/" 
+                    + discuss_id +
+                    "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+            }
             window.open(url, "discuss");
         }
+        buildTable(seq, myArray)
+        //} else if (seq == "X") {
+        //    varray.splice(idx, 1)
+        //    let vlist = varray.join(",");
+        //    // console.log("varray: " + varray + ", vlist: " + vlist)
+        //    setSequence(seq, vlist)
+        //    buildTable(seq, myArray)
+        //}
     }
     
     var passwd = getCookie('password');
