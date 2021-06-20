@@ -128,6 +128,7 @@
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
         setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
+        setCookie("SAA"+seq, vlist, {secure: true, path: '/SAA/', 'expires': expDate});
     }
 
     function setVlist(question_id, vlist, toggle) {
