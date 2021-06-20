@@ -22,12 +22,12 @@
       return len > 0? new Array(len).join('0')+nr : nr;
     }
 
-    document.keydown(function(event){
+    document.body.addEventListener('keydown', function (e) {
         if(event.which=="17")
             cntrlIsPressed = true;
     });
 
-    document.keyup(function(){
+    document.body.addEventListener('keyup', function (e) {
         cntrlIsPressed = false;
     });
 
