@@ -109,12 +109,13 @@
             for (var c=0; c < ncols; c++) {
                 var idx = i+nrows*c
                 if (idx < data.length) {
-                    var astyle = ""
+                    var fstyle = "text-decoration: underline; "
                     if (varray.indexOf(data[idx].QID) >= 0) {
                         // console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
-                        astyle = " style='color:" + txtColor + "; font-weight:bold; '"
+                        fstyle += "color:" + txtColor + "; font-weight:bold; "
                     }
-                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font " + astyle + " href='#"+id+"-"+data[idx].QID+"' target='_self'>#"+data[idx].QID+"</font></td>"
+//                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' href='#"+id+"-"+data[idx].QID+"' target='_self'>#"+data[idx].QID+"</font></td>"
+                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' target='_self'>#"+data[idx].QID+"</font></td>"
                 }
             }
             row += "</tr>" 
@@ -168,7 +169,7 @@
             if (vlist != newList) {
                 setSequence(seq, newList)
             }
-            console.log("passwd: " + passwd)
+
             var url = "https://aws.amazon.com/"
             if (passwd == "tssadm") {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
@@ -177,14 +178,8 @@
             }
             window.open(url, "discuss");
         }
+        
         buildTable(seq, myArray)
-        //} else if (seq == "X") {
-        //    varray.splice(idx, 1)
-        //    let vlist = varray.join(",");
-        //    // console.log("varray: " + varray + ", vlist: " + vlist)
-        //    setSequence(seq, vlist)
-        //    buildTable(seq, myArray)
-        //}
     }
     
     var passwd = getCookie('password');
