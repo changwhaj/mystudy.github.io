@@ -97,7 +97,7 @@
                   "</label>&nbsp </th></tr>"
         
         // alert(document.cookie); // 모든 쿠키 보여주기
-        var vlist = getCookie("E"+id);
+        var vlist = getCookie("SAA"+id);
         var varray = [];
         
         if (vlist != undefined) {
@@ -127,8 +127,8 @@
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
-        setCookie("E"+seq, vlist, {secure: true, 'expires': expDate});
         setCookie("SAA"+seq, vlist, {secure: true, 'expires': expDate});
+        deleteCookie("E"+seq)
     }
 
     function setVlist(question_id, vlist, toggle) {
@@ -154,7 +154,7 @@
 
     function NewTab(question_id, discuss_id) {
         var seq = document.getElementById("seq").innerHTML
-        var vlist = getCookie("E"+seq);
+        var vlist = getCookie("SAA"+seq);
         var varray = []
                 
         if (vlist != undefined) {
