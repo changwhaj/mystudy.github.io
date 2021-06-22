@@ -784,7 +784,7 @@
     function setCookie(name, value, options = {}) {
 
         options = {
-          path: '/SAP/',
+          path: '/SAP',
           // 필요한 경우, 옵션 기본값을 설정할 수도 있습니다.
           ...options
         };
