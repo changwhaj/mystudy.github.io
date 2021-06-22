@@ -853,7 +853,7 @@
                         fstyle += "color:" + txtColor + "; font-weight:bold; "
                     }
                     if (data[idx].DID == "") {
-                        row += "<td><font style='color:gray; font-style:italic'>#"+data[idx].QID+"</font></td>"
+                        row += "<td><font style='color:cyan; font-style:italic'>#"+data[idx].QID+"</font></td>"
                     } else {
                         row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' target='_self'>#"+data[idx].QID+"</font></td>"
                     }
