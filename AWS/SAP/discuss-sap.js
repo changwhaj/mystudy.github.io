@@ -853,7 +853,7 @@
                         fstyle += "color:" + txtColor + "; font-weight:bold; "
                     }
                     if (data[idx].DID == "") {
-                        row += "<td><font style='color:cyan; font-style:italic'>#"+data[idx].QID+"</font></td>"
+                        row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='color:cyan; font-style:italic; text-decoration: underline;'>#"+data[idx].QID+"</font></td>"
                     } else {
                         row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' target='_self'>#"+data[idx].QID+"</font></td>"
                     }
@@ -913,10 +913,15 @@
 
             //var url = "https://aws.amazon.com/"
             //if (passwd == "tssadm") {
+            if (discuss_id == "") {
+                url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
+                    + str(int(question_id)/10 + 1) +
+                    "/";
+            } else {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
-            //}
+            }
             window.open(url, "discuss");
         }
         
