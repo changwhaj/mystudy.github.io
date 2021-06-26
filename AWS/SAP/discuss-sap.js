@@ -915,7 +915,7 @@
             //if (passwd == "tssadm") {
             if (discuss_id == "") {
                 url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
-                    + String(parseInt(parseInt(question_id)+5/10)) +
+                    + String(parseInt((question_id+5)/10)) +
                     "/";
             } else {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
