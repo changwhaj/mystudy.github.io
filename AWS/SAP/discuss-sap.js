@@ -914,8 +914,9 @@
             //var url = "https://aws.amazon.com/"
             //if (passwd == "tssadm") {
             if (discuss_id == "") {
+                console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.5)))
                 url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
-                    + String(parseInt((question_id+5)/10)) +
+                    + String(parseInt(question_id/10+0.5)) +
                     "/";
             } else {
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
