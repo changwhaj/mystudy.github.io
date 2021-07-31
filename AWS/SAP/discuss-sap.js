@@ -752,8 +752,6 @@
         {'QID' : '750', 'DID' : '51690'},
     ] 
     
-    var winDiscuss;
-
     // Usage
     // zeroPad(1,10);   //=> 01
     // zeroPad(1,100);   //=> 001
