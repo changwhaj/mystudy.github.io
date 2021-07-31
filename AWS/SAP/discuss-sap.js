@@ -933,7 +933,7 @@
             var winDiscuss = window.open(url, "discuss");
             var teste = function(){
                 //console.log("Find Element for google-cache-hdr");
-                teste.parent.postMessage({ childData : 'test data' }, '*');
+                winDiscuss.parent.postMessage({ childData : 'test data' }, '*');
                 var div = winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr");
                 if(typeof(div)!="undefined"){
                     winDiscuss.alert("Found!");
