@@ -83,14 +83,14 @@
     }
 
     function buildTable(id, data) {
-        table.innerHTML = "<H1>문제은행 사이트의 Amazon 문제은행 서비스 중단으로 조회가 불가합니다.</H1>"
-        return
-        
         var nrows = 25;
         var ncols = 19;
         var table = document.getElementById('table1')
         var btnText = "오답노트"
         var txtColor = "green"
+
+        table.innerHTML = "<H1>문제은행 사이트의 Amazon 문제은행 서비스 중단으로 조회가 불가합니다.</H1>"
+        return
 
         if (id == "X") { 
             btnText = "문제풀이"
