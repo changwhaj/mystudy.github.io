@@ -89,8 +89,8 @@
         var btnText = "오답노트"
         var txtColor = "green"
 
-        table.innerHTML = "<H1>문제은행 사이트의 Amazon 문제은행 서비스 중단으로 조회가 불가합니다.</H1>"
-        return
+        //table.innerHTML = "<H1>문제은행 사이트의 Amazon 문제은행 서비스 중단으로 조회가 불가합니다.</H1>"
+        //return
 
         if (id == "X") { 
             btnText = "문제풀이"
@@ -181,6 +181,7 @@
             } else {
                 deleteCookie('password')
             }
+            url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
             window.open(url, "discuss");
         }
         
