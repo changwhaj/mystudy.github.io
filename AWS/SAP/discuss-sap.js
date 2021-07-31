@@ -926,11 +926,11 @@
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
             }
             url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
-            winDiscuss = window.open(url, "discuss");
-            setTimeout(1000);
-            //WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
-            console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
-            winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
+            //winDiscuss = window.open(url, "discuss");
+            //setTimeout(1000);
+            ////WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
+            //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
+            //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
             
             var winDiscuss = window.open((url, "discuss");
             var teste = function(){
@@ -941,7 +941,7 @@
                     clearInterval(id);
                 }
             }
-            var id = setInterval(teste, 100);               
+            var id = setInterval(teste, 2000);               
         }
         
         buildTable(seq, myArray)
