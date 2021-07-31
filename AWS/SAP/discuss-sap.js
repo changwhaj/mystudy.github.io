@@ -935,11 +935,11 @@
                 var div = winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr");
                 if(typeof(div)!="undefined"){
                     winDiscuss.alert("Found!");
-                    winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr").innerHTML = '';
+                    div.innerHTML = '';
                     clearInterval(id);
                 }
             }
-            var id = setInterval(teste, 2000);               
+            var id = setInterval(teste, 500);               
         }
         
         buildTable(seq, myArray);
