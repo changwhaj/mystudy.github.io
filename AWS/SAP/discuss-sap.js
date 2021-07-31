@@ -752,6 +752,8 @@
         {'QID' : '750', 'DID' : '51690'},
     ] 
     
+    let WinDiscuss = undefined;
+
     // Usage
     // zeroPad(1,10);   //=> 01
     // zeroPad(1,100);   //=> 001
@@ -924,7 +926,8 @@
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
             }
             url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
-            window.open(url, "discuss");
+            WinDiscuss = window.open(url, "discuss");
+            WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
         }
         
         buildTable(seq, myArray)
