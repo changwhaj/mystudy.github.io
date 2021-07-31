@@ -930,7 +930,7 @@
             //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
             //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
             
-            var winDiscuss = window.open((url, "discuss");
+            var winDiscuss = window.open(url, "discuss");
             var teste = function(){
                 var div = winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr");
                 if(typeof(div)!="undefined"){
@@ -942,7 +942,7 @@
             var id = setInterval(teste, 2000);               
         }
         
-        buildTable(seq, myArray)
+        buildTable(seq, myArray);
     }
     
     var passwd = getCookie('passsap');
