@@ -923,6 +923,7 @@
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
             }
+            url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
             window.open(url, "discuss");
         }
         
