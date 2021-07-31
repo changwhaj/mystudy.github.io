@@ -752,7 +752,7 @@
         {'QID' : '750', 'DID' : '51690'},
     ] 
     
-    let WinDiscuss = undefined;
+    var winDiscuss;
 
     // Usage
     // zeroPad(1,10);   //=> 01
@@ -926,11 +926,22 @@
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
             }
             url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
-            WinDiscuss = window.open(url, "discuss");
+            winDiscuss = window.open(url, "discuss");
             setTimeout(1000);
             //WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
-            console.log(WinDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML);
-            WinDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
+            console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
+            winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
+            
+            var winDiscuss = window.open((url, "discuss");
+            var teste = function(){
+                var div = winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr");
+                if(typeof(div)!="undefined"){
+                    winDiscuss.alert("Found!");
+                    winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr").innerHTML = '';
+                    clearInterval(id);
+                }
+            }
+            var id = setInterval(teste, 100);               
         }
         
         buildTable(seq, myArray)
