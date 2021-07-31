@@ -941,7 +941,7 @@
                     clearInterval(id);
                 }
             }
-            var id = setInterval(teste, 5000);               
+            // var id = setInterval(teste, 5000);               
         }
         
         buildTable(seq, myArray);
