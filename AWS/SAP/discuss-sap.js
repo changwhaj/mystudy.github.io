@@ -932,7 +932,7 @@
             
             var winDiscuss = window.open(url, "discuss");
             var teste = function(){
-                console.log("Find Element for google-cache-hdr");
+                //console.log("Find Element for google-cache-hdr");
                 var div = winDiscuss.document.getElementById("bN015htcoyT__google-cache-hdr");
                 if(typeof(div)!="undefined"){
                     winDiscuss.alert("Found!");
@@ -940,7 +940,7 @@
                     clearInterval(id);
                 }
             }
-            var id = setInterval(teste, 500);               
+            var id = setInterval(teste, 5000);               
         }
         
         buildTable(seq, myArray);
