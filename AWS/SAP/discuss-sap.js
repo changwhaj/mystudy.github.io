@@ -927,6 +927,7 @@
             }
             url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
             WinDiscuss = window.open(url, "discuss");
+            setTimeout(1000);
             //WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
             console.log(WinDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").first().innerHTML);
             WinDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").first().innerHTML = "X";
