@@ -925,8 +925,9 @@
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-professional-topic-1/";
+                url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
             }
-            url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
+            // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
             //winDiscuss = window.open(url, "discuss");
             //setTimeout(1000);
             ////WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
