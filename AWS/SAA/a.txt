@@ -1,1 +1,13 @@
 
+git clone --single-branch --branch gh-pages https://github.com/changwhaj/mystudy.git
+
+git status
+
+git pull
+
+git add .
+
+git commit -m 'added DOCTYPE'
+git push origin gh-pages
+git status
+
