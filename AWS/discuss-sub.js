@@ -181,7 +181,7 @@
             } else {
                 deleteCookie('password')
             }
-            url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
+            // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
             window.open(url, "discuss");
         }
         
