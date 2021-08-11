@@ -165,9 +165,9 @@ function NewTab(question_id, discuss_id) {
             url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
                 + String(parseInt(question_id/10+0.9)) +
                 "/";
-            url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-P" 
-                + String(parseInt(question_id/10+0.9)) +
-                ".html";
+            //url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-P" 
+            //    + String(parseInt(question_id/10+0.9)) +
+            //    ".html";
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
