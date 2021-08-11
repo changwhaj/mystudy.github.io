@@ -1,5 +1,4 @@
-import { myArray } from './myArray';
- 
+
 // Usage
 // zeroPad(1,10);   //=> 01
 // zeroPad(1,100);   //=> 001
