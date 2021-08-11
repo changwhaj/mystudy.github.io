@@ -172,7 +172,7 @@ function NewTab(question_id, discuss_id) {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
                 "-exam-aws-certified-solutions-architect-professional-topic-1/";
-            url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
+            //url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
         }
         // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
         //winDiscuss = window.open(url, "discuss");
