@@ -162,6 +162,7 @@
                 url = "https://www.examtopics.com/discussions/amazon/view/" 
                     + discuss_id +
                     "-exam-aws-certified-solutions-architect-associate-saa-c02/";
+                url = "https://changwhaj.github.io/assets/exam/aws/SAA/SAA-Q" + question_id + ".html"
             } else {
                 deleteCookie('password')
             }
