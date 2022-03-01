@@ -167,10 +167,9 @@ function NewTab(question_id, discuss_id) {
                 ".html";
             url = "https://changwhaj.github.io/assets/exam/aws/DBS/DBS-Q" + question_id + ".html"
         } else {
-            nqid = myArray[parseInt(myArray[question_id-1].NQID)-1].QID
             url = "https://www.examtopics.com/discussions/amazon/view/"
                 + discuss_id +
-                "-exam-aws-certified-database-specialty-topic-1-question-" + nqid + "/";
+                "-exam-aws-certified-database-specialty-topic-1-question-" + str(parseInt(question_id)) + "/";
             // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
             //url = "https://www.examtopics.com/exams/amazon/aws-certified-database-specialty/view/" 
             //    + String(parseInt(question_id/4+0.9)) +
