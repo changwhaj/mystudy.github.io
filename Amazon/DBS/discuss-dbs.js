@@ -1,4 +1,4 @@
-const PASSKEY = "Tuning";
+const PASSKEY = "tuning";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -169,7 +169,7 @@ function NewTab(question_id, discuss_id) {
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/"
                 + discuss_id +
-                "-exam-aws-certified-database-specialty-topic-1-question-" + str(parseInt(question_id)) + "/";
+                "-exam-aws-certified-database-specialty-topic-1-question-" + String(parseInt(question_id)) + "/";
             // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
             //url = "https://www.examtopics.com/exams/amazon/aws-certified-database-specialty/view/" 
             //    + String(parseInt(question_id/4+0.9)) +
