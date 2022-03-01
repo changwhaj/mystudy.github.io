@@ -1,3 +1,4 @@
+const PASSKEY = "Tuning";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -158,28 +159,23 @@ function NewTab(question_id, discuss_id) {
             setSequence(seq, newList)
         }
 
-        //var url = "https://aws.amazon.com/"
-        //if (passwd == "tssadm") {
-        if (discuss_id == "") {
-            // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
-            url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
-                + String(parseInt(question_id/10+0.9)) +
-                "/";
+        var url = "https://aws.amazon.com/"
+        if (passwd == PASSKEY) {
+        // if (discuss_id == "") {
             url = "https://changwhaj.github.io/assets/exam/aws/DBS/page/DBS-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-        } else {
-            url = "https://www.examtopics.com/discussions/amazon/view/" 
-                + discuss_id +
-                "-exam-aws-certified-solutions-architect-professional-topic-1/";
             url = "https://changwhaj.github.io/assets/exam/aws/DBS/DBS-Q" + question_id + ".html"
+        } else {
+            nqid = myArray[parseInt(myArray[question_id-1].NQID)-1].QID
+            url = "https://www.examtopics.com/discussions/amazon/view/"
+                + discuss_id +
+                "-exam-aws-certified-database-specialty-topic-1-question-" + nqid + "/";
+            // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
+            //url = "https://www.examtopics.com/exams/amazon/aws-certified-database-specialty/view/" 
+            //    + String(parseInt(question_id/4+0.9)) +
+                "/";
         }
-        // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
-        //winDiscuss = window.open(url, "discuss");
-        //setTimeout(1000);
-        ////WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
-        //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
-        //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
         
         var winDiscuss = window.open(url, "discuss");
         var teste = function(){
@@ -203,7 +199,7 @@ var passwd = getCookie('passdbs');
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
 
-    if (passwd.toLowerCase() == "tuning") {
+    if (passwd.toLowerCase() == PASSKEY) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
