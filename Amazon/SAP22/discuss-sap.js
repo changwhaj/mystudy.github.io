@@ -90,7 +90,7 @@ function buildTable(id, data) {
         varray = vlist.split(',');
     }
 
-    for (var i=0; i < (data.length/ncols); i++) { 
+    for (var i=0; i <= (data.length/ncols); i++) { 
         row += "<tr>"
         for (var c=0; c < ncols; c++) {
             var idx = i+nrows*c
