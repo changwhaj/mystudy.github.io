@@ -173,7 +173,7 @@ function NewTab(question_id, discuss_id) {
             // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
             //url = "https://www.examtopics.com/exams/amazon/aws-certified-database-specialty/view/" 
             //    + String(parseInt(question_id/4+0.9)) +
-                "/";
+            //    "/";
         }
         
         var winDiscuss = window.open(url, "discuss");
