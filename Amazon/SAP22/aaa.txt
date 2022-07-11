@@ -1,0 +1,10 @@
+**[Q#001. Q#496. Q#529.](https://www.examtopics.com/discussions/amazon/view/46381-exam-aws-certified-solutions-architect-professional-topic-1/)**  
+Your organization's rules mandate the encryption of sensitive data in transit. You're weighing your choices for data protection while it's stored at rest on an EBS data disk connected to an EC2 instance.  
+
+Which of the following choices enables you to encrypt your data in transit? (Select three.)  
+
+>**A.** Implement third party volume encryption tools.  
+**B).** Implement SSL/TLS for all services running on the server.  
+**C).** Encrypt data inside your applications before storing it on EBS.  
+**D).** Encrypt data using native data encryption drivers at the file system level.  
+**E.** Do nothing as EBS volumes are encrypted by default.  
