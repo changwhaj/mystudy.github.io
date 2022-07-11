@@ -1,11 +1,10 @@
-**[Q#058. Q#633. Q#672.](https://www.examtopics.com/discussions/amazon/view/11794-exam-aws-certified-solutions-architect-professional-topic-1/)**  
+**[Q#149. Q#249. Q#264.](https://www.examtopics.com/discussions/amazon/view/14895-exam-aws-certified-solutions-architect-professional-topic-1/)**  
+The IAM policy of an organization (account ID 123412341234) has been set to enable the user to alter his credentials.  
+
+What action would the user be able to take as a result of the following statement?  
 ![image.png](attachment:image.png)  
-Refer to the architectural diagram above for a batch processing solution that utilizes Simple Queue Service (SQS) to establish a message queue between Amazon Elastic Compute Cloud (EC2) instances that serve as batch processors. Cloud Watch checks the quantity of Job requests (queued messages), and an Auto Scaling group dynamically adds or deletes batch servers depending on Cloud Watch alert criteria.  
 
-Which of the following features can you implement cost effectively and efficiently using this architecture?  
-
->**A.** Reduce the overall lime for executing jobs through parallel processing by allowing a busy EC2 instance that receives a message to pass it to the next instance in a daisy-chain setup.  
-**B.** Implement fault tolerance against EC2 instance failure since messages would remain in SQS and worn can continue with recovery of EC2 instances implement fault tolerance against SQS failure by backing up messages to S3.  
-**C.** Implement message passing between EC2 instances within a batch by exchanging messages through SQS.  
-**D.** Coordinate number of EC2 instances with number of job requests automatically thus Improving cost effectiveness.  
-**E.** Handle high priority jobs before lower priority jobs by assigning a priority metadata field to SQS messages.  
+>**A.** Allow the IAM user to update the membership of the group called TestingGroup  
+**B.** The IAM policy will throw an error due to an invalid resource name  
+**C.** The IAM policy will allow the user to subscribe to any IAM group  
+**D.** Allow the IAM user to delete the TestingGroup  
