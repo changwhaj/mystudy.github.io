@@ -1,0 +1,2105 @@
+**Q#1**  
+A business utilizes Amazon DynamoDB to power a web-based survey program. A Database Specialist encounters the ProvisionedThroughputExceededException problem during peak use, while survey answers are being gathered.  
+
+What is the Database Specialist's role in resolving this issue? (Select two.)  
+
+>**A.** Change the table to use Amazon DynamoDB Streams  
+**B.** Purchase DynamoDB reserved capacity in the affected Region  
+**C.** Increase the write capacity units for the specific table  
+**D.** Change the table capacity mode to on-demand  
+**E.** Change the table type to throughput optimized  
+
+**Q#2**  
+A business's customer relationship management (CRM) system is hosted on an Amazon RDS for PostgreSQL DB instance. According to new compliance rules, the database must be encrypted at rest.  
+
+Which course of action will satisfy these criteria?  
+
+>**A.** Create an encrypted copy of manual snapshot of the DB instance. Restore a new DB instance from the encrypted snapshot.  
+**B.** Modify the DB instance and enable encryption.  
+**C.** Restore a DB instance from the most recent automated snapshot and enable encryption.  
+**D.** Create an encrypted read replica of the DB instance. Promote the read replica to a standalone instance.  
+
+Community vote distribution : A (100%)  
+
+**Q#3**  
+On an Amazon RDS for PostgreSQL Multi-AZ DB instance, a business conducts online transaction processing (OLTP) workloads. After-hours tests were done on the database, generating extra database logs. Due to these extra logs, the RDS DB instance's free storage space is limited.  
+
+What should the business do to handle this problem of space constraint?  
+
+>**A.** Log in to the host and run the rm `$PGDATA/pg_logs/*` command  
+**B.** Modify the rds.log_retention_period parameter to 1440 and wait up to 24 hours for database logs to be deleted  
+**C.** Create a ticket with AWS Support to have the logs deleted  
+**D.** Run the SELECT rds_rotate_error_log() stored procedure to rotate the logs  
+
+**Q#4**  
+Amazon Aurora MySQL is being used by an ecommerce business to migrate its main application database. The firm is now doing OLTP stress testing using concurrent database connections. A database professional detected sluggish performance for several particular write operations during the first round of testing.  
+Examining the Amazon CloudWatch stats for the Aurora DB cluster revealed a CPU usage of 90%.  
+
+Which actions should the database professional take to determine the main cause of excessive CPU use and sluggish performance most effectively? (Select two.)  
+
+>**A.** Enable Enhanced Monitoring at less than 30 seconds of granularity to review the operating system metrics before the next round of tests.  
+**B.** Review the VolumeBytesUsed metric in CloudWatch to see if there is a spike in write I/O.  
+**C.** Review Amazon RDS Performance Insights to identify the top SQL statements and wait events.  
+**D.** Review Amazon RDS API calls in AWS CloudTrail to identify long-running queries.  
+**E.** Enable Advance Auditing to log QUERY events in Amazon CloudWatch before the next round of tests.  
+
+**Q#5**  
+A database professional is required to evaluate and improve a performance-related Amazon DynamoDB table. The database professional determines that the partition key is generating the hot partitions, and hence creates a new partition key. The database professional must apply the new partition key to all current and new data in an efficient manner.  
+
+How does one go about implementing this solution?  
+
+>**A.** Use Amazon EMR to export the data from the current DynamoDB table to Amazon S3. Then use Amazon EMR again to import the data from Amazon S3 into a new DynamoDB table with the new partition key.  
+**B.** Use AWS DMS to copy the data from the current DynamoDB table to Amazon S3. Then import the DynamoDB table to create a new DynamoDB table with the new partition key.  
+**C.** Use the AWS CLI to update the DynamoDB table and modify the partition key.  
+**D.** Use the AWS CLI to back up the DynamoDB table. Then use the restore-table-from-backup command and modify the partition key.  
+
+**Q#6**  
+A business uses Amazon Aurora MySQL to power their customer feedback application. Every day, the firm runs a report to extract client feedback, which is then analyzed by a staff to assess if the consumer remarks are favorable or negative. It might take days for a business to contact dissatisfied consumers and take remedial action. The corporation wishes to automate this process via the use of machine learning.  
+
+Which method satisfies this criterion with the MINIMUM amount of effort?  
+
+>**A.** Export the Aurora MySQL database to Amazon S3 by using AWS Database Migration Service (AWS DMS). Use Amazon Comprehend to run sentiment analysis on the exported files.  
+**B.** Export the Aurora MySQL database to Amazon S3 by using AWS Database Migration Service (AWS DMS). Use Amazon SageMaker to run sentiment analysis on the exported files.  
+**C.** Set up Aurora native integration with Amazon Comprehend. Use SQL functions to extract sentiment analysis.  
+**D.** Set up Aurora native integration with Amazon SageMaker. Use SQL functions to extract sentiment analysis.  
+
+**Q#7**  
+As part of a proof-of-concept effort, a financial institution recently established an Amazon RDS for MySQL DB instance. Automated database snapshots have been established by a database professional. The database professional observed one day during normal testing that the automatic database snapshot had not been made.  
+
+Which of the following are potential explanations for the absence of the snapshot? (Select two.)  
+
+>**A.** A copy of the RDS automated snapshot for this DB instance is in progress within the same AWS Region.  
+**B.** A copy of the RDS automated snapshot for this DB instance is in progress in a different AWS Region.  
+**C.** The RDS maintenance window is not configured.  
+**D.** The RDS DB instance is in the STORAGE_FULL state.  
+**E.** RDS event notifications have not been enabled.  
+
+Community vote distribution : AD (100%)  
+
+**Q#8**  
+Amazon Aurora is used by a business to conduct secure financial transactions. To comply with compliance regulations, data must always be encrypted at rest and in transit.  
+
+Which steps should a database professional perform in combination to achieve these requirements? (Select two.)  
+
+>**A.** Create an Aurora Replica with encryption enabled using AWS Key Management Service (AWS KMS). Then promote the replica to master.  
+**B.** Use SSL/TLS to secure the in-transit connection between the financial application and the Aurora DB cluster.  
+**C.** Modify the existing Aurora DB cluster and enable encryption using an AWS Key Management Service (AWS KMS) encryption key. Apply the changes immediately.  
+**D.** Take a snapshot of the Aurora DB cluster and encrypt the snapshot using an AWS Key Management Service (AWS KMS) encryption key. Restore the snapshot to a new DB cluster and update the financial application database endpoints.  
+**E.** Use AWS Key Management Service (AWS KMS) to secure the in-transit connection between the financial application and the Aurora DB cluster.  
+
+**Q#9**  
+A huge gaming firm is developing a centralized method for storing the status of various online games' user sessions. The workload requires low-latency key-value storage and will consist of an equal number of reads and writes. Across the games' geographically dispersed user base, data should be written to the AWS Region nearest to the user. The design should reduce the burden associated with managing data replication across Regions.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Amazon RDS for MySQL with multi-Region read replicas  
+**B.** Amazon Aurora global database  
+**C.** Amazon RDS for Oracle with GoldenGate  
+**D.** Amazon DynamoDB global tables  
+
+Community vote distribution : D (100%)  
+
+**Q#10**  
+A new mobile game with a team play feature is being released by a firm. As a set of mobile device users interact, an Amazon DynamoDB database is updated with an item detailing their statuses. Using the BatchGetltemn function, the other users' devices periodically read the newest statuses of their colleagues from the table.  
+Prior to launch, several testers filed bug reports alleging that the game's status data was out of current. The developers have been unable to duplicate this problem and have sought advice from a database professional.  
+
+Which suggestion would be most effective in resolving this issue?  
+
+>**A.** Ensure the DynamoDB table is configured to be always consistent.  
+**B.** Ensure the BatchGetltem operation is called with the ConsistentRead parameter set to false.  
+**C.** Enable a stream on the DynamoDB table and subscribe each device to the stream to ensure all devices receive up-to-date status information.  
+**D.** Ensure the BatchGetltem operation is called with the ConsistentRead parameter set to true.  
+
+**Q#11**  
+Amazon RDS for Oracle with Transparent Data Encryption is used by a financial services organization (TDE). At all times, the organization is obligated to encrypt its data at rest. The decryption key must be widely distributed, and access to the key must be restricted. The organization must be able to rotate the encryption key on demand to comply with regulatory requirements. If any possible security vulnerabilities are discovered, the organization must be able to disable the key. Additionally, the company's overhead must be kept to a minimal.  
+
+What method should the database administrator use to configure the encryption to fulfill these specifications?  
+
+>**A.** AWS CloudHSM  
+**B.** AWS Key Management Service (AWS KMS) with an AWS managed key  
+**C.** AWS Key Management Service (AWS KMS) with server-side encryption  
+**D.** AWS Key Management Service (AWS KMS) CMK with customer-provided material  
+
+Community vote distribution : D (100%)  
+
+**Q#12**  
+A business maintains a SQL Server database on-premises. Active Directory authentication is used to provide users access to the database. The organization transferred their database successfully to Amazon RDS for SQL Server. The organization, however, has reservations regarding user authentication in the AWS Cloud environment.  
+
+Which authentication solution should a database professional provide?  
+
+>**A.** Deploy Active Directory Federation Services (AD FS) on premises and configure it with an on-premises Active Directory. Set up delegation between the on- premises AD FS and AWS Security Token Service (AWS STS) to map user identities to a role using theAmazonRDSDirectoryServiceAccess managed IAM policy.  
+**B.** Establish a forest trust between the on-premises Active Directory and AWS Directory Service for Microsoft Active Directory. Use AWS SSO to configure an Active Directory user delegated to access the databases in RDS for SQL Server.  
+**C.** Use Active Directory Connector to redirect directory requests to the company's on-premises Active Directory without caching any information in the cloud. Use the RDS master user credentials to connect to the DB instance and configure SQL Server logins and users from the Active Directory users and groups.  
+**D.** Establish a forest trust between the on-premises Active Directory and AWS Directory Service for Microsoft Active Directory. Ensure RDS for SQL Server is using mixed mode authentication. Use the RDS master user credentials to connect to the DB instance and configure SQL Server logins and users from the Active Directory users and groups.  
+
+Community vote distribution : D (100%)  
+
+**Q#13**  
+A corporation just purchased another. A database professional must migrate a 12 TB Amazon RDS for MySQL database instance that is not secured to a new AWS account. The database professional must keep the migration time to a minimum.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Create a snapshot of the source DB instance in the source account. Share the snapshot with the destination account. In the target account, create a DB instance from the snapshot.  
+**B.** Use AWS Resource Access Manager to share the source DB instance with the destination account. Create a DB instance in the destination account using the shared resource.  
+**C.** Create a read replica of the DB instance. Give the destination account access to the read replica. In the destination account, create a snapshot of the shared read replica and provision a new RDS for MySQL DB instance.  
+**D.** Use mysqldump to back up the source database. Create an RDS for MySQL DB instance in the destination account. Use the mysql command to restore the backup in the destination database.  
+
+**Q#14**  
+As part of a disaster recovery plan, a database professional must generate nightly backups of an Amazon DynamoDB table in a mission-critical workload.  
+
+Which backup technique should the database professional choose in order to reduce administration overhead?  
+
+>**A.** Install the AWS CLI on an Amazon EC2 instance. Write a CLI command that creates a backup of the DynamoDB table. Create a scheduled job or task that runs the command on a nightly basis.  
+**B.** Create an AWS Lambda function that creates a backup of the DynamoDB table. Create an Amazon CloudWatch Events rule that runs the Lambda function on a nightly basis.  
+**C.** Create a backup plan using AWS Backup, specify a backup frequency of every 24 hours, and give the plan a nightly backup window.  
+**D.** Configure DynamoDB backup and restore for an on-demand backup frequency of every 24 hours.  
+
+Community vote distribution : C (100%)  
+
+**Q#15**  
+A database expert is responsible for the management of a company's important Amazon RDS for MySQL DB instance. Daily data storage may range from.01 percent to 10% of the current database size. The database expert must guarantee that the storage for the database instance increases as required.  
+
+Which approach is the MOST OPERATIONALLY EFFECTIVE AND COST-EFFECTIVE?  
+
+>**A.** Configure RDS Storage Auto Scaling.  
+**B.** Configure RDS instance Auto Scaling.  
+**C.** Modify the DB instance allocated storage to meet the forecasted requirements.  
+**D.** Monitor the Amazon CloudWatch FreeStorageSpace metric daily and add storage as required.  
+
+Community vote distribution : A (100%)  
+
+**Q#16**  
+A financial organization must ensure that the most current 90 days of MySQL database backups are accessible. Amazon RDS for MySQL DB instances are used to host all MySQL databases. A database expert must create a solution that satisfies the criteria for backup retention with the least amount of development work feasible.  
+
+Which strategy should the database administrator take?  
+
+>**A.** Use AWS Backup to build a backup plan for the required retention period. Assign the DB instances to the backup plan.  
+**B.** Modify the DB instances to enable the automated backup option. Select the required backup retention period.  
+**C.** Automate a daily cron job on an Amazon EC2 instance to create MySQL dumps, transfer to Amazon S3, and implement an S3 Lifecycle policy to meet the retention requirement.  
+**D.** Use AWS Lambda to schedule a daily manual snapshot of the DB instances. Delete snapshots that exceed the retention requirement.  
+
+**Q#17**  
+For the first time, a database professional is establishing a test graph database on Amazon Neptune. The database expert must input millions of rows of test observations from an Amazon S3.csv file. The database professional uploaded the data to the Neptune DB instance through a series of API calls.  
+
+Which sequence of actions enables the database professional to upload the data most quickly? (Select three.)  
+
+>**A.** Ensure Amazon Cognito returns the proper AWS STS tokens to authenticate the Neptune DB instance to the S3 bucket hosting the CSV file.  
+**B.** Ensure the vertices and edges are specified in different .csv files with proper header column formatting.  
+**C.** Use AWS DMS to move data from Amazon S3 to the Neptune Loader.  
+**D.** Curl the S3 URI while inside the Neptune DB instance and then run the addVertex or addEdge commands.  
+**E.** Ensure an IAM role for the Neptune DB instance is configured with the appropriate permissions to allow access to the file in the S3 bucket.  
+**F.** Create an S3 VPC endpoint and issue an HTTP POST to the database's loader endpoint.  
+
+**Q#18**  
+A gaming firm is building a new mobile game and plans to utilize Amazon DynamoDB to store user data. Users may register using their current Facebook or Amazon accounts to make the procedure as simple as possible. The firm anticipates over 10,000 users.  
+
+How should a database administrator implement access control with the LEAST amount of operational work possible?  
+
+>**A.** Use web identity federation on the mobile app and AWS STS with an attached IAM role to get temporary credentials to access DynamoDB.  
+**B.** Use web identity federation on the mobile app and create individual IAM users with credentials to access DynamoDB.  
+**C.** Use a self-developed user management system on the mobile app that lets users access the data from DynamoDB through an API.  
+**D.** Use a single IAM user on the mobile app to access DynamoDB.  
+
+**Q#19**  
+On an Amazon RDS for MySQL DB instance, a business is running a financial application. Multiple financial regulatory authorities regulate the application.  
+The RDS database instance is configured with security groups that restrict access to certain Amazon EC2 hosts. AWS KMS is used to encrypt data in transit.  
+
+Which procedure will offer an extra layer of security?  
+
+>**A.** Set up NACLs that allow the entire EC2 subnet to access the DB instance  
+**B.** Disable the master user account  
+**C.** Set up a security group that blocks SSH to the DB instance  
+**D.** Set up RDS to use SSL for data in transit  
+
+Community vote distribution : D (100%)  
+
+**Q#20**  
+A business wants to move from an Amazon EC2 instance running Oracle Database Standard Edition to an Amazon RDS for Oracle DB instance with Multi-AZ.  
+The database is used to power a continuous-running ecommerce website. The business can only give a 5-minute maintenance window.  
+
+Which solution will satisfy these criteria?  
+
+>**A.** Configure Oracle Real Application Clusters (RAC) on the EC2 instance and the RDS DB instance. Update the connection string to point to the RAC cluster. Once the EC2 instance and RDS DB instance are in sync, fail over from Amazon EC2 to Amazon RDS.  
+**B.** Export the Oracle database from the EC2 instance using Oracle Data Pump and perform an import into Amazon RDS. Stop the application for the entire process. When the import is complete, change the database connection string and then restart the application.  
+**C.** Configure AWS DMS with the EC2 instance as the source and the RDS DB instance as the destination. Stop the application when the replication is in sync, change the database connection string, and then restart the application.  
+**D.** Configure AWS DataSync with the EC2 instance as the source and the RDS DB instance as the destination. Stop the application when the replication is in sync, change the database connection string, and then restart the application.  
+
+**Q#21**  
+In one AWS account, a business runs a two-tier ecommerce application. Amazon RDS for MySQL Multi-AZ DB instance is used to install the web server. A developer erased the database in the production environment by accident. Although the database has been recovered, hours of downtime and income have been lost.  
+
+Which combination of current IAM policy adjustments should a Database Specialist do to avoid this kind of issue from occurring again in the future? (Select three.)  
+
+>**A.** Grant least privilege to groups, users, and roles  
+**B.** Allow all users to restore a database from a backup that will reduce the overall downtime to restore the database  
+**C.** Enable multi-factor authentication for sensitive operations to access sensitive resources and API operations  
+**D.** Use policy conditions to restrict access to selective IP addresses  
+**E.** Use AccessList Controls policy type to restrict users for database instance deletion  
+**F.** Enable AWS CloudTrail logging and Enhanced Monitoring  
+
+**Q#22**  
+Each day, an online shopping firm receives a high volume of shopping requests. As a consequence, the company's Amazon RDS database is consistently under strain. A database expert is responsible for maintaining the database's availability and functionality at all times. The database expert desires an automated alerting system for problems that might result in database downtime or for database configuration modifications.  
+
+What is the database expert to do in order to do this? (Select two.)  
+
+>**A.** Create an Amazon CloudWatch Events event to send a notification using Amazon SNS on every API call logged in AWS CloudTrail.  
+**B.** Subscribe to an RDS event subscription and configure it to use an Amazon SNS topic to send notifications.  
+**C.** Use Amazon SES to send notifications based on configured Amazon CloudWatch Events events.  
+**D.** Configure Amazon CloudWatch alarms on various metrics, such as FreeStorageSpace for the RDS instance.  
+**E.** Enable email notifications for AWS Trusted Advisor.  
+
+**Q#23**  
+A business has a JSON-based AWS CloudFormation template for launching new Amazon RDS for MySQL DB instances. The security team has requested that a database expert guarantee that the master password for all new database instances created using the template is automatically changed every 30 days.  
+
+Which approach is the MOST OPERATIONALLY EFFECTIVE in meeting these requirements?  
+
+>**A.** Save the password in an Amazon S3 object. Encrypt the S3 object with an AWS KMS key. Set the KMS key to be rotated every 30 days by setting the EnableKeyRotation property to true. Use a CloudFormation custom resource to read the S3 object to extract the password.  
+**B.** Create an AWS Lambda function to rotate the secret. Modify the CloudFormation template to add an AWS::SecretsManager::RotationSchedule resource. Configure the RotationLambdaARN value and, for the RotationRules property, set the AutomaticallyAfterDays parameter to 30.  
+**C.** Modify the CloudFormation template to use the AWS KMS key as the database password. Configure an Amazon EventBridge rule to invoke the KMS API to rotate the key every 30 days by setting the ScheduleExpression parameter to ***/30***.  
+**D.** Integrate the Amazon RDS for MySQL DB instances with AWS IAM and centrally manage the master database user password.  
+
+**Q#24**  
+Amazon DynamoDB global tables are being used by a business to power an online gaming game. The game is played by gamers from all around the globe. As the game became popularity, the amount of queries to DynamoDB substantially rose. Recently, gamers have complained about the game's condition being inconsistent between nations. A database professional notices that the ReplicationLatency metric for many replica tables is set to an abnormally high value.  
+
+Which strategy will resolve the issue?  
+
+>**A.** Configure all replica tables to use DynamoDB auto scaling.  
+**B.** Configure a DynamoDB Accelerator (DAX) cluster on each of the replicas.  
+**C.** Configure the primary table to use DynamoDB auto scaling and the replica tables to use manually provisioned capacity.  
+**D.** Configure the table-level write throughput limit service quota to a higher value.  
+
+**Q#25**  
+A database professional maintains a fleet of Amazon RDS database instances that are configured to utilize the default database parameter group. A database expert must connect a custom parameter group with certain database instances.  
+
+When will the instances be allocated to this new parameter group once the database specialist performs this change?  
+
+>**A.** Instantaneously after the change is made to the parameter group  
+**B.** In the next scheduled maintenance window of the DB instances  
+**C.** After the DB instances are manually rebooted  
+**D.** Within 24 hours after the change is made to the parameter group  
+
+**Q#26**  
+A huge corporation is running a Java application on an Amazon RDS for Oracle Multi-AZ DB instance. The organization would want to mimic an Availability Zone failure and record how the application behaves during the DB instance failover activity as part of its yearly disaster recovery testing. The firm does not want to make any modifications to the code associated with this activity.  
+
+What should the business do in order to do this in the lowest period of time possible?  
+
+>**A.** Use a blue-green deployment with a complete application-level failover test  
+**B.** Use the RDS console to reboot the DB instance by choosing the option to reboot with failover  
+**C.** Use RDS fault injection queries to simulate the primary node failure  
+**D.** Add a rule to the NACL to deny all traffic on the subnets associated with a single Availability Zone  
+
+**Q#27**  
+A business utilizes Amazon CloudWatch to monitor their Amazon RDS for SQL Server setup. The reason of a recent rise in CPU use could not be detected using the gathered standard data. The CPU increase resulted in the program performing badly, which negatively impacted users. A Database Specialist must ascertain the source of the CPU increase.  
+
+Which combination of activities should be performed to enhance visibility into the processes and queries that are executing when the CPU load increases? (Select two.)  
+
+>**A.** Enable Amazon CloudWatch Events and view the incoming T-SQL statements causing the CPU to spike.  
+**B.** Enable Enhanced Monitoring metrics to view CPU utilization at the RDS SQL Server DB instance level.  
+**C.** Implement a caching layer to help with repeated queries on the RDS SQL Server DB instance.  
+**D.** Use Amazon QuickSight to view the SQL statement being run.  
+**E.** Enable Amazon RDS Performance Insights to view the database load and filter the load by waits, SQL statements, hosts, or users.  
+
+**Q#28**  
+A business is transferring a database from one AWS Region to another using an Amazon RDS for SQL Server DB instance. The organization wishes to keep database downtime to a minimum throughout the transfer.  
+
+Which migration strategy should the organization use for this cross-regional move?  
+
+>**A.** Back up the source database using native backup to an Amazon S3 bucket in the same Region. Then restore the backup in the target Region.  
+**B.** Back up the source database using native backup to an Amazon S3 bucket in the same Region. Use Amazon S3 Cross-Region Replication to copy the backup to an S3 bucket in the target Region. Then restore the backup in the target Region.  
+**C.** Configure AWS Database Migration Service (AWS DMS) to replicate data between the source and the target databases. Once the replication is in sync, terminate the DMS task.  
+**D.** Add an RDS for SQL Server cross-Region read replica in the target Region. Once the replication is in sync, promote the read replica to master.  
+
+**Q#29**  
+A financial institution has assigned a high storage capacity Amazon RDS MariaDB database instance to assist migration operations. Following migration, the organization cleaned the instance of any unnecessary data. The corporation now want to decrease its storage capacity in order to save money. The solution must have the fewest possible adverse effects on output and almost no downtime.  
+
+Which solution would satisfy these criteria?  
+
+>**A.** Create a snapshot of the old databases and restore the snapshot with the required storage  
+**B.** Create a new RDS DB instance with the required storage and move the databases from the old instances to the new instance using AWS DMS  
+**C.** Create a new database using native backup and restore  
+**D.** Create a new read replica and make it the primary by terminating the existing primary  
+
+Community vote distribution : B (100%)  
+
+**Q#30**  
+A team of Database Specialists is now examining performance concerns and evaluating associated metrics on an Amazon RDS for MySQL DB instance. To have a better understanding of the problem, the team want to reduce the alternatives down to particular database wait occurrences.  
+
+How are Database Specialists capable of doing this?  
+
+>**A.** Enable the option to push all database logs to Amazon CloudWatch for advanced analysis  
+**B.** Create appropriate Amazon CloudWatch dashboards to contain specific periods of time  
+**C.** Enable Amazon RDS Performance Insights and review the appropriate dashboard  
+**D.** Enable Enhanced Monitoring will the appropriate settings  
+
+**Q#31**  
+Recently, a financial institution created a portfolio management service. The application's backend is powered by Amazon Aurora, which supports MySQL.  
+The firm demands a response time of five minutes and a response time of five minutes. A database professional must create a disaster recovery system that is both efficient and has a low replication latency.  
+
+How should the database professional tackle these requirements?  
+
+>**A.** Configure AWS Database Migration Service (AWS DMS) and create a replica in a different AWS Region.  
+**B.** Configure an Amazon Aurora global database and add a different AWS Region.  
+**C.** Configure a binlog and create a replica in a different AWS Region.  
+**D.** Configure a cross-Region read replica.  
+
+**Q#32**  
+Amazon Aurora MySQL DB clusters are being used by a software development business for a variety of purposes, including development and reporting. These use cases create unexpected and variable demands on Aurora DB clusters, resulting in brief latency spikes. Throughout the week, system users do ad-hoc searches. The company's key concern is cost, and a solution that does not need extensive rework is required.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Create new Aurora Serverless DB clusters for development and reporting, then migrate to these new DB clusters.  
+**B.** Upgrade one of the DB clusters to a larger size, and consolidate development and reporting activities on this larger DB cluster.  
+**C.** Use existing DB clusters and stop/start the databases on a routine basis using scheduling tools.  
+**D.** Change the DB clusters to the burstable instance family.  
+
+**Q#33**  
+A ride-hailing application stores bookings in a persistent Amazon RDS for MySQL DB instance. This program is very popular, and the corporation anticipates a tenfold rise in the application's user base over the next several months. The application receives a higher volume of traffic in the morning and evening.  
+This application is divided into two sections:  
+- An internal booking component that takes online reservations in response to concurrent user queries.  
+- A component of a third-party customer relationship management (CRM) system that customer service professionals utilize. Booking data is accessed using queries in the CRM.  
+To manage this workload effectively, a database professional must create a cost-effective database system.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Use Amazon ElastiCache for Redis to accept the bookings. Associate an AWS Lambda function to capture changes and push the booking data to the RDS for MySQL DB instance used by the CRM.  
+**B.** Use Amazon DynamoDB to accept the bookings. Enable DynamoDB Streams and associate an AWS Lambda function to capture changes and push the booking data to an Amazon SQS queue. This triggers another Lambda function that pulls data from Amazon SQS and writes it to the RDS for MySQL DB instance used by the CRM.  
+**C.** Use Amazon ElastiCache for Redis to accept the bookings. Associate an AWS Lambda function to capture changes and push the booking data to an Amazon Redshift database used by the CRM.  
+**D.** Use Amazon DynamoDB to accept the bookings. Enable DynamoDB Streams and associate an AWS Lambda function to capture changes and push the booking data to Amazon Athena, which is used by the CRM.  
+
+Community vote distribution : B (100%)  
+
+**Q#34**  
+A significant automotive manufacturer is switching a mission-critical finance application's database to Amazon DynamoDB. According to the company's risk and compliance policy, any update to the database must be documented as a log entry for auditing purposes. Each minute, the system anticipates about 500,000 log entries. Log entries should be kept in Apache Parquet files in batches of at least 100,000 records per file.  
+
+How could a database professional approach these needs while using DynamoDB?  
+
+>**A.** Enable Amazon DynamoDB Streams on the table. Create an AWS Lambda function triggered by the stream. Write the log entries to an Amazon S3 object.  
+**B.** Create a backup plan in AWS Backup to back up the DynamoDB table once a day. Create an AWS Lambda function that restores the backup in another table and compares both tables for changes. Generate the log entries and write them to an Amazon S3 object.  
+**C.** Enable AWS CloudTrail logs on the table. Create an AWS Lambda function that reads the log files once an hour and filters DynamoDB API actions. Write the filtered log files to Amazon S3.  
+**D.** Enable Amazon DynamoDB Streams on the table. Create an AWS Lambda function triggered by the stream. Write the log entries to an Amazon Kinesis Data Firehose delivery stream with buffering and Amazon S3 as the destination.  
+
+Community vote distribution : D (100%)  
+
+**Q#35**  
+A business uses Amazon RDS for MySQL and PostgreSQL to manage many databases. Each RDS database creates log files with predefined retention durations. The corporation has now ordered that database logs be retained in a centralized repository for up to 90 days in order to support real-time and post-mortem analysis.  
+
+What should a Database Specialist do to ensure that these standards are met with the least amount of work possible?  
+
+>**A.** Create an AWS Lambda function to pull logs from the RDS databases and consolidate the log files in an Amazon S3 bucket. Set a lifecycle policy to expire the objects after 90 days.  
+**B.** Modify the RDS databases to publish log to Amazon CloudWatch Logs. Change the log retention policy for each log group to expire the events after 90 days.  
+**C.** Write a stored procedure in each RDS database to download the logs and consolidate the log files in an Amazon S3 bucket. Set a lifecycle policy to expire the objects after 90 days.  
+**D.** Create an AWS Lambda function to download the logs from the RDS databases and publish the logs to Amazon CloudWatch Logs. Change the log retention policy for the log group to expire the events after 90 days.  
+
+Community vote distribution : B (100%)  
+
+**Q#36**  
+A business just transitioned from an on-premises Oracle database to Amazon Aurora PostgreSQL. Following the move, the organization observed that every day around 3:00 PM, the application's response time is substantially slower. The firm has determined that the problem is with the database, not the application.  
+
+Which set of procedures should the Database Specialist do to locate the erroneous PostgreSQL query most efficiently?  
+
+>**A.** Create an Amazon CloudWatch dashboard to show the number of connections, CPU usage, and disk space consumption. Watch these dashboards during the next slow period.  
+**B.** Launch an Amazon EC2 instance, and install and configure an open-source PostgreSQL monitoring tool that will run reports based on the output error logs.  
+**C.** Modify the logging database parameter to log all the queries related to locking in the database and then check the logs after the next slow period for this information.  
+**D.** Enable Amazon RDS Performance Insights on the PostgreSQL database. Use the metrics to identify any queries that are related to spikes in the graph during the next slow period.  
+
+**Q#37**  
+For high availability and read-only workload scalability, a corporation uses an Amazon Aurora PostgreSQL DB cluster with an xlarge main instance master and two large Aurora Replicas. A failover happens, and the application's performance degrades significantly for several minutes. All application servers in all Availability Zones are healthy and functioning regularly throughout this time period.  
+
+What actions should the business take to resolve this application performance issue?  
+
+>**A.** Configure both of the Aurora Replicas to the same instance class as the primary DB instance. Enable cache coherence on the DB cluster, set the primary DB instance failover priority to tier-0, and assign a failover priority of tier-1 to the replicas.  
+**B.** Deploy an AWS Lambda function that calls the DescribeDBInstances action to establish which instance has failed, and then use the PromoteReadReplica operation to promote one Aurora Replica to be the primary DB instance. Configure an Amazon RDS event subscription to send a notification to an Amazon SNS topic to which the Lambda function is subscribed.  
+**C.** Configure one Aurora Replica to have the same instance class as the primary DB instance. Implement Aurora PostgreSQL DB cluster cache management. Set the failover priority to tier-0 for the primary DB instance and one replica with the same instance class. Set the failover priority to tier-1 for the other replicas.  
+**D.** Configure both Aurora Replicas to have the same instance class as the primary DB instance. Implement Aurora PostgreSQL DB cluster cache management. Set the failover priority to tier-0 for the primary DB instance and to tier-1 for the replicas.  
+
+Community vote distribution : C (100%)  
+
+**Q#38**  
+On a single Amazon RDS DB instance, a business hosts a MySQL database for its ecommerce application. Automatically saving application purchases to the database results in high-volume writes. Employees routinely create purchase reports for the company. The organization wants to boost database performance and minimize downtime associated with upgrade patching.  
+
+Which technique will satisfy these criteria with the LEAST amount of operational overhead?  
+
+>**A.** Enable a Multi-AZ deployment of the RDS for MySQL DB instance, and enable Memcached in the MySQL option group.  
+**B.** Enable a Multi-AZ deployment of the RDS for MySQL DB instance, and set up replication to a MySQL DB instance running on Amazon EC2.  
+**C.** Enable a Multi-AZ deployment of the RDS for MySQL DB instance, and add a read replica.  
+**D.** Add a read replica and promote it to an Amazon Aurora MySQL DB cluster master. Then enable Amazon Aurora Serverless.  
+
+Community vote distribution : C (100%)  
+
+**Q#39**  
+Amazon Neptune is being used by a corporation as the graph database for one of its products. During an ETL procedure, the company's data science team produced enormous volumes of temporary data by unintentionally. The Neptune DB cluster extended its storage capacity automatically to handle the added data, but the data science team erased the superfluous data.  
+
+What should a database professional do to prevent incurring extra expenditures for cluster volume space that is not being used?  
+
+>**A.** Take a snapshot of the cluster volume. Restore the snapshot in another cluster with a smaller volume size.  
+**B.** Use the AWS CLI to turn on automatic resizing of the cluster volume.  
+**C.** Export the cluster data into a new Neptune DB cluster.  
+**D.** Add a Neptune read replica to the cluster. Promote this replica as a new primary DB instance. Reset the storage space of the cluster.  
+
+Community vote distribution : C (100%)  
+
+**Q#40**  
+Amazon DynamoDB is used as the backend for an ecommerce company's order processing application. The constant growth in order volume results in rising DynamoDB charges. Order verification and reporting need a large number of repeated GetItem methods that read comparable information, which contributes to the higher expenses. The corporation wishes to keep these expenditures under control without incurring major development costs.  
+
+What approach should a Database Specialist use in order to meet these requirements?  
+
+>**A.** Use AWS DMS to migrate data from DynamoDB to Amazon DocumentDB  
+**B.** Use Amazon DynamoDB Streams and Amazon Kinesis Data Firehose to push the data into Amazon Redshift  
+**C.** Use an Amazon ElastiCache for Redis in front of DynamoDB to boost read performance  
+**D.** Use DynamoDB Accelerator to offload the reads  
+
+Community vote distribution : D (100%)  
+
+**Q#41**  
+A gaming business is developing a mobile gaming application that will be accessible to a large number of consumers worldwide. The business requires replication and complete support for multi-master writes. Additionally, the organization aims to guarantee that app users experience minimal latency and reliable performance.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Use Amazon DynamoDB global tables for storage and enable DynamoDB automatic scaling  
+**B.** Use Amazon Aurora for storage and enable cross-Region Aurora Replicas  
+**C.** Use Amazon Aurora for storage and cache the user content with Amazon ElastiCache  
+**D.** Use Amazon Neptune for storage  
+
+Community vote distribution : A (100%)  
+
+**Q#42**  
+A Database Specialist must establish a read replica of an Amazon RDS for MySQL DB instance in order to isolate read-only queries. Users that query the read replica immediately after it is created complain sluggish response times.  
+
+What may account for these sluggish reaction times?  
+
+>**A.** New volumes created from snapshots load lazily in the background  
+**B.** Long-running statements on the master  
+**C.** Insufficient resources on the master  
+**D.** Overload of a single replication thread by excessive writes on the master  
+
+Community vote distribution : A (100%)  
+
+**Q#43**  
+In one AWS account, a business runs a two-tier ecommerce application. An Amazon RDS for MySQL Multi-AZ database instance serves as the application's backend. A developer removed the database instance in the production environment by accident. Although the organization recovers the database, the incident results in hours of outage and financial loss.  
+
+Which combination of adjustments would reduce the likelihood that this error will occur again in the future? (Select three.)  
+
+>**A.** Grant least privilege to groups, IAM users, and roles.  
+**B.** Allow all users to restore a database from a backup.  
+**C.** Enable deletion protection on existing production DB instances.  
+**D.** Use an ACL policy to restrict users from DB instance deletion.  
+**E.** Enable AWS CloudTrail logging and Enhanced Monitoring.  
+
+**Q#44**  
+A business uses Amazon EC2 instances in VPC A to serve an internal file-sharing application. This application is supported by an Amazon ElastiCache cluster in VPC B that is peering with VPC A. The corporation migrates the instances of its applications from VPC A to VPC B. The file-sharing application is no longer able to connect to the ElastiCache cluster, as shown by the logs.  
+
+What is the best course of action for a database professional to take in order to remedy this issue?  
+
+>**A.** Create a second security group on the EC2 instances. Add an outbound rule to allow traffic from the ElastiCache cluster security group.  
+**B.** Delete the ElastiCache security group. Add an interface VPC endpoint to enable the EC2 instances to connect to the ElastiCache cluster.  
+**C.** Modify the ElastiCache security group by adding outbound rules that allow traffic to VPC_B's CIDR blocks from the ElastiCache cluster.  
+**D.** Modify the ElastiCache security group by adding an inbound rule that allows traffic from the EC2 instances' security group to the ElastiCache cluster.  
+
+**Q#45**  
+A business is operating an on-premises application that is divided into three tiers: web, application, and MySQL database. The database is predominantly accessed during business hours, with occasional bursts of activity throughout the day. As part of the company's shift to AWS, a database expert wants to increase the availability and minimize the cost of the MySQL database tier.  
+
+Which MySQL database choice satisfies these criteria?  
+
+>**A.** Amazon RDS for MySQL with Multi-AZ  
+**B.** Amazon Aurora Serverless MySQL cluster  
+**C.** Amazon Aurora MySQL cluster  
+**D.** Amazon RDS for MySQL with read replica  
+
+**Q#46**  
+A business wishes to transfer its MySQL databases from on-premises to Amazon RDS for MySQL. All databases must be encrypted at rest to adhere to the company's security policy. Additionally, snapshots of RDS DB instances must be shared across several accounts in order to create testing and staging environments.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Create an RDS for MySQL DB instance with an AWS Key Management Service (AWS KMS) customer managed CMK. Update the key policy to include the Amazon Resource Name (ARN) of the other AWS accounts as a principal, and then allow the kms:CreateGrant action.  
+**B.** Create an RDS for MySQL DB instance with an AWS managed CMK. Create a new key policy to include the Amazon Resource Name (ARN) of the other AWS accounts as a principal, and then allow the kms:CreateGrant action.  
+**C.** Create an RDS for MySQL DB instance with an AWS owned CMK. Create a new key policy to include the administrator user name of the other AWS accounts as a principal, and then allow the kms:CreateGrant action.  
+**D.** Create an RDS for MySQL DB instance with an AWS CloudHSM key. Update the key policy to include the Amazon Resource Name (ARN) of the other AWS accounts as a principal, and then allow the kms:CreateGrant action.  
+
+Community vote distribution : A (100%)  
+
+**Q#47**  
+A financial services organization employs an Amazon Aurora PostgreSQL DB cluster to host an application on AWS. No log files detailing database administrator activity were discovered during a recent examination. A database professional must suggest a solution that enables access to the database and maintains activity logs. The solution should be simple to implement and have a negligible effect on performance.  
+
+Which database specialist solution should be recommended?  
+
+>**A.** Enable Aurora Database Activity Streams on the database in synchronous mode. Connect the Amazon Kinesis data stream to Kinesis Data Firehose. Set the Kinesis Data Firehose destination to an Amazon S3 bucket.  
+**B.** Create an AWS CloudTrail trail in the Region where the database runs. Associate the database activity logs with the trail.  
+**C.** Enable Aurora Database Activity Streams on the database in asynchronous mode. Connect the Amazon Kinesis data stream to Kinesis Data Firehose. Set the Firehose destination to an Amazon S3 bucket.  
+**D.** Allow connections to the DB cluster through a bastion host only. Restrict database access to the bastion host and application servers. Push the bastion host logs to Amazon CloudWatch Logs using the CloudWatch Logs agent.  
+
+**Q#48**  
+A business's production database is hosted on a single-node Amazon RDS for MySQL DB instance. The database instance is hosted in a United States AWS Region.  
+A week before a significant sales event, a fresh database maintenance update is released. The maintenance update has been designated as necessary. The firm want to minimize the database instance's downtime and requests that a database expert make the database instance highly accessible until the sales event concludes.  
+
+Which solution will satisfy these criteria?  
+
+>**A.** Defer the maintenance update until the sales event is over.  
+**B.** Create a read replica with the latest update. Initiate a failover before the sales event.  
+**C.** Create a read replica with the latest update. Transfer all read-only traffic to the read replica during the sales event.  
+**D.** Convert the DB instance into a Multi-AZ deployment. Apply the maintenance update.  
+
+Community vote distribution : D (100%)  
+
+**Q#49**  
+A firm is operating a business-critical workload on an Amazon RDS for MySQL Multi-AZ DB instance. The database instance's RDS encryption is deactivated. According to a recent security assessment, all mission-critical apps must encrypt data at rest. The corporation has requested that its database expert provide a strategy for doing this for the database instance.  
+
+Which procedure should the database expert suggest?  
+
+>**A.** Create an encrypted snapshot of the unencrypted DB instance. Copy the encrypted snapshot to Amazon S3. Restore the DB instance from the encrypted snapshot using Amazon S3.  
+**B.** Create a new RDS for MySQL DB instance with encryption enabled. Restore the unencrypted snapshot to this DB instance.  
+**C.** Create a snapshot of the unencrypted DB instance. Create an encrypted copy of the snapshot. Restore the DB instance from the encrypted snapshot.  
+**D.** Temporarily shut down the unencrypted DB instance. Enable AWS KMS encryption in the AWS Management Console using an AWS managed CMK. Restart the DB instance in an encrypted state.  
+
+Community vote distribution : C (100%)  
+
+**Q#50**  
+A corporation intends to migrate a 500-GB Oracle database to Amazon Aurora PostgreSQL utilizing the AWS Schema Conversion Tool (AWS SCT) and AWS Data Management Service (AWS DMS). The database does not have any stored procedures, but does contain several huge or partitioned tables. Because the program is vital to the company, it is preferable to migrate with little downtime.  
+
+Which measures should a database professional perform in combination to expedite the transfer process? (Select three.)  
+
+>**A.** Use the AWS SCT data extraction agent to migrate the schema from Oracle to Aurora PostgreSQL.  
+**B.** For the large tables, change the setting for the maximum number of tables to load in parallel and perform a full load using AWS DMS.  
+**C.** For the large tables, create a table settings rule with a parallel load option in AWS DMS, then perform a full load using DMS.  
+**D.** Use AWS DMS to set up change data capture (CDC) for continuous replication until the cutover date.  
+**E.** Use AWS SCT to convert the schema from Oracle to Aurora PostgreSQL.  
+**F.** Use AWS DMS to convert the schema from Oracle to Aurora PostgreSQL and for continuous replication.  
+
+**Q#51**  
+An ecommerce business migrates its MongoDB database from on-premises to Amazon DocumentDB (with MongoDB compatibility). Following the migration, a database professional discovers that the Amazon DocumentDB cluster's encryption at rest has not been enabled.  
+
+What should the database professional do to enable Amazon DocumentDB cluster encryption at rest?  
+
+>**A.** Take a snapshot of the Amazon DocumentDB cluster. Restore the unencrypted snapshot as a new cluster while specifying the encryption option, and provide an AWS Key Management Service (AWS KMS) key.  
+**B.** Enable encryption for the Amazon DocumentDB cluster on the AWS Management Console. Reboot the cluster.  
+**C.** Modify the Amazon DocumentDB cluster by using the modify-db-cluster command with the --storage-encrypted parameter set to true.  
+**D.** Add a new encrypted instance to the Amazon DocumentDB cluster, and then delete an unencrypted instance from the cluster. Repeat until all instances are encrypted.  
+
+Community vote distribution : A (100%)  
+
+**Q#52**  
+A business that specializes in internet advertising is developing an application that will show adverts to its customers. The program stores data in an Amazon DynamoDB database. Additionally, the application caches its reads using a DynamoDB Accelerator (DAX) cluster. The majority of reads come via the GetItem and BatchGetItem queries. The application does not need consistency of readings.  
+The application cache does not behave as intended after deployment. Specific extremely consistent queries to the DAX cluster are responding in several milliseconds rather than microseconds.  
+
+How can the business optimize cache behavior in order to boost application performance?  
+
+>**A.** Increase the size of the DAX cluster.  
+**B.** Configure DAX to be an item cache with no query cache  
+**C.** Use eventually consistent reads instead of strongly consistent reads.  
+**D.** Create a new DAX cluster with a higher TTL for the item cache.  
+
+Community vote distribution : C (100%)  
+
+**Q#53**  
+A business is developing on a single-AZ Amazon RDS for MySQL DB instance. When queries are conducted, the database instance performs slowly. According to Amazon CloudWatch data, the instance needs more I/O capacity.  
+
+What activities may a database professional take to rectify this situation? (Select two.)  
+
+>**A.** Restart the application tool used to execute queries.  
+**B.** Change to a database instance class with higher throughput.  
+**C.** Convert from Single-AZ to Multi-AZ.  
+**D.** Increase the I/O parameter in Amazon RDS Enhanced Monitoring.  
+**E.** Convert from General Purpose to Provisioned IOPS (PIOPS).  
+
+Community vote distribution : BE (100%)  
+
+**Q#54**  
+A marketing firm is using Amazon DocumentDB and wants the enablement of database audit logs. A Database Specialist must establish monitoring so that the Administrator can see all data definition language (DDL) commands executed. In the cluster parameter group, the Database Specialist has activated the audit logs option.  
+
+What should the Database Specialist do to ensure that the Administrator's database logs are collected automatically?  
+
+>**A.** Enable DocumentDB to export the logs to Amazon CloudWatch Logs  
+**B.** Enable DocumentDB to export the logs to AWS CloudTrail  
+**C.** Enable DocumentDB Events to export the logs to Amazon CloudWatch Logs  
+**D.** Configure an AWS Lambda function to download the logs using the download-db-log-file-portion operation and store the logs in Amazon S3  
+
+Community vote distribution : C (100%)  
+
+**Q#55**  
+A financial institution uses AWS to host its online application. Amazon RDS for MySQL is used to host the application's database, which includes automatic backups.  
+The program has corrupted the database logically, resulting in the application being unresponsive. The exact moment the corruption occurred has been determined, and it occurred within the backup retention period.  
+
+How should a database professional restore a database to its previous state prior to corruption?  
+
+>**A.** Use the point-in-time restore capability to restore the DB instance to the specified time. No changes to the application connection string are required.  
+**B.** Use the point-in-time restore capability to restore the DB instance to the specified time. Change the application connection string to the new, restored DB instance.  
+**C.** Restore using the latest automated backup. Change the application connection string to the new, restored DB instance.  
+**D.** Restore using the appropriate automated backup. No changes to the application connection string are required.  
+
+Community vote distribution : B (100%)  
+
+**Q#56**  
+A corporation is transitioning from an IBM Informix database to an Amazon RDS for SQL Server Multi-AZ implementation with Always On Availability Groups (AGs). SQL Server Agent tasks are scheduled to execute at 5-minute intervals on the Always On AG listener to synchronize data between the Informix and SQL Server databases. After a successful failover to the backup node with minimum delay, users endure hours of stale data.  
+
+How can a database professional guarantee that consumers view the most current data after a failover?  
+
+>**A.** Set TTL to less than 30 seconds for cached DNS values on the Always On AG listener.  
+**B.** Break up large transactions into multiple smaller transactions that complete in less than 5 minutes.  
+**C.** Set the databases on the secondary node to read-only mode.  
+**D.** Create the SQL Server Agent jobs on the secondary node from a script when the secondary node takes over after a failure.  
+
+Community vote distribution : D (100%)  
+
+**Q#57**  
+Amazon DynamoDB is used as the data repository for an ecommerce website. At night, the website gets little to no traffic, while the bulk of visitors come during the day. On a daily level, traffic increase during peak hours is steady and predictable, but it might be orders of magnitude more than traffic growth during off-peak hours.  
+Initially, the corporation allocated capacity based on its average daily throughput without taking into consideration the fluctuation of traffic patterns. However, the website is significantly throttled during busy hours. The firm want to minimize throttling while also decreasing expenditures.  
+
+What actions should a database professional do to ensure compliance with these requirements?  
+
+>**A.** Use reserved capacity. Set it to the capacity levels required for peak daytime throughput.  
+**B.** Use provisioned capacity. Set it to the capacity levels required for peak daytime throughput.  
+**C.** Use provisioned capacity. Create an AWS Application Auto Scaling policy to update capacity based on consumption.  
+**D.** Use on-demand capacity.  
+
+**Q#58**  
+An IT consulting firm wishes to save expenses associated with the operation of its development environment databases. For each development group, the company's process builds numerous Amazon Aurora MySQL DB clusters. The Aurora DB clusters are utilized for a maximum of eight hours per day. The database clusters may then be destroyed at the conclusion of the two-week development cycle.  
+
+Which of the following solutions is the MOST cost effective?  
+
+>**A.** Use AWS CloudFormation templates. Deploy a stack with the DB cluster for each development group. Delete the stack at the end of the development cycle.  
+**B.** Use the Aurora DB cloning feature. Deploy a single development and test Aurora DB instance, and create clone instances for the development groups. Delete the clones at the end of the development cycle.  
+**C.** Use Aurora Replicas. From the master automatic pause compute capacity option, create replicas for each development group, and promote each replica to master. Delete the replicas at the end of the development cycle.  
+**D.** Use Aurora Serverless. Restore current Aurora snapshot and deploy to a serverless cluster for each development group. Enable the option to pause the compute capacity on the cluster and set an appropriate timeout.  
+
+Community vote distribution : B (100%)  
+
+**Q#59**  
+A business runs its analytical tasks on an Amazon Redshift cluster. Corporate policy mandates that customer-managed keys be used to encrypt data at rest. According to the company's disaster recovery strategy, regular backups of the cluster must be moved to another AWS Region.  
+
+How should a database professional automate the process of cluster data backup in order to adhere to these policies?  
+
+>**A.** Copy the AWS Key Management Service (AWS KMS) customer managed key from the source Region to the destination Region. Set up an AWS Glue job in the source Region to copy the latest snapshot of the Amazon Redshift cluster from the source Region to the destination Region. Use a time-based schedule in AWS Glue to run the job on a daily basis.  
+**B.** Create a new AWS Key Management Service (AWS KMS) customer managed key in the destination Region. Create a snapshot copy grant in the destination Region specifying the new key. In the source Region, configure cross-Region snapshots for the Amazon Redshift cluster specifying the destination Region, the snapshot copy grant, and retention periods for the snapshot.  
+**C.** Copy the AWS Key Management Service (AWS KMS) customer-managed key from the source Region to the destination Region. Create Amazon S3 buckets in each Region using the keys from their respective Regions. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule an AWS Lambda function in the source Region to copy the latest snapshot to the S3 bucket in that Region. Configure S3 Cross-Region Replication to copy the snapshots to the destination Region, specifying the source and destination KMS key IDs in the replication configuration.  
+**D.** Use the same customer-supplied key materials to create a CMK with the same private key in the destination Region. Configure cross-Region snapshots in the source Region targeting the destination Region. Specify the corresponding CMK in the destination Region to encrypt the snapshot.  
+
+**Q#60**  
+A clothing firm sells goods to thousands of people from several countries using a bespoke ecommerce application and PostgreSQL database. The organization is in the process of transferring its application and database from its on-premises data center to AWS Cloud. Amazon EC2 was chosen for the application, while Amazon RDS with PostgreSQL was chosen for the database. Every 60 days, the corporation needs database passwords to be reset. A Database Specialist must guarantee that the web application's credentials for connecting to the database are maintained securely.  
+
+Which method should the Database Specialist use to maintain database credentials securely?  
+
+>**A.** Store the credentials in a text file in an Amazon S3 bucket. Restrict permissions on the bucket to the IAM role associated with the instance profile only. Modify the application to download the text file and retrieve the credentials on start up. Update the text file every 60 days.  
+**B.** Configure IAM database authentication for the application to connect to the database. Create an IAM user and map it to a separate database user for each ecommerce user. Require users to update their passwords every 60 days.  
+**C.** Store the credentials in AWS Secrets Manager. Restrict permissions on the secret to only the IAM role associated with the instance profile. Modify the application to retrieve the credentials from Secrets Manager on start up. Configure the rotation interval to 60 days.  
+**D.** Store the credentials in an encrypted text file in the application AMI. Use AWS KMS to store the key for decrypting the text file. Modify the application to decrypt the text file and retrieve the credentials on start up. Update the text file and publish a new AMI every 60 days.  
+
+Community vote distribution : C (100%)  
+
+**Q#61**  
+In North America, a business launched a mobile game that swiftly expanded to 10 million daily active players. The game's backend is hosted on AWS and makes considerable use of a TTL-configured Amazon DynamoDB table.  
+When an item is added or changed, its TTL is set to 600 seconds plus the current epoch time. The game logic is reliant on the purging of outdated data in order to compute rewards points properly. At times, items from the table are read that are many hours beyond their TTL expiration.  
+
+How should a database administrator resolve this issue?  
+
+>**A.** Use a client library that supports the TTL functionality for DynamoDB.  
+**B.** Include a query filter expression to ignore items with an expired TTL.  
+**C.** Set the ConsistentRead parameter to true when querying the table.  
+**D.** Create a local secondary index on the TTL attribute.  
+
+Community vote distribution : B (100%)  
+
+**Q#62**  
+A business is undergoing a security audit. The audit team discovered a cleartext master user password in the Amazon RDS for MySQL DB instances' AWS CloudFormation templates. This has been reported as a security issue for the database team by the audit team.  
+
+What steps should a database professional take to avoid this hazard?  
+
+>**A.** Change all the databases to use AWS IAM for authentication and remove all the cleartext passwords in CloudFormation templates.  
+**B.** Use an AWS Secrets Manager resource to generate a random password and reference the secret in the CloudFormation template.  
+**C.** Remove the passwords from the CloudFormation templates so Amazon RDS prompts for the password when the database is being created.  
+**D.** Remove the passwords from the CloudFormation template and store them in a separate file. Replace the passwords by running CloudFormation using a sed command.  
+
+Community vote distribution : B (100%)  
+
+**Q#63**  
+A media firm is storing user data on Amazon RDS for PostgreSQL. The RDS database instance is presently configured to be publicly accessible and is housed on a public subnet. A Database Specialist was assigned additional security requirements after a recent AWS Well-Architected Framework assessment.  
+- Only certain on-premises corporate network IP addresses should be allowed to connect to the database instance. ? Connectivity is permitted solely via the corporate network.  
+
+Which measures does the Database Specialist need to perform in combination to achieve these new requirements? (Select three.)  
+
+>**A.** Modify the pg_hba.conf file. Add the required corporate network IPs and remove the unwanted IPs.  
+**B.** Modify the associated security group. Add the required corporate network IPs and remove the unwanted IPs.  
+**C.** Move the DB instance to a private subnet using AWS DMS.  
+**D.** Enable VPC peering between the application host running on the corporate network and the VPC associated with the DB instance.  
+**E.** Disable the publicly accessible setting.  
+**F.** Connect to the DB instance using private IPs and a VPN.  
+
+Community vote distribution : BEF (100%)  
+
+**Q#64**  
+A new Amazon Redshift cluster has been requested by developers in order to load fresh third-party marketing data. The new cluster is now operational, and the developers have been provided with login credentials. According to the developers, their copy tasks fail with the following error message:  
+- Amazon Operation is not valid: Access Denied,Status 403,Error AccessDenied.  
+- S3ServiceException:Access Denied,Status 403,Error AccessDenied.  
+Because the developers want immediate access to this data, a database professional must work immediately to resolve this problem.  
+
+Which option is the MOST SECURE?  
+
+>**A.** Create a new IAM role with the same user name as the Amazon Redshift developer user ID. Provide the IAM role with read-only access to Amazon S3 with the assume role action.  
+**B.** Create a new IAM role with read-only access to the Amazon S3 bucket and include the assume role action. Modify the Amazon Redshift cluster to add the IAM role.  
+**C.** Create a new IAM role with read-only access to the Amazon S3 bucket with the assume role action. Add this role to the developer IAM user ID used for the copy job that ended with an error message.  
+**D.** Create a new IAM user with access keys and a new role with read-only access to the Amazon S3 bucket. Add this role to the Amazon Redshift cluster. Change the copy job to use the access keys created.  
+
+Community vote distribution : B (100%)  
+
+**Q#65**  
+Amazon DynamoDB is used to store purchase orders on an ecommerce website. Each order is identified by two unique identifiers: a Customer ID and an Order ID. The partition key for the DynamoDB database is the Customer ID, and the sort key is the Order ID.  
+Additionally, the organization wants the ability to query the database through a third characteristic entitled Invoice ID to satisfy a new demand. Queries that make use of the Invoice ID must be very consistent. A database expert must be able to deliver this capability with the highest possible performance and the least amount of overhead.  
+
+What actions should the database administrator take to ensure compliance with these requirements?  
+
+>**A.** Add a global secondary index on Invoice ID to the existing table.  
+**B.** Add a local secondary index on Invoice ID to the existing table.  
+**C.** Recreate the table by using the latest snapshot while adding a local secondary index on Invoice ID.  
+**D.** Use the partition key and a FilterExpression parameter with a filter on Invoice ID for all queries.  
+
+Community vote distribution : C (100%)  
+
+**Q#66**  
+A multi-day flash sale is being planned by an online retailer. The event must enable the processing of up to 5,000 orders per second. Each day, the amount of orders and the precise timing for the sale will change. Approximately 10,000 concurrent consumers will peruse the discounts prior to making purchases during the event. Outside of the sale, the amount of traffic is really minimal. Acceptable read/write query performance should be less than 25 milliseconds. Each order item is around 2 KB in size and has a unique identifier. The business seeks the most cost-effective solution possible that is both highly accessible and scales automatically.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Amazon DynamoDB with on-demand capacity mode  
+**B.** Amazon Aurora with one writer node and an Aurora Replica with the parallel query feature enabled  
+**C.** Amazon DynamoDB with provisioned capacity mode with 5,000 write capacity units (WCUs) and 10,000 read capacity units (RCUs)  
+**D.** Amazon Aurora with one writer node and two cross-Region Aurora Replicas  
+
+Community vote distribution : A (100%)  
+
+**Q#67**  
+A firm's important business data is stored in an Amazon Redshift cluster. Due to the sensitive nature of the data, AWS KMS is used to encrypt the cluster at rest. The organization must replicate the Amazon Redshift snapshots to another Region as part of its disaster recovery obligations.  
+Which procedures in the AWS Management Console should be completed to fulfill disaster recovery requirements?  
+
+>**A.** Create a new KMS customer master key in the source Region. Switch to the destination Region, enable Amazon Redshift cross-Region snapshots, and use the KMS key of the source Region.  
+**B.** Create a new IAM role with access to the KMS key. Enable Amazon Redshift cross-Region replication using the new IAM role, and use the KMS key of the source Region.  
+**C.** Enable Amazon Redshift cross-Region snapshots in the source Region, and create a snapshot copy grant and use a KMS key in the destination Region.  
+**D.** Create a new KMS customer master key in the destination Region and create a new IAM role with access to the new KMS key. Enable Amazon Redshift cross-Region replication in the source Region and use the KMS key of the destination Region.  
+
+Community vote distribution : C (100%)  
+
+**Q#68**  
+A business has a production environment that runs on Amazon RDS for SQL Server and is accessed through an in-house web application. During the most recent application maintenance window, the web application was enhanced with additional features to improve management reporting capabilities. The program has been sluggish to reply to certain reporting requests after the upgrade.  
+
+How should the business determine the source of the issue?  
+
+>**A.** Install and configure Amazon CloudWatch Application Insights for Microsoft .NET and Microsoft SQL Server. Use a CloudWatch dashboard to identify the root cause.  
+**B.** Enable RDS Performance Insights and determine which query is creating the problem. Request changes to the query to address the problem.  
+**C.** Use AWS X-Ray deployed with Amazon RDS to track query system traces.  
+**D.** Create a support request and work with AWS Support to identify the source of the issue.  
+
+**Q#69**  
+A corporation wishes to migrate an on-premises IBM Db2 database to an IBM POWER7 server running AIX. Due to the increasing expense of support and maintenance, the organization is considering migrating the workload to an Amazon Aurora PostgreSQL DB cluster.  
+
+How can the organization get data on migration compatibility in the shortest amount of time?  
+
+>**A.** Perform a logical dump from the Db2 database and restore it to an Aurora DB cluster. Identify the gaps and compatibility of the objects migrated by comparing row counts from source and target tables.  
+**B.** Run AWS DMS from the Db2 database to an Aurora DB cluster. Identify the gaps and compatibility of the objects migrated by comparing the row counts from source and target tables.  
+**C.** Run native PostgreSQL logical replication from the Db2 database to an Aurora DB cluster to evaluate the migration compatibility.  
+**D.** Run the AWS Schema Conversion Tool (AWS SCT) from the Db2 database to an Aurora DB cluster. Create a migration assessment report to evaluate the migration compatibility.  
+
+**Q#70**  
+Recently, a prominent retailer switched its three-tiered ecommerce apps to AWS. Amazon Aurora PostgreSQL is used to host the company's backend database. Users complain about longer website load times during busy periods. A database professional conducted an analysis of Amazon RDS Performance Insights and saw an increase in IO:XactSync wait events. All SQL statements associated with wait events are single INSERT statements.  
+
+How is this situation to be resolved?  
+
+>**A.** Modify the application to commit transactions in batches  
+**B.** Add a new Aurora Replica to the Aurora DB cluster.  
+**C.** Add an Amazon ElastiCache for Redis cluster and change the application to write through.  
+**D.** Change the Aurora DB cluster storage to Provisioned IOPS (PIOPS).  
+
+Community vote distribution : A (100%)  
+
+**Q#71**  
+A business wishes to transition from on-premises Oracle to Amazon Aurora PostgreSQL. The transfer must be conducted with the least amount of downtime possible by using AWS DMS. Prior to the cutover, a Database Specialist must verify that the data was correctly migrated from the source to the destination. The migration should have a negligible effect on the source database's performance.  
+
+Which strategy is the MOST SUITABLE for meeting these requirements?  
+
+>**A.** Use the AWS Schema Conversion Tool (AWS SCT) to convert source Oracle database schemas to the target Aurora DB cluster. Verify the datatype of the columns.  
+**B.** Use the table metrics of the AWS DMS task created for migrating the data to verify the statistics for the tables being migrated and to verify that the data definition language (DDL) statements are completed.  
+**C.** Enable the AWS Schema Conversion Tool (AWS SCT) premigration validation and review the premigration checklist to make sure there are no issues with the conversion.  
+**D.** Enable AWS DMS data validation on the task so the AWS DMS task compares the source and target records, and reports any mismatches.  
+
+**Q#72**  
+A database professional set up an Amazon RDS database instance in their development team's Dev-VPC1. Dev-VPC1 is peering with another development team in the same department through Dev-VPC2. The networking team verified that the routing across VPCs is fine; but, when the database engineers in Dev-VPC2 attempt to connect to the database in Dev-VPC1, they get a timeout connection error.  
+
+What is most likely to be the cause of the timeouts?  
+
+>**A.** The database is deployed in a VPC that is in a different Region.  
+**B.** The database is deployed in a VPC that is in a different Availability Zone.  
+**C.** The database is deployed with misconfigured security groups.  
+**D.** The database is deployed with the wrong client connect timeout configuration.  
+
+**Q#73**  
+A business is launching a new Amazon RDS for SQL Server database instance. The organization wishes to allow auditing of the SQL Server database.  
+
+Which measures should a database professional perform in combination to achieve this requirement? (Select two.)  
+
+>**A.** Create a service-linked role for Amazon RDS that grants permissions for Amazon RDS to store audit logs on Amazon S3.  
+**B.** Set up a parameter group to configure an IAM role and an Amazon S3 bucket for audit log storage. Associate the parameter group with the DB instance.  
+**C.** Disable Multi-AZ on the DB instance, and then enable auditing. Enable Multi-AZ after auditing is enabled.  
+**D.** Disable automated backup on the DB instance, and then enable auditing. Enable automated backup after auditing is enabled.  
+**E.** Set up an options group to configure an IAM role and an Amazon S3 bucket for audit log storage. Associate the options group with the DB instance.  
+
+**Q#74**  
+A database professional received notification that a production Amazon RDS MariaDB instance with 100 GB of storage had reached its storage capacity. The database professional changed the database instance and increased 50 GB of storage space in response. Three hours later, another alarm is triggered owing to a shortage of available capacity on the same database instance.  
+The database professional chooses to instantly change the instance to add 20 GB of storage space.  
+
+What will occur upon submission of the modification?  
+
+>**A.** The request will fail because this storage capacity is too large.  
+**B.** The request will succeed only if the primary instance is in active status.  
+**C.** The request will succeed only if CPU utilization is less than 10%.  
+**D.** The request will fail as the most recent modification was too soon.  
+
+Community vote distribution : D (100%)  
+
+**Q#75**  
+A database professional is developing an application that will respond to single-instance requests. The program will query large amounts of client data and offer end users with results.  
+These reports may include a variety of fields. The database specialist want to enable users to query the database using any of the fields offered.  
+During peak periods, the database's traffic volume will be significant yet changeable. However, the database will see little activity over the rest of the day.  
+
+Which approach will be the most cost-effective in meeting these requirements?  
+
+>**A.** Amazon DynamoDB with provisioned capacity mode and auto scaling  
+**B.** Amazon DynamoDB with on-demand capacity mode  
+**C.** Amazon Aurora with auto scaling enabled  
+**D.** Amazon Aurora in a serverless mode  
+
+Community vote distribution : D (100%)  
+
+**Q#76**  
+A business uses an Amazon RDS for MySQL DB instance to power an ecommerce web application. The marketing department has detected some unexpected changes to the website's product and price information, which is affecting sales objectives. The marketing team desires the services of a database professional to audit future database activity in order to ascertain how and when adjustments are made.  
+
+What actions should the database expert do to ensure compliance with these requirements? (Select two.)  
+
+>**A.** Create an RDS event subscription to the audit event type.  
+**B.** Enable auditing of CONNECT and QUERY_DML events.  
+**C.** SSH to the DB instance and review the database logs.  
+**D.** Publish the database logs to Amazon CloudWatch Logs.  
+**E.** Enable Enhanced Monitoring on the DB instance.  
+
+Community vote distribution : BD (100%)  
+
+**Q#77**  
+A database specialist moved an Oracle database from on-premises to Amazon Aurora PostgreSQL. The schema and data have been successfully moved.  
+Additionally, the on-premises database server was utilized to execute database maintenance cron jobs written in Python that performed activities such as data cleaning and export generation. The records for these tasks indicate that the majority of them finished within five minutes, although a couple took up to ten minutes. Aurora PostgreSQL requires the establishment of these maintenance activities.  
+
+How can the Database Specialist plan these activities in such a way that the configuration is low-maintenance and high-availability?  
+
+>**A.** Create cron jobs on an Amazon EC2 instance to run the maintenance jobs following the required schedule.  
+**B.** Connect to the Aurora host and create cron jobs to run the maintenance jobs following the required schedule.  
+**C.** Create AWS Lambda functions to run the maintenance jobs and schedule them with Amazon CloudWatch Events.  
+**D.** Create the maintenance job using the Amazon CloudWatch job scheduling plugin.  
+
+Community vote distribution : C (100%)  
+
+**Q#78**  
+A business is developing a software as a service (SaaS) application. A Python application executes the CreateTable action using the Amazon DynamoDB API as part of the new user sign-on routine. Following the return of the call, the script tries to call PutItem.  
+At times, the PutItem request fails with a ResourceNotFoundException exception, thereby terminating the process. The development team validated that the two API requests utilize the same table name.  
+
+How should a database administrator resolve this issue?  
+
+>**A.** Add an allow statement for the dynamodb:PutItem action in a policy attached to the role used by the application creating the table.  
+**B.** Set the StreamEnabled property of the StreamSpecification parameter to true, then call PutItem.  
+**C.** Change the application to call DescribeTable periodically until the TableStatus is ACTIVE, then call PutItem.  
+**D.** Add a ConditionExpression parameter in the PutItem request.  
+
+**Q#79**  
+A business created an AWS CloudFormation template that was used to construct all new Amazon DynamoDB tables in the company's AWS account. Using hard-coded numbers, the template configures provided throughput capacity. The organization want to modify the template in order to allocate independently variable read and write capacity units to future tables.  
+
+Which solution will make this transformation possible?  
+
+>**A.** Add values for the rcuCount and wcuCount parameters to the Mappings section of the template. Configure DynamoDB to provision throughput capacity using the stack's mappings.  
+**B.** Add values for two Number parameters, rcuCount and wcuCount, to the template. Replace the hard-coded values with calls to the Ref intrinsic function, referencing the new parameters.  
+**C.** Add values for the rcuCount and wcuCount parameters as outputs of the template. Configure DynamoDB to provision throughput capacity using the stack outputs.  
+**D.** Add values for the rcuCount and wcuCount parameters to the Mappings section of the template. Replace the hard-coded values with calls to the Ref intrinsic function, referencing the new parameters.  
+
+Community vote distribution : B (100%)  
+
+**Q#80**  
+Recently, a gaming firm purchased a popular iOS game that is especially popular during the Christmas season. The business has opted to include a leaderboard into the game, which will be powered by Amazon DynamoDB. The application's load is likely to increase significantly throughout the Christmas season.  
+
+Which solution satisfies these criteria at the lowest possible cost?  
+
+>**A.** DynamoDB Streams  
+**B.** DynamoDB with DynamoDB Accelerator  
+**C.** DynamoDB with on-demand capacity mode  
+**D.** DynamoDB with provisioned capacity mode with Auto Scaling  
+
+Community vote distribution : C (100%)  
+
+**Q#81**  
+On an Amazon Aurora MySQL DB cluster, the Development team just performed a database script containing multiple data definition language (DDL) and data manipulation language (DML) commands. The release destroyed thousands of entries from a critical table inadvertently and damaged certain application functionality.  
+This occurred four hours after the release. After conducting an examination, a Database Specialist determined that the problem was caused by a DELETE command in the script that had an improper WHERE clause that filtered the incorrect group of records.  
+Backtrack is enabled on the Aurora DB cluster, with an 8-hour backtrack timeframe. Additionally, the Database Administrator took a manual snapshot of the DB cluster prior to the release beginning. The database must be restored to its original condition as fast as possible in order for the program to resume normal operation. Data loss must be kept to a minimum.  
+
+How is this accomplished by the Database Specialist?  
+
+>**A.** Quickly rewind the DB cluster to a point in time before the release using Backtrack.  
+**B.** Perform a point-in-time recovery (PITR) of the DB cluster to a time before the release and copy the deleted rows from the restored database to the original database.  
+**C.** Restore the DB cluster using the manual backup snapshot created before the release and change the application configuration settings to point to the new DB cluster.  
+**D.** Create a clone of the DB cluster with Backtrack enabled. Rewind the cloned cluster to a point in time before the release. Copy deleted rows from the clone to the original database.  
+
+Community vote distribution : A (100%)  
+
+**Q#82**  
+The Amazon CloudWatch statistic for FreeLocalStorage indicates that the quantity of local storage on an Amazon Aurora MySQL DB instance is less than 10 MB. A database engineer needs expand the amount of accessible local storage in the Aurora DB instance.  
+
+How is the database engineer to achieve this criterion?  
+
+>**A.** Modify the DB instance to use an instance class that provides more local SSD storage.  
+**B.** Modify the Aurora DB cluster to enable automatic volume resizing.  
+**C.** Increase the local storage by upgrading the database engine version.  
+**D.** Modify the DB instance and configure the required storage volume in the configuration section.  
+
+Community vote distribution : A (100%)  
+
+**Q#83**  
+A business is in the process of building a new online application. As part of the build process, an AWS CloudFormation template was built.  
+Recently, a modification was made to the template's AWS::RDS::DBInstance resource. The CharacterSetName property was modified to enable international text processing in the application. The new template created a change set indicating that the existing database instance should be replaced during an upgrade.  
+
+What should a database administrator do to avoid data loss during a stack upgrade?  
+
+>**A.** Create a snapshot of the DB instance. Modify the template to add the DBSnapshotIdentifier property with the ID of the DB snapshot. Update the stack.  
+**B.** Modify the stack policy using the aws cloudformation update-stack command and the set-stack-policy command, then make the DB resource protected.  
+**C.** Create a snapshot of the DB instance. Update the stack. Restore the database to a new instance.  
+**D.** Deactivate any applications that are using the DB instance. Create a snapshot of the DB instance. Modify the template to add the DBSnapshotIdentifier property with the ID of the DB snapshot. Update the stack and reactivate the applications.  
+
+**Q#84**  
+A database specialist is doing a proof of concept using Amazon Aurora, utilizing a tiny instance to validate a basic database behavior. When the Database Specialist attempts to import a huge dataset and create the index, Aurora displays the following error message:  
+ERROR: cloud failed to write the temporary file's block 7507718: There is no more space on the device.  
+
+What caused this mistake, and how should the Database Specialist proceed to address it?  
+
+>**A.** The scaling of Aurora storage cannot catch up with the data loading. The Database Specialist needs to modify the workload to load the data slowly.  
+**B.** The scaling of Aurora storage cannot catch up with the data loading. The Database Specialist needs to enable Aurora storage scaling.  
+**C.** The local storage used to store temporary tables is full. The Database Specialist needs to scale up the instance.  
+**D.** The local storage used to store temporary tables is full. The Database Specialist needs to enable local storage scaling.  
+
+Community vote distribution : C (100%)  
+
+**Q#85**  
+A gaming firm want to distribute their product across several regions. The firm intends to preserve local top scores in each Region's Amazon DynamoDB tables. A Database Specialist must build a system that automates the deployment of the database in other Regions with similar settings as required. Additionally, the system should be capable of automating configuration updates across all Regions.  
+
+Which solution would satisfy these criteria and enable the DynamoDB tables to be deployed?  
+
+>**A.** Create an AWS CLI command to deploy the DynamoDB table to all the Regions and save it for future deployments.  
+**B.** Create an AWS CloudFormation template and deploy the template to all the Regions.  
+**C.** Create an AWS CloudFormation template and use a stack set to deploy the template to all the Regions.  
+**D.** Create DynamoDB tables using the AWS Management Console in all the Regions and create a step-by-step guide for future deployments.  
+
+Community vote distribution : C (100%)  
+
+**Q#86**  
+A major organization maintains a number of Amazon DB clusters. Each of these clusters is configured differently to meet certain needs. These configurations may be classified into wider groups based on the team and use case.  
+A database administrator wishes to streamline the process of storing and updating these settings. Additionally, the database administrator want to guarantee that changes to certain configuration categories are automatically implemented to all instances as necessary.  
+
+Which AWS service or functionality will assist in automating and achieving this goal?  
+
+>**A.** AWS Systems Manager Parameter Store  
+**B.** DB parameter group  
+**C.** AWS Config  
+**D.** AWS Secrets Manager  
+
+Community vote distribution : A (100%)  
+
+**Q#87**  
+AWS CloudFormation stack including an Amazon RDS database instance was mistakenly removed, resulting in the loss of recent data. A Database Specialist must apply RDS parameters to the CloudFormation template in order to minimize the possibility of future inadvertent instance data loss.  
+
+Which settings will satisfy this criterion? (Select three.)  
+
+>**A.** Set DeletionProtection to True  
+**B.** Set MultiAZ to True  
+**C.** Set TerminationProtection to True  
+**D.** Set DeleteAutomatedBackups to False  
+**E.** Set DeletionPolicy to Delete  
+**F.** Set DeletionPolicy to Retain  
+
+Community vote distribution : ADF (100%)  
+
+**Q#88**  
+A company's application's backend is powered by Amazon Aurora PostgreSQL. The system's users are complaining about the system's poor response times. According to a database professional, queries to Aurora take slower at busy hours. The load on the chart for average active sessions is often more than the line denoting maximum CPU use, and the wait state indicates that the majority of wait events are IO:XactSync.  
+
+What should the business do to address these performance concerns?  
+
+>**A.** Add an Aurora Replica to scale the read traffic.  
+**B.** Scale up the DB instance class.  
+**C.** Modify applications to commit transactions in batches.  
+**D.** Modify applications to avoid conflicts by taking locks.  
+
+Community vote distribution : B (100%)  
+
+**Q#89**  
+A worldwide digital advertising corporation collects browser information in order to provide targeted visitors with contextually relevant pictures, websites, and connections. A single page load may create many events, each of which must be kept separately. A single event may have a maximum size of 200 KB and an average size of 10 KB. Each page load requires a query of the user's browsing history in order to deliver suggestions for targeted advertising. The advertising corporation anticipates daily page views of more than 1 billion from people in the United States, Europe, Hong Kong, and India. The information structure differs according to the event. Additionally, browsing information must be written and read with a very low latency to guarantee that consumers have a positive viewing experience.  
+
+Which database solution satisfies these criteria?  
+
+>**A.** Amazon DocumentDB  
+**B.** Amazon RDS Multi-AZ deployment  
+**C.** Amazon DynamoDB global table  
+**D.** Amazon Aurora Global Database  
+
+**Q#90**  
+Amazon DynamoDB is used by a big ecommerce firm to manage transactions on its online site. Generally, traffic patterns are constant throughout the year; nevertheless, a huge event is planned. The business anticipates that traffic would grow by up to tenfold over the three-day event. When sale prices are made public during an event, traffic spikes dramatically.  
+
+How can a Database Specialist assure that DynamoDB is capable of handling the increasing traffic?  
+
+>**A.** Ensure the table is always provisioned to meet peak needs  
+**B.** Allow burst capacity to handle the additional load  
+**C.** Set an AWS Application Auto Scaling policy for the table to handle the increase in traffic  
+**D.** Preprovision additional capacity for the known peaks and then reduce the capacity after the event  
+
+**Q#91**  
+A stock market analysis firm maintains two locations: one in the us-east-1 Region and another in the eu-west-2 Region. The business want to build an AWS database solution capable of providing rapid and accurate updates.  
+Dashboards with advanced analytical queries are used to present data in the eu-west-2 office. Because the corporation will use these dashboards to make purchasing choices, they must have less than a second to obtain application data.  
+
+Which solution satisfies these criteria and gives the MOST CURRENT dashboard?  
+
+>**A.** Deploy an Amazon RDS DB instance in us-east-1 with a read replica instance in eu-west-2. Create an Amazon ElastiCache cluster in eu-west-2 to cache data from the read replica to generate the dashboards.  
+**B.** Use an Amazon DynamoDB global table in us-east-1 with replication into eu-west-2. Use multi-active replication to ensure that updates are quickly propagated to eu-west-2.  
+**C.** Use an Amazon Aurora global database. Deploy the primary DB cluster in us-east-1. Deploy the secondary DB cluster in eu-west-2. Configure the dashboard application to read from the secondary cluster.  
+**D.** Deploy an Amazon RDS for MySQL DB instance in us-east-1 with a read replica instance in eu-west-2. Configure the dashboard application to read from the read replica.  
+
+**Q#92**  
+A database expert at a big multinational financial organization is responsible for developing the disaster recovery plan for a newly developed highly available application. The program stores its data in an Amazon DynamoDB database. The application needs a one-minute recovery time target (RTO) and a two-minute recovery point objective (RPO).  
+
+Which operationally effective disaster recovery solution for the DynamoDB table should the database professional recommend?  
+
+>**A.** Create a DynamoDB stream that is processed by an AWS Lambda function that copies the data to a DynamoDB table in another Region.  
+**B.** Use a DynamoDB global table replica in another Region. Enable point-in-time recovery for both tables.  
+**C.** Use a DynamoDB Accelerator table in another Region. Enable point-in-time recovery for the table.  
+**D.** Create an AWS Backup plan and assign the DynamoDB table as a resource.  
+
+**Q#93**  
+A firm is operating its line of business application on AWS, and the persistent data storage is Amazon RDS for MySQL. The organization wishes to minimize downtime during the database migration to Amazon Aurora.  
+
+Which type of migration should a database specialist employ?  
+
+>**A.** Take a snapshot of the RDS for MySQL DB instance and create a new Aurora DB cluster with the option to migrate snapshots.  
+**B.** Make a backup of the RDS for MySQL DB instance using the mysqldump utility, create a new Aurora DB cluster, and restore the backup.  
+**C.** Create an Aurora Replica from the RDS for MySQL DB instance and promote the Aurora DB cluster.  
+**D.** Create a clone of the RDS for MySQL DB instance and promote the Aurora DB cluster.  
+
+Community vote distribution : C (100%)  
+
+**Q#94**  
+A business maintains an on-premises system that keeps account of numerous database activities that occur during the course of a database's life, such as database shutdown, deletion, creation, and backup.  
+Recently, the organization transferred two databases to Amazon RDS and is now seeking for a solution that meets these needs. Other systems inside the firm may make use of the data.  
+
+Which option satisfies these criteria with the least amount of effort?  
+
+>**A.** Create an Amazon CloudWatch Events rule with the operations that need to be tracked on Amazon RDS. Create an AWS Lambda function to act on these rules and write the output to the tracking systems.  
+**B.** Create an AWS Lambda function to trigger on AWS CloudTrail API calls. Filter on specific RDS API calls and write the output to the tracking systems.  
+**C.** Create RDS event subscriptions. Have the tracking systems subscribe to specific RDS event system notifications.  
+**D.** Write RDS logs to Amazon Kinesis Data Firehose. Create an AWS Lambda function to act on these rules and write the output to the tracking systems.  
+
+Community vote distribution : C (100%)  
+
+**Q#95**  
+Multiple apps provide data from a secure on-premises database for a business. All apps and databases are being migrated to the AWS Cloud. Auditing is required by the IT Risk and Compliance department on all secure databases to record all log ins and log outs, unsuccessful logins, authorization modifications, and database schema changes. A Database Specialist advised using Amazon Aurora MySQL as the target database and exploiting Aurora's Advanced Auditing functionality.  
+
+Which events in the Advanced Auditing setup must be defined to meet the minimum auditing requirements? (Select three.)  
+
+>**A.** CONNECT  
+**B.** QUERY_DCL  
+**C.** QUERY_DDL  
+**D.** QUERY_DML  
+**E.** TABLE  
+**F.** QUERY  
+
+**Q#96**  
+Recently, an ecommerce business transferred one of its SQL Server databases to an Amazon RDS for SQL Server Enterprise Edition database instance. The corporation anticipates an increase in read traffic as a result of an approaching sale. To accommodate the projected read load, a database professional must establish a read replica of the database instance.  
+
+Which procedures should the database professional do prior to establishing the read replica? (Select two.)  
+
+>**A.** Identify a potential downtime window and stop the application calls to the source DB instance.  
+**B.** Ensure that automatic backups are enabled for the source DB instance.  
+**C.** Ensure that the source DB instance is a Multi-AZ deployment with Always ON Availability Groups.  
+**D.** Ensure that the source DB instance is a Multi-AZ deployment with SQL Server Database Mirroring (DBM).  
+**E.** Modify the read replica parameter group setting and set the value to 1.  
+
+**Q#97**  
+A business need a data warehouse system that stores data consistently and in a highly organized fashion. The organization demands rapid response times for end-user inquiries including current-year data, and users must have access to the whole 15-year dataset when necessary. Additionally, this solution must be able to manage a variable volume of incoming inquiries. Costs associated with storing the 100 TB of data must be maintained to a minimum.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Leverage an Amazon Redshift data warehouse solution using a dense storage instance type while keeping all the data on local Amazon Redshift storage. Provision enough instances to support high demand.  
+**B.** Leverage an Amazon Redshift data warehouse solution using a dense storage instance to store the most recent data. Keep historical data on Amazon S3 and access it using the Amazon Redshift Spectrum layer. Provision enough instances to support high demand.  
+**C.** Leverage an Amazon Redshift data warehouse solution using a dense storage instance to store the most recent data. Keep historical data on Amazon S3 and access it using the Amazon Redshift Spectrum layer. Enable Amazon Redshift Concurrency Scaling.  
+**D.** Leverage an Amazon Redshift data warehouse solution using a dense storage instance to store the most recent data. Keep historical data on Amazon S3 and access it using the Amazon Redshift Spectrum layer. Leverage Amazon Redshift elastic resize.  
+
+Community vote distribution : C (100%)  
+
+**Q#98**  
+A business is doing load testing on their three-tier production web application that was launched using an AWS CloudFormation template. The application team is making adjustments to increase the capacity of the load testing environment by deploying extra Amazon EC2 and AWS Lambda resources. A Database Specialist wants to guarantee that the application team's modifications do not affect the Amazon RDS database resources that have already been deployed.  
+
+Which sequence of procedures would enable the Database Specialist to do so? (Select two.)  
+
+>**A.** Review the stack drift before modifying the template  
+**B.** Create and review a change set before applying it  
+**C.** Export the database resources as stack outputs  
+**D.** Define the database resources in a nested stack  
+**E.** Set a stack policy for the database resources  
+
+**Q#99**  
+A business is transferring its on-premises database workloads to the Amazon Web Services (AWS) Cloud. A database professional migrating an Oracle database with a huge table to Amazon RDS has picked AWS DMS. The database professional observes that AWS DMS is consuming considerable time migrating the data.  
+
+Which activities would increase the pace of data migration? (Select three.)  
+
+>**A.** Create multiple AWS DMS tasks to migrate the large table.  
+**B.** Configure the AWS DMS replication instance with Multi-AZ.  
+**C.** Increase the capacity of the AWS DMS replication server.  
+**D.** Establish an AWS Direct Connect connection between the on-premises data center and AWS.  
+**E.** Enable an Amazon RDS Multi-AZ configuration.  
+**F.** Enable full large binary object (LOB) mode to migrate all LOB data for all large tables.  
+
+**Q#100**  
+A business is shutting down one of its distant data centers. This site hosts an on-premises data warehousing system with a capacity of 100 TB. The organization intends to migrate to AWS using the AWS Schema Conversion Tool (AWS SCT) and AWS DMS. The site's network bandwidth is 500 megabits per second. A database specialist wishes to move on-premises data to Amazon S3, which will serve as the data lake, and Amazon Redshift, which will serve as the data warehouse. This migration must occur within a two-week period during which the source systems are shut down for maintenance. At rest and in transit, data should be encrypted.  
+
+Which strategy is the safest and most likely to result in a successful data transfer?  
+
+>**A.** Set up a VPN tunnel for encrypting data over the network from the data center to AWS. Leverage AWS SCT and apply the converted schema to Amazon Redshift. Once complete, start an AWS DMS task to move the data from the source to Amazon S3. Use AWS Glue to load the data from Amazon S3 to Amazon Redshift.  
+**B.** Leverage AWS SCT and apply the converted schema to Amazon Redshift. Start an AWS DMS task with two AWS Snowball Edge devices to copy data from on-premises to Amazon S3 with AWS KMS encryption. Use AWS DMS to finish copying data to Amazon Redshift.  
+**C.** Leverage AWS SCT and apply the converted schema to Amazon Redshift. Once complete, use a fleet of 10 TB dedicated encrypted drives using the AWS Import/Export feature to copy data from on-premises to Amazon S3 with AWS KMS encryption. Use AWS Glue to load the data to Amazon redshift.  
+**D.** Set up a VPN tunnel for encrypting data over the network from the data center to AWS. Leverage a native database export feature to export the data and compress the files. Use the aws S3 cp multi-port upload command to upload these files to Amazon S3 with AWS KMS encryption. Once complete, load the data to Amazon Redshift using AWS Glue.  
+
+**Q#101**  
+A database specialist has been entrusted by an ecommerce firm with designing a reporting dashboard that visualizes crucial business KPIs derived from the company's primary production database running on Amazon Aurora. The dashboard should be able to read data within 100 milliseconds after an update.  
+The Database Specialist must conduct an audit of the Aurora DB cluster's present setup and provide a cost-effective alternative. The solution must support the unexpected read demand generated by the reporting dashboard without impairing the DB cluster's write availability and performance.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Turn on the serverless option in the DB cluster so it can automatically scale based on demand.  
+**B.** Provision a clone of the existing DB cluster for the new Application team.  
+**C.** Create a separate DB cluster for the new workload, refresh from the source DB cluster, and set up ongoing replication using AWS DMS change data capture (CDC).  
+**D.** Add an automatic scaling policy to the DB cluster to add Aurora Replicas to the cluster based on CPU consumption.  
+
+**Q#102**  
+A business currently operates an Amazon RDS for PostgreSQL database and wishes to convert it to an Amazon Aurora PostgreSQL database cluster. The database is currently 1 TB in size. The relocation process should be as seamless as possible.  
+
+What is the SPEEDIEST method for doing this?  
+
+>**A.** Create an Aurora PostgreSQL DB cluster. Set up replication from the source RDS for PostgreSQL DB instance using AWS DMS to the target DB cluster.  
+**B.** Use the pg_dump and pg_restore utilities to extract and restore the RDS for PostgreSQL DB instance to the Aurora PostgreSQL DB cluster.  
+**C.** Create a database snapshot of the RDS for PostgreSQL DB instance and use this snapshot to create the Aurora PostgreSQL DB cluster.  
+**D.** Migrate data from the RDS for PostgreSQL DB instance to an Aurora PostgreSQL DB cluster using an Aurora Replica. Promote the replica during the cutover.  
+
+Community vote distribution : D (100%)  
+
+**Q#103**  
+A business has an application that stores user data in an Amazon DynamoDB database. Each morning, a single-threaded process invokes the DynamoDB API Scan operation to do an exhaustive scan of the whole database and provide a vital start-of-day report for management. Due to a successful marketing effort, the number of elements in the table has just doubled, and the procedure is now taking too long to complete, and the report is not created on time.  
+A database professional must optimize the process's performance. According to the database professional, the operation consumes 15% of the table's allotted read capacity units (RCUs).  
+
+What is the database specialist's responsibility?  
+
+>**A.** Enable auto scaling for the DynamoDB table.  
+**B.** Use four threads and parallel DynamoDB API Scan operations.  
+**C.** Double the table's provisioned RCUs.  
+**D.** Set the Limit and Offset parameters before every call to the API.  
+
+**Q#104**  
+One of a company's mission-critical database workloads was transferred to an Amazon Aurora Multi-AZ DB cluster. The organization demands a very low recovery time objective (RTO) and wishes to enhance application recovery time after database failovers.  
+
+Which technique satisfies these criteria?  
+
+>**A.** Set the max_connections parameter to 16,000 in the instance-level parameter group.  
+**B.** Modify the client connection timeout to 300 seconds.  
+**C.** Create an Amazon RDS Proxy database proxy and update client connections to point to the proxy endpoint.  
+**D.** Enable the query cache at the instance level.  
+
+**Q#105**  
+A database specialist is tasked with the responsibility of developing a new database architecture for a ride hailing service. The application data contains a ride tracking system that logs all rides and maintains their GPS locations. Real-time statistics and metadata lookups need a high throughput and a low latency in the microsecond range. The database should be fault resilient and have a low operating and development cost.  
+
+Which solution satisfies these needs MOST EFFECTIVELY?  
+
+>**A.** Use Amazon RDS for MySQL as the database and use Amazon ElastiCache  
+**B.** Use Amazon DynamoDB as the database and use DynamoDB Accelerator  
+**C.** Use Amazon Aurora MySQL as the database and use Aurora's buffer cache  
+**D.** Use Amazon DynamoDB as the database and use Amazon API Gateway  
+
+Community vote distribution : B (100%)  
+
+**Q#106**  
+A business operates a production Amazon Aurora DB cluster with a capacity of 20 TB. Overnight, the organization performs a big batch operation to populate the Aurora DB cluster with data. To ensure that the development team has the most current data accessible for testing, a copy of the database cluster must be made available as soon as feasible after the batch operation completes.  
+
+How is this to be achieved?  
+
+>**A.** Use the AWS CLI to schedule a manual snapshot of the DB cluster. Restore the snapshot to a new DB cluster using the AWS CLI.  
+**B.** Create a dump file from the DB cluster. Load the dump file into a new DB cluster.  
+**C.** Schedule a job to create a clone of the DB cluster at the end of the overnight batch process.  
+**D.** Set up a new daily AWS DMS task that will use cloning and change data capture (CDC) on the DB cluster to copy the data to a new DB cluster. Set up a time for the AWS DMS stream to stop when the new cluster is current.  
+
+Community vote distribution : C (100%)  
+
+**Q#107**  
+A business operates a customer relationship management (CRM) system that is hosted on-premises and is backed up by a MySQL database. When data is added into a table, a custom stored procedure is utilized to send email alerts to another system. The organization found that the CRM system's performance has degraded as a result of database reporting apps utilized by multiple departments. The organization needs an AWS solution that minimizes maintenance, optimizes performance, and supports email notification.  
+
+Which AWS solution satisfies these criteria?  
+
+>**A.** Use MySQL running on an Amazon EC2 instance with Auto Scaling to accommodate the reporting applications. Configure a stored procedure and an AWS Lambda function that uses Amazon SES to send email notifications to the other system.  
+**B.** Use Amazon Aurora MySQL in a multi-master cluster to accommodate the reporting applications. Configure Amazon RDS event subscriptions to publish a message to an Amazon SNS topic and subscribe the other system's email address to the topic.  
+**C.** Use MySQL running on an Amazon EC2 instance with a read replica to accommodate the reporting applications. Configure Amazon SES integration to send email notifications to the other system.  
+**D.** Use Amazon Aurora MySQL with a read replica for the reporting applications. Configure a stored procedure and an AWS Lambda function to publish a message to an Amazon SNS topic. Subscribe the other system's email address to the topic.  
+
+Community vote distribution : D (100%)  
+
+**Q#108**  
+A database specialist is developing a disaster recovery plan for an Amazon DynamoDB table that is in production. The table is configured in provisioned read/write capacity mode and includes global secondary indexes and a time to live column (TTL). The Database Specialist has recreated a new table from the most recent backup.  
+
+Which procedures should be taken to create a new table with same settings? (Select two.)  
+
+>**A.** Re-create global secondary indexes in the new table  
+**B.** Define IAM policies for access to the new table  
+**C.** Define the TTL settings  
+**D.** Encrypt the table from the AWS Management Console or use the update-table command  
+**E.** Set the provisioned read and write capacity  
+
+Community vote distribution : BC (100%)  
+
+**Q#109**  
+A database expert is responsible for a single read replica of an Amazon RDS for MySQL DB instance. The default parameter group is allocated to the database instance and the read replica. Currently, the database team is testing queries against a read replica. To aid the testing, the database team want to construct extra tables in the read replica that will be available only through the read replica.  
+
+Which of the following actions should the database expert do to enable the database team to develop the test tables?  
+
+>**A.** Contact AWS Support to disable read-only mode on the read replica. Reboot the read replica. Connect to the read replica and create the tables.  
+**B.** Change the read_only parameter to false (read_only=0) in the default parameter group of the read replica. Perform a reboot without failover. Connect to the read replica and create the tables using the local_only MySQL option.  
+**C.** Change the read_only parameter to false (read_only=0) in the default parameter group. Reboot the read replica. Connect to the read replica and create the tables.  
+**D.** Create a new DB parameter group. Change the read_only parameter to false (read_only=0). Associate the read replica with the new group. Reboot the read replica. Connect to the read replica and create the tables.  
+
+Community vote distribution : D (100%)  
+
+**Q#110**  
+To comply with new data compliance rules, a business must retain vital data for seven years in a secure location that is easily accessible. Data older than one year is considered archive data and must be routinely deleted from the Amazon Aurora MySQL DB cluster each week. Each month, around 10 GB of fresh data is uploaded to the database. A database professional must determine the most operationally efficient method of archiving data to Amazon S3.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Create a custom script that exports archival data from the DB cluster to Amazon S3 using a SQL view, then deletes the archival data from the DB cluster. Launch an Amazon EC2 instance with a weekly cron job to execute the custom script.  
+**B.** Configure an AWS Lambda function that exports archival data from the DB cluster to Amazon S3 using a SELECT INTO OUTFILE S3 statement, then deletes the archival data from the DB cluster. Schedule the Lambda function to run weekly using Amazon EventBridge (Amazon CloudWatch Events).  
+**C.** Configure two AWS Lambda functions: one that exports archival data from the DB cluster to Amazon S3 using the mysqldump utility, and another that deletes the archival data from the DB cluster. Schedule both Lambda functions to run weekly using Amazon EventBridge (Amazon CloudWatch Events).  
+**D.** Use AWS Database Migration Service (AWS DMS) to continually export the archival data from the DB cluster to Amazon S3. Configure an AWS Data Pipeline process to run weekly that executes a custom SQL script to delete the archival data from the DB cluster.  
+
+Community vote distribution : B (100%)  
+Topic 1 - Single Topic  
+
+**Q#111**  
+A business has created a new AWS account for the purpose of deploying an e-commerce web application. This deployment includes an Amazon RDS for MySQL Multi-AZ database instance with a database-1.xxxxxxxxxx.us-east-1.rds.amazonaws.com endpoint listening on port 3306. The company's Database Specialist may use these credentials to connect into MySQL and perform queries from the bastion server.  
+When users attempt to access the application hosted in the AWS account, a generic error message is shown. The application servers are recording an error stating that they could not connect to the server: An error message stating that the connection has timed out€ has been sent to Amazon CloudWatch Logs.  
+
+What caused this error?  
+
+>**A.** The user name and password the application is using are incorrect.  
+**B.** The security group assigned to the application servers does not have the necessary rules to allow inbound connections from the DB instance.  
+**C.** The security group assigned to the DB instance does not have the necessary rules to allow inbound connections from the application servers.  
+**D.** The user name and password are correct, but the user is not authorized to use the DB instance.  
+
+**Q#112**  
+An online advertising company stores its data in an Amazon DynamoDB table with on-demand capacity mode. Additionally, the website hosts a DynamoDB Accelerator (DAX) cluster in the same virtual private cloud (VPC) as its web application server. By accessing the DAX cluster, the application must conduct rare writes and many highly consistent reads from the data store.  
+A systems administrator finds during a performance audit that the application may seek up objects through the DAX cluster. However, in Amazon CloudWatch, the QueryCacheHits statistic for the DAX cluster is always 0, whereas the QueryCacheMisses metric is always expanding.  
+
+Which of the following is the MOST LIKELY cause of this occurrence?  
+
+>**A.** A VPC endpoint was not added to access DynamoDB.  
+**B.** Strongly consistent reads are always passed through DAX to DynamoDB.  
+**C.** DynamoDB is scaling due to a burst in traffic, resulting in degraded performance.  
+**D.** A VPC endpoint was not added to access CloudWatch.  
+
+**Q#113**  
+The website of a manufacturing firm makes use of an Amazon Aurora PostgreSQL database cluster.  
+
+Which settings will result in the LEAST amount of downtime for the application during failover? (Select three.)  
+
+>**A.** Use the provided read and write Aurora endpoints to establish a connection to the Aurora DB cluster.  
+**B.** Create an Amazon CloudWatch alert triggering a restore in another Availability Zone when the primary Aurora DB cluster is unreachable.  
+**C.** Edit and enable Aurora DB cluster cache management in parameter groups.  
+**D.** Set TCP keepalive parameters to a high value.  
+**E.** Set JDBC connection string timeout variables to a low value.  
+**F.** Set Java DNS caching timeouts to a high value.  
+
+**Q#114**  
+A database professional is developing a system that will make use of a static vendor dataset of postal codes and associated territorial data that is less than 1 GB in size. At application startup, the dataset is loaded into the program's cache. The organization needs to store this data in the most cost-effective manner possible while also minimizing application launch time.  
+
+Which strategy will satisfy these criteria?  
+
+>**A.** Use an Amazon RDS DB instance. Shut down the instance once the data has been read.  
+**B.** Use Amazon Aurora Serverless. Allow the service to spin resources up and down, as needed.  
+**C.** Use Amazon DynamoDB in on-demand capacity mode.  
+**D.** Use Amazon S3 and load the data from flat files.  
+
+**Q#115**  
+A Database Specialist changed an existing parameter group that was previously connected with a live Amazon RDS for SQL Server Multi-AZ database instance. The change is connected with a static parameter type that specifies the maximum number of user connections permitted on the company's most essential RDS SQL Server DB instance. To assist minimize the effect on users, this modification has been authorized for a defined maintenance window.  
+
+How should the Database Specialist modify the database instance's parameter group?  
+
+>**A.** Select the option to apply the change immediately  
+**B.** Allow the preconfigured RDS maintenance window for the given DB instance to control when the change is applied  
+**C.** Apply the change manually by rebooting the DB instance during the approved maintenance window  
+**D.** Reboot the secondary Multi-AZ DB instance  
+
+**Q#116**  
+A corporation with branches in Portland, New York, and Singapore has developed a three-tier web application that makes use of a common database. The database is hosted in the us-west-2 Region using Amazon RDS for MySQL. The application's front end is spread among the us-west-2, ap-southheast-1, and us-east-2 regions.  
+This front end serves as a dashboard for Sales Managers at each branch office, allowing them to see up-to-date sales figures. There have been concerns that the dashboard is slower in Singapore than in Portland or New York. A solution is required to ensure that all users in each location get consistent performance.  
+
+Which collection of activities will satisfy these criteria?  
+
+>**A.** Take a snapshot of the instance in the us-west-2 Region. Create a new instance from the snapshot in the ap-southeast-1 Region. Reconfigure the ap- southeast-1 front-end dashboard to access this instance.  
+**B.** Create an RDS read replica in the ap-southeast-1 Region from the primary RDS DB instance in the us-west-2 Region. Reconfigure the ap-southeast-1 front- end dashboard to access this instance.  
+**C.** Create a new RDS instance in the ap-southeast-1 Region. Use AWS DMS and change data capture (CDC) to update the new instance in the ap-southeast-1 Region. Reconfigure the ap-southeast-1 front-end dashboard to access this instance.  
+**D.** Create an RDS read replica in the us-west-2 Region where the primary instance resides. Create a read replica in the ap-southeast-1 Region from the read replica located on the us-west-2 Region. Reconfigure the ap-southeast-1 front-end dashboard to access this instance.  
+
+Community vote distribution : B (100%)  
+
+**Q#117**  
+A business intends to shut for many days. A Database Specialist must terminate all applications and database instances to guarantee that no workers have access to the systems during this time period. Amazon RDS for MySQL is used to host all databases.  
+The Database Specialist created and executed a script that terminated all database instances. When the Database Specialist examined the logs, he discovered that Amazon RDS DB instances with read replicas continued to run.  
+
+What modifications should the Database Specialist make to the script to resolve this issue?  
+
+>**A.** Stop the source instances before stopping their read replicas  
+**B.** Delete each read replica before stopping its corresponding source instance  
+**C.** Stop the read replicas before stopping their source instances  
+**D.** Use the AWS CLI to stop each read replica and source instance at the same time  
+
+**Q#118**  
+A significant financial services firm mandates that all data in transit be encrypted. A developer is trying to establish a connection to an Amazon RDS DB instance for the first time using the company's VPC and credentials supplied by a Database Specialist. Other members of the Development team are able to connect, however this user is getting an error indicating a communications connection failure on a continuous basis. The Developer has requested many times from the Database Specialist to reset the password, yet the problem continues.  
+
+Which procedure should be followed to resolve this issue?  
+
+>**A.** Ensure that the database option group for the RDS DB instance allows ingress from the Developer machine's IP address  
+**B.** Ensure that the RDS DB instance's subnet group includes a public subnet to allow the Developer to connect  
+**C.** Ensure that the RDS DB instance has not reached its maximum connections limit  
+**D.** Ensure that the connection is using SSL and is addressing the port where the RDS DB instance is listening for encrypted connections  
+
+Community vote distribution : B (50%)  
+D (50%)  
+
+**Q#119**  
+A database specialist is constructing an AWS CloudFormation stack using AWS CloudFormation. The database expert wishes to avoid the stack's Amazon RDS ProductionDatabase resource being accidentally deleted.  
+
+Which solution will satisfy this criterion?  
+
+>**A.** Create a stack policy to prevent updates. Include "Effect" : "ProductionDatabase" and "Resource" : "Deny" in the policy.  
+**B.** Create an AWS CloudFormation stack in XML format. Set xAttribute as false.  
+**C.** Create an RDS DB instance without the DeletionPolicy attribute. Disable termination protection.  
+**D.** Create a stack policy to prevent updates. Include "Effect" : "Deny" and "Resource" : "ProductionDatabase" in the policy.  
+
+**Q#120**  
+A business's database license is about to expire. The firm wishes to relocate its on-premises 80 TB transactional database system to the AWS Cloud.  
+The migration should cause as little downtime as possible for downstream database applications. The network architecture of the business has a limited amount of network bandwidth that is shared with other applications.  
+
+Which solution should a database professional employ to ensure that a migration occurs on time?  
+
+>**A.** Perform a full backup of the source database to AWS Snowball Edge appliances and ship them to be loaded to Amazon S3. Use AWS DMS to migrate change data capture (CDC) data from the source database to Amazon S3. Use a second AWS DMS task to migrate all the S3 data to the target database.  
+**B.** Perform a full backup of the source database to AWS Snowball Edge appliances and ship them to be loaded to Amazon S3. Periodically perform incremental backups of the source database to be shipped in another Snowball Edge appliance to handle syncing change data capture (CDC) data from the source to the target database.  
+**C.** Use AWS DMS to migrate the full load of the source database over a VPN tunnel using the internet for its primary connection. Allow AWS DMS to handle syncing change data capture (CDC) data from the source to the target database.  
+**D.** Use the AWS Schema Conversion Tool (AWS SCT) to migrate the full load of the source database over a VPN tunnel using the internet for its primary connection. Allow AWS SCT to handle syncing change data capture (CDC) data from the source to the target database.  
+
+Community vote distribution : B (100%)  
+
+**Q#121**  
+A retailer maintains a web application that utilizes an Amazon DynamoDB database to store data. The corporation is currently consolidating its accounts. A database engineer must move a DynamoDB table from one AWS account to another.  
+
+Which technique satisfies these criteria with the MINIMUM amount of administrative work?  
+
+>**A.** Use AWS Glue to crawl the data in the DynamoDB table. Create a job using an available blueprint to export the data to Amazon S3. Import the data from the S3 file to a DynamoDB table in the new account.  
+**B.** Create an AWS Lambda function to scan the items of the DynamoDB table in the current account and write to a file in Amazon S3. Create another Lambda function to read the S3 file and restore the items of a DynamoDB table in the new account.  
+**C.** Use AWS Data Pipeline in the current account to export the data from the DynamoDB table to a file in Amazon S3. Use Data Pipeline to import the data from the S3 file to a DynamoDB table in the new account.  
+**D.** Configure Amazon DynamoDB Streams for the DynamoDB table in the current account. Create an AWS Lambda function to read from the stream and write to a file in Amazon S3. Create another Lambda function to read the S3 file and restore the items to a DynamoDB table in the new account.  
+
+**Q#122**  
+A corporation is transferring from on-premises to Amazon Aurora a mission-critical 2-TB Oracle database. The database migration must be maintained to a low cost, and both the on-premises Oracle database and the Aurora DB cluster must be available for write traffic until the organization is ready to totally transition to Aurora.  
+
+Which combination of measures should a database professional do to expedite this migration? (Select two.)  
+
+>**A.** Use the AWS Schema Conversion Tool (AWS SCT) to convert the source database schema. Then restore the converted schema to the target Aurora DB cluster.  
+**B.** Use Oracle's Data Pump tool to export a copy of the source database schema and manually edit the schema in a text editor to make it compatible with Aurora.  
+**C.** Create an AWS DMS task to migrate data from the Oracle database to the Aurora DB cluster. Select the migration type to replicate ongoing changes to keep the source and target databases in sync until the company is ready to move all user traffic to the Aurora DB cluster.  
+**D.** Create an AWS DMS task to migrate data from the Oracle database to the Aurora DB cluster. Once the initial load is complete, create an AWS Kinesis Data Firehose stream to perform change data capture (CDC) until the company is ready to move all user traffic to the Aurora DB cluster.  
+**E.** Create an AWS Glue job and related resources to migrate data from the Oracle database to the Aurora DB cluster. Once the initial load is complete, create an AWS DMS task to perform change data capture (CDC) until the company is ready to move all user traffic to the Aurora DB cluster.  
+
+**Q#123**  
+A business is worried about the expense of running a large-scale, transactional application on Amazon DynamoDB that requires data to be stored for just two days before being erased. When a Database Specialist examines the tables, he or she sees that most of the data is months old and dates all the way back to when the program was initially launched.  
+
+What can the Database Specialist do to help minimize the total cost of ownership?  
+
+>**A.** Create a new attribute in each table to track the expiration time and create an AWS Glue transformation to delete entries more than 2 days old.  
+**B.** Create a new attribute in each table to track the expiration time and enable DynamoDB Streams on each table.  
+**C.** Create a new attribute in each table to track the expiration time and enable time to live (TTL) on each table.  
+**D.** Create an Amazon CloudWatch Events event to export the data to Amazon S3 daily using AWS Data Pipeline and then truncate the Amazon DynamoDB table.  
+
+**Q#124**  
+A user has a key-value database that is not relational. The customer is searching for a fully managed Amazon Web Services (AWS) offering that will relieve them of the administrative constraints associated with running and growing distributed databases. The solution must be economically viable and capable of dealing with unexpected application traffic.  
+
+What recommendation would a database specialist make for this user?  
+
+>**A.** Create an Amazon DynamoDB table with provisioned capacity mode  
+**B.** Create an Amazon DocumentDB cluster  
+**C.** Create an Amazon DynamoDB table with on-demand capacity mode  
+**D.** Create an Amazon Aurora Serverless DB cluster  
+
+Community vote distribution : C (100%)  
+
+**Q#125**  
+A database professional at a corporation deactivated TLS on an Amazon DocumentDB cluster in order to conduct benchmarking tests. A few days after this update was made, a database expert trainee erased many tables by mistake. The database expert restored the database using snapshots that were accessible. The database specialist is still unable to connect to the new cluster endpoint one hour after restoring the cluster.  
+
+What steps should the database professional take to establish a connection to the recovered Amazon DocumentDB cluster?  
+
+>**A.** Change the restored cluster's parameter group to the original cluster's custom parameter group.  
+**B.** Change the restored cluster's parameter group to the Amazon DocumentDB default parameter group.  
+**C.** Configure the interface VPC endpoint and associate the new Amazon DocumentDB cluster.  
+**D.** Run the syncInstances command in AWS DataSync.  
+
+**Q#126**  
+A business runs apps on Amazon EC2 instances in a private subnet that is not connected to the internet. The organization has launched a new application that makes use of Amazon DynamoDB, however the application is unable to access the DynamoDB tables. A developer has previously verified that all permissions are properly configured.  
+
+What should a database professional do to handle this problem with the least amount of reliance on external resources as possible?  
+
+>**A.** Add a route to an internet gateway in the subnet's route table.  
+**B.** Add a route to a NAT gateway in the subnet's route table.  
+**C.** Assign a new security group to the EC2 instances with an outbound rule to ports 80 and 443.  
+**D.** Create a VPC endpoint for DynamoDB and add a route to the endpoint in the subnet's route table.  
+
+Community vote distribution : D (100%)  
+
+**Q#127**  
+A small startup firm wishes to move a 4 TB MySQL database from on-premises to AWS through an Amazon RDS for MySQL DB instance.  
+
+Which migration approach would result in the LEAST amount of downtime?  
+
+>**A.** Deploy a new RDS for MySQL DB instance and configure it for access from the on-premises data center. Use the mysqldump utility to create an initial snapshot from the on-premises MySQL server, and copy it to an Amazon S3 bucket. Import the snapshot into the DB instance utilizing the MySQL utilities running on an Amazon EC2 instance. Immediately point the application to the DB instance.  
+**B.** Deploy a new Amazon EC2 instance, install the MySQL software on the EC2 instance, and configure networking for access from the on-premises data center. Use the mysqldump utility to create a snapshot of the on-premises MySQL server. Copy the snapshot into the EC2 instance and restore it into the EC2 MySQL instance. Use AWS DMS to migrate data into a new RDS for MySQL DB instance. Point the application to the DB instance.  
+**C.** Deploy a new Amazon EC2 instance, install the MySQL software on the EC2 instance, and configure networking for access from the on-premises data center. Use the mysqldump utility to create a snapshot of the on-premises MySQL server. Copy the snapshot into an Amazon S3 bucket and import the snapshot into a new RDS for MySQL DB instance using the MySQL utilities running on an EC2 instance. Point the application to the DB instance.  
+**D.** Deploy a new RDS for MySQL DB instance and configure it for access from the on-premises data center. Use the mysqldump utility to create an initial snapshot from the on-premises MySQL server, and copy it to an Amazon S3 bucket. Import the snapshot into the DB instance using the MySQL utilities running on an Amazon EC2 instance. Establish replication into the new DB instance using MySQL replication. Stop application access to the on-premises MySQL server and let the remaining transactions replicate over. Point the application to the DB instance.  
+
+**Q#128**  
+A Database Specialist transferred an on-premises production MySQL database to an Amazon RDS for MySQL DB instance using Amazon RDS for MySQL DB. However, after the transfer, the database's at-rest encryption required to be encrypted using AWS KMS. Due to the database's size, reloading the contents into an encrypted database would be prohibitively time consuming.  
+
+How is the Database Specialist supposed to meet this new requirement?  
+
+>**A.** Create a snapshot of the unencrypted RDS DB instance. Create an encrypted copy of the unencrypted snapshot. Restore the encrypted snapshot copy.  
+**B.** Modify the RDS DB instance. Enable the AWS KMS encryption option that leverages the AWS CLI.  
+**C.** Restore an unencrypted snapshot into a MySQL RDS DB instance that is encrypted.  
+**D.** Create an encrypted read replica of the RDS DB instance. Promote it the master.  
+
+**Q#129**  
+A gaming firm built a leaderboard on AWS by using a Sorted Set data structure inside Amazon ElastiCache for Redis. ElastiCache has been installed with cluster mode deactivated and a replication group with two extra replicas has been deployed. The firm is preparing for a global gaming event and anticipates a heavier write demand than the cluster's existing capacity.  
+
+Which strategy should a Database Specialist take to prepare for an impending event by scaling the ElastiCache cluster?  
+
+>**A.** Enable cluster mode on the existing ElastiCache cluster and configure separate shards for the Sorted Set across all nodes in the cluster.  
+**B.** Increase the size of the ElastiCache cluster nodes to a larger instance size.  
+**C.** Create an additional ElastiCache cluster and load-balance traffic between the two clusters.  
+**D.** Use the EXPIRE command and set a higher time to live (TTL) after each call to increment a given key.  
+
+**Q#130**  
+A business uses an Amazon Aurora Db cluster in production to handle both online transaction processing (OLTP) and compute-intensive reporting. Reports use 10% of the entire cluster uptime, but OLTP transactions run continuously. The organization benchmarked their workload and found that a six-node Aurora DB cluster would be sufficient to handle the peak demand.  
+The firm is now aiming to reduce the cost of this database cluster, but it need a sufficient number of nodes to sustain the demand at various times. The workload has been constant since the last benchmarking exercise.  
+
+How can a Database Specialist meet these goals with the least amount of user interaction possible?  
+
+>**A.** Split up the DB cluster into two different clusters: one for OLTP and the other for reporting. Monitor and set up replication between the two clusters to keep data consistent.  
+**B.** Review all evaluate the peak combined workload. Ensure that utilization of the DB cluster node is at an acceptable level. Adjust the number of instances, if necessary.  
+**C.** Use the stop cluster functionality to stop all the nodes of the DB cluster during times of minimal workload. The cluster can be restarted again depending on the workload at the time.  
+**D.** Set up automatic scaling on the DB cluster. This will allow the number of reader nodes to adjust automatically to the reporting workload, when needed.  
+
+**Q#131**  
+A corporation has a 200 GB Amazon RDS Multi-AZ DB instance with a 6 hour RPO. To comply with the company's disaster recovery rules, a backup of the database must be transferred to another Region. The organization seeks a cost-effective and operationally efficient solution.  
+
+What steps should a Database Specialist take to replicate the database backup to another Region?  
+
+>**A.** Use Amazon RDS automated snapshots and use AWS Lambda to copy the snapshot into another Region  
+**B.** Use Amazon RDS automated snapshots every 6 hours and use Amazon S3 cross-Region replication to copy the snapshot into another Region  
+**C.** Create an AWS Lambda function to take an Amazon RDS snapshot every 6 hours and use a second Lambda function to copy the snapshot into another Region  
+**D.** Create a cross-Region read replica for Amazon RDS in another Region and take an automated snapshot of the read replica  
+
+Community vote distribution : C (100%)  
+
+**Q#132**  
+A utility firm want to store data from power plant sensors in an Amazon DynamoDB database. The utility firm owns and operates over 100 power plants, each of which is equipped with over 200 sensors that transmit data every two seconds. The sensor data consists of a time stamp with millisecond precision, a value, and a fault attribute indicating if the sensor is malfunctioning. A globally unique identifier is used to identify power plants. Within each power plant, sensors are identifiable by a unique identification. A database professional must create the table in such a way that it facilitates the effective detection of all defective sensors inside a specific power plant.  
+
+Which schema should the database professional use when establishing the DynamoDB table in order to get the quickest query time possible while searching for malfunctioning sensors?  
+
+>**A.** Use the plant identifier as the partition key and the measurement time as the sort key. Create a global secondary index (GSI) with the plant identifier as the partition key and the fault attribute as the sort key.  
+**B.** Create a composite of the plant identifier and sensor identifier as the partition key. Use the measurement time as the sort key. Create a local secondary index (LSI) on the fault attribute.  
+**C.** Create a composite of the plant identifier and sensor identifier as the partition key. Use the measurement time as the sort key. Create a global secondary index (GSI) with the plant identifier as the partition key and the fault attribute as the sort key.  
+**D.** Use the plant identifier as the partition key and the sensor identifier as the sort key. Create a local secondary index (LSI) on the fault attribute.  
+
+**Q#133**  
+A retail firm with its headquarters in New York and another in Tokyo intends to use AWS to construct a database solution. The primary burden of the organization is a mission-critical application that continuously updates its application data in a data store. The Tokyo office's team is developing dashboards with sophisticated analytical queries based on application data. Because the dashboards will be used to make purchasing choices, they must have instant access to the application's data.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Use an Amazon RDS DB instance deployed in the us-east-1 Region with a read replica instance in the ap-northeast-1 Region. Create an Amazon ElastiCache cluster in the ap-northeast-1 Region to cache application data from the replica to generate the dashboards.  
+**B.** Use an Amazon DynamoDB global table in the us-east-1 Region with replication into the ap-northeast-1 Region. Use Amazon QuickSight for displaying dashboard results.  
+**C.** Use an Amazon RDS for MySQL DB instance deployed in the us-east-1 Region with a read replica instance in the ap-northeast-1 Region. Have the dashboard application read from the read replica.  
+**D.** Use an Amazon Aurora global database. Deploy the writer instance in the us-east-1 Region and the replica in the ap-northeast-1 Region. Have the dashboard application read from the replica ap-northeast-1 Region.  
+
+**Q#134**  
+A financial services firm is establishing a shared data service that will serve several applications throughout the organization. A database specialist created a solution that makes use of Amazon ElastiCache for Redis in cluster mode to improve speed and scalability. On port 6379, the cluster is set to listen.  
+
+Which combination of procedures should the Database Specialist do to preserve and safeguard the cache data? (Select three.)  
+
+>**A.** Enable in-transit and at-rest encryption on the ElastiCache cluster.  
+**B.** Ensure that Amazon CloudWatch metrics are configured in the ElastiCache cluster.  
+**C.** Ensure the security group for the ElastiCache cluster allows all inbound traffic from itself and inbound traffic on TCP port 6379 from trusted clients only.  
+**D.** Create an IAM policy to allow the application service roles to access all ElastiCache API actions.  
+**E.** Ensure the security group for the ElastiCache clients authorize inbound TCP port 6379 and port 22 traffic from the trusted ElastiCache cluster's security group.  
+**F.** Ensure the cluster is created with the auth-token parameter and that the parameter is used in all subsequent commands.  
+
+Community vote distribution : ACF (100%)  
+
+**Q#135**  
+A business uses Amazon RDS for MySQL to manage its workloads. There is disruption associated with the application of AWS operating system updates during the Amazon RDS-specified maintenance window.  
+
+What is the MOST CHEAPEST course of action to follow to prevent downtime?  
+
+>**A.** Migrate the workloads from Amazon RDS for MySQL to Amazon DynamoDB  
+**B.** Enable cross-Region read replicas and direct read traffic to them when Amazon RDS is down  
+**C.** Enable a read replica and direct read traffic to it when Amazon RDS is down  
+**D.** Enable an Amazon RDS for MySQL Multi-AZ configuration  
+
+**Q#136**  
+A Database Specialist is debugging an application connection failure on an Amazon Aurora DB cluster with numerous Aurora Replicas that had been operating normally for two months. The connection fault lasted five minutes and then resolved itself. After reviewing the Amazon RDS events, the Database Specialist found that a failover happened at that time. It takes around 15 seconds to finish the failover operation.  
+
+Which of the following is the MOST LIKELY REASON for the 5-minute connection outage?  
+
+>**A.** After a database crash, Aurora needed to replay the redo log from the last database checkpoint  
+**B.** The client-side application is caching the DNS data and its TTL is set too high  
+**C.** After failover, the Aurora DB cluster needs time to warm up before accepting client connections  
+**D.** There were no active Aurora Replicas in the Aurora DB cluster  
+
+**Q#137**  
+A media organization want to implement zero-downtime patching (ZDP) on its Amazon Aurora MySQL database. SSL certificates are used by several processing apps to establish connections to database endpoints and read replicas.  
+
+Which element will have the MINIMUM influence on ZDP's success?  
+
+>**A.** Binary logging is enabled, or binary log replication is in progress.  
+**B.** Current SSL connections are open to the database.  
+**C.** Temporary tables or table locks are in use.  
+**D.** The value of the lower_case_table_names server parameter was set to 0 when the tables were created.  
+
+**Q#138**  
+A business hosts a website on Amazon EC2 instances distributed across several Availability Zones (AZs). Each second, the site executes a large volume of repeated reads and writes on an Amazon RDS for MySQL Multi-AZ DB instance using General Purpose SSD (gp2) storage. After extensive testing and analysis, a database professional determines that the database instance has a high read latency and a high CPU consumption.  
+
+Which technique should the database professional use in order to remedy this problem without requiring the program to be changed?  
+
+>**A.** Implement sharding to distribute the load to multiple RDS for MySQL databases.  
+**B.** Use the same RDS for MySQL instance class with Provisioned IOPS (PIOPS) storage.  
+**C.** Add an RDS for MySQL read replica.  
+**D.** Modify the RDS for MySQL database class to a bigger size and implement Provisioned IOPS (PIOPS).  
+
+**Q#139**  
+On AWS, a business is developing a web application. The application needs that the database supports concurrent read and write activities in several AWS Regions. Additionally, the database must communicate data changes across Regions as they occur. The application must be highly available and have a latency of less than a few hundred milliseconds.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Amazon DynamoDB global tables  
+**B.** Amazon DynamoDB streams with AWS Lambda to replicate the data  
+**C.** An Amazon ElastiCache for Redis cluster with cluster mode enabled and multiple shards  
+**D.** An Amazon Aurora global database  
+
+**Q#140**  
+A bank intends to utilize Amazon RDS to host a MySQL database instance. The database should be able to handle high-volume read requests with extremely few repeated queries.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Create an Amazon ElastiCache cluster. Use a write-through strategy to populate the cache.  
+**B.** Create an Amazon ElastiCache cluster. Use a lazy loading strategy to populate the cache.  
+**C.** Change the DB instance to Multi-AZ with a standby instance in another AWS Region.  
+**D.** Create a read replica of the DB instance. Use the read replica to distribute the read traffic.  
+
+Community vote distribution : D (100%)  
+
+**Q#141**  
+A business uses Amazon with Aurora Replicas to scale read-only workloads. A Database Specialist must partition two read-only apps in such a manner that each application is always connected to a dedicated replica. For read-only applications, the Database Specialist want to incorporate load balancing and high availability.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Use a specific instance endpoint for each replica and add the instance endpoint to each read-only application connection string.  
+**B.** Use reader endpoints for both the read-only workload applications.  
+**C.** Use a reader endpoint for one read-only application and use an instance endpoint for the other read-only application.  
+**D.** Use custom endpoints for the two read-only applications.  
+
+**Q#142**  
+A firm is redesigning its business application using Amazon RDS for MySQL. A database specialist noted that the Development team is restoring their MySQL database numerous times per day as a result of developer errors in their schema upgrades. Developers are often need to wait hours for restorations to finish.  
+Multiple team members are involved in the project, which makes it difficult to identify the right restoration point for each error.  
+
+Which strategy should the database specialist use in order to minimize downtime?  
+
+>**A.** Deploy multiple read replicas and have the team members make changes to separate replica instances  
+**B.** Migrate to Amazon RDS for SQL Server, take a snapshot, and restore from the snapshot  
+**C.** Migrate to Amazon Aurora MySQL and enable the Aurora Backtrack feature  
+**D.** Enable the Amazon RDS for MySQL Backtrack feature  
+
+Community vote distribution : C (100%)  
+
+**Q#143**  
+A database specialist is assisting a business with the launch of a new website built on Amazon Aurora and distributed over many Aurora Replicas. This new website will be used to replace an on-premises website that was previously tied to a relational database. Due to stability difficulties with the traditional database, the organization wishes to evaluate Aurora's resilience.  
+
+Which step may the Database Specialist do to validate the Aurora DB cluster's resilience?  
+
+>**A.** Stop the DB cluster and analyze how the website responds  
+**B.** Use Aurora fault injection to crash the master DB instance  
+**C.** Remove the DB cluster endpoint to simulate a master DB instance failure  
+**D.** Use Aurora Backtrack to crash the DB cluster  
+
+**Q#144**  
+A firm is constructing a multi-tier web application that will be hosted on AWS and will use the Amazon Aurora database. Deployment of the application to production and other non-production environments is required. A Database Specialist must provide distinct MasterUsername and MasterUserPassword attributes in the AWS CloudFormation templates that are utilized for automatic deployment. Version control is used to manage the CloudFormation templates in the company's source repository. Additionally, the organization must adhere to compliance requirements by changing the database master password for production on a regular basis.  
+
+Which method is the most safe for storing the master password?  
+
+>**A.** Store the master password in a parameter file in each environment. Reference the environment-specific parameter file in the CloudFormation template.  
+**B.** Encrypt the master password using an AWS KMS key. Store the encrypted master password in the CloudFormation template.  
+**C.** Use the secretsmanager dynamic reference to retrieve the master password stored in AWS Secrets Manager and enable automatic rotation.  
+**D.** Use the ssm dynamic reference to retrieve the master password stored in the AWS Systems Manager Parameter Store and enable automatic rotation.  
+
+**Q#145**  
+The security department of a corporation implemented new criteria for internal users to connect to an existing Amazon RDS for SQL Server database server using their corporate Active Directory (AD) credentials. A Database Specialist is required to make the necessary adjustments to meet this criterion.  
+
+Which activities should the Database Specialist do in combination? (Select three.)  
+
+>**A.** Disable Transparent Data Encryption (TDE) on the RDS SQL Server DB instance.  
+**B.** Modify the RDS SQL Server DB instance to use the directory for Windows authentication. Create appropriate new logins.  
+**C.** Use the AWS Management Console to create an AWS Managed Microsoft AD. Create a trust relationship with the corporate AD.  
+**D.** Stop the RDS SQL Server DB instance, modify it to use the directory for Windows authentication, and start it again. Create appropriate new logins.  
+**E.** Use the AWS Management Console to create an AD Connector. Create a trust relationship with the corporate AD.  
+**F.** Configure the AWS Managed Microsoft AD domain controller Security Group.  
+
+**Q#146**  
+A business is using Amazon RDS to host PostgreSQL. All database connection requests should be recorded and maintained for 180 days, according to the Security team. Currently, the RDS for PostgreSQL database instance is utilizing the default parameter group. According to a Database Specialist, changing the log connections option to 1 enables connection logging.  
+
+Which combination of measures should the Database Specialist do to ensure that the database meets the logging and retention requirements? (Select two.)  
+
+>**A.** Update the log_connections parameter in the default parameter group  
+**B.** Create a custom parameter group, update the log_connections parameter, and associate the parameter with the DB instance  
+**C.** Enable publishing of database engine logs to Amazon CloudWatch Logs and set the event expiration to 180 days  
+**D.** Enable publishing of database engine logs to an Amazon S3 bucket and set the lifecycle policy to 180 days  
+**E.** Connect to the RDS PostgreSQL host and update the log_connections parameter in the postgresql.conf file  
+
+Community vote distribution : BC (100%)  
+
+**Q#147**  
+A leading online gaming firm is considering launching a new game using Amazon DynamoDB as the data storage. The database should be set up to accommodate the following use cases:  
+- Scores should be updated in real time anytime a player is engaged in the game.  
+- Retrieve the information of a player's score for a certain gaming session.  
+A database administrator wishes to create a DynamoDB table. Each participant is identified by a unique user id, and each game is identified by a unique game id.  
+Which keys should be used for the DynamoDB table?  
+
+>**A.** Create a global secondary index with game_id as the partition key  
+**B.** Create a global secondary index with user_id as the partition key  
+**C.** Create a composite primary key with game_id as the partition key and user_id as the sort key  
+**D.** Create a composite primary key with user_id as the partition key and game_id as the sort key  
+
+**Q#148**  
+A business is transitioning from an on-premises system to Amazon Aurora. The information technology department developed an AWS Direct Connect connection from the company's data center. The database specialist for the organization has chosen to need SSL/TLS connection in order to prevent unencrypted data from being sent over the network. The conversion looks to be complete, since data can be queried from a desktop computer.  
+Two Data Analysts have been tasked with the responsibility of querying and validating the data in the newly created Aurora DB cluster. Both Analysts have been unable to establish a connection to Aurora. Their user names and passwords have been validated as legitimate, and the Database Specialist may now use their accounts to login to the database cluster. Additionally, the Database Specialist confirmed that the setting of the security group allowed network access from all corporate IP addresses.  
+
+What should the Database Specialist do to resolve the Data Analysts' connection issues?  
+
+>**A.** Restart the DB cluster to apply the SSL change.  
+**B.** Instruct the Data Analysts to download the root certificate and use the SSL certificate on the connection string to connect.  
+**C.** Add explicit mappings between the Data Analysts' IP addresses and the instance in the security group assigned to the DB cluster.  
+**D.** Modify the Data Analysts' local client firewall to allow network traffic to AWS.  
+
+Community vote distribution : B (100%)  
+
+**Q#149**  
+A business is employing five-terabyte Amazon RDS database instances and is required to maintain five years of monthly database backups for regulatory reasons. A database administrator is required to send data to auditors within 24 hours.  
+
+Which solution satisfies these parameters and is the MOST OPTIMAL in terms of operational efficiency?  
+
+>**A.** Create an AWS Lambda function to run on the first day of every month to take a manual RDS snapshot. Move the snapshot to the company's Amazon S3 bucket.  
+**B.** Create an AWS Lambda function to run on the first day of every month to take a manual RDS snapshot.  
+**C.** Create an RDS snapshot schedule from the AWS Management Console to take a snapshot every 30 days.  
+**D.** Create an AWS Lambda function to run on the first day of every month to create an automated RDS snapshot.  
+
+Community vote distribution : B (100%)  
+
+**Q#150**  
+A business is going to launch a new product and needs to recreate test databases from production data. The company's production databases are hosted on a cluster of Amazon Aurora MySQL DB instances. A Database Specialist must implement a system that enables the rapid creation of these test databases with the least amount of administrative labor feasible.  
+
+What actions should the Database Specialist do to ensure compliance with these requirements?  
+
+>**A.** Restore a snapshot from the production cluster into test clusters  
+**B.** Create logical dumps of the production cluster and restore them into new test clusters  
+**C.** Use database cloning to create clones of the production cluster  
+**D.** Add an additional read replica to the production cluster and use that node for testing  
+
+**Q#151**  
+A database professional is responsible for an application located in the us-west-1 Region and wishes to establish disaster recovery in the us-east-1 Region. The Amazon Aurora MySQL DB cluster requires a one-minute RPO and a two-minute RTO.  
+
+Which technique satisfies these needs without impairing performance?  
+
+>**A.** Enable synchronous replication.  
+**B.** Enable asynchronous binlog replication.  
+**C.** Create an Aurora Global Database.  
+**D.** Copy Aurora incremental snapshots to the us-east-1 Region.  
+
+**Q#152**  
+A database professional is tasked with the task of migrating 25 GB of data files from an on-premises storage system to an Amazon Neptune database.  
+
+Which method of data loading is the FASTEST?  
+
+>**A.** Upload the data to Amazon S3 and use the Loader command to load the data from Amazon S3 into the Neptune database.  
+**B.** Write a utility to read the data from the on-premises storage and run INSERT statements in a loop to load the data into the Neptune database.  
+**C.** Use the AWS CLI to load the data directly from the on-premises storage into the Neptune database.  
+**D.** Use AWS DataSync to load the data directly from the on-premises storage into the Neptune database.  
+
+**Q#153**  
+A database specialist must create a database migration plan for migrating an Oracle database from on-premises to an Amazon Aurora MySQL DB cluster. The organization needs little to no downtime throughout the data transfer process. Additionally, the solution must be cost effective.  
+
+Which strategy should the Database Specialist employ?  
+
+>**A.** Dump all the tables from the Oracle database into an Amazon S3 bucket using datapump (expdp). Run data transformations in AWS Glue. Load the data from the S3 bucket to the Aurora DB cluster.  
+**B.** Order an AWS Snowball appliance and copy the Oracle backup to the Snowball appliance. Once the Snowball data is delivered to Amazon S3, create a new Aurora DB cluster. Enable the S3 integration to migrate the data directly from Amazon S3 to Amazon RDS.  
+**C.** Use the AWS Schema Conversion Tool (AWS SCT) to help rewrite database objects to MySQL during the schema migration. Use AWS DMS to perform the full load and change data capture (CDC) tasks.  
+**D.** Use AWS Server Migration Service (AWS SMS) to import the Oracle virtual machine image as an Amazon EC2 instance. Use the Oracle Logical Dump utility to migrate the Oracle data from Amazon EC2 to an Aurora DB cluster.  
+
+**Q#154**  
+A database specialist is establishing a new Amazon Aurora DB cluster with one main instance and three Aurora Replicas for a mission-critical application that requires excellent performance. One medium-sized main instance, one large-sized replica, and two medium-sized replicas comprise the Aurora DB cluster. The Database Specialist did not give the replicas a promotion tier.  
+
+What will happen in the case of a main failure?  
+
+>**A.** Aurora will promote an Aurora Replica that is of the same size as the primary instance  
+**B.** Aurora will promote an arbitrary Aurora Replica  
+**C.** Aurora will promote the largest-sized Aurora Replica  
+**D.** Aurora will not promote an Aurora Replica  
+
+**Q#155**  
+A database expert is responsible for building a highly available online transaction processing (OLTP) solution that makes use of Amazon RDS for MySQL production databases. Disaster recovery criteria include a cross-regional deployment and an RPO and RTO of 5 and 30 minutes, respectively.  
+
+What should the database professional do to ensure that the database meets the criteria for high availability and disaster recovery?  
+
+>**A.** Use a Multi-AZ deployment in each Region.  
+**B.** Use read replica deployments in all Availability Zones of the secondary Region.  
+**C.** Use Multi-AZ and read replica deployments within a Region.  
+**D.** Use Multi-AZ and deploy a read replica in a secondary Region.  
+
+**Q#156**  
+A business is intending to employ an Amazon Aurora PostgreSQL DB cluster as the backend for an application. The database cluster has many tables that hold sensitive data. A database specialist must manage access rights on a table-by-table basis.  
+
+How will the Database Specialist be able to adhere to these requirements?  
+
+>**A.** Use AWS IAM database authentication and restrict access to the tables using an IAM policy.  
+**B.** Configure the rules in a NACL to restrict outbound traffic from the Aurora DB cluster.  
+**C.** Execute GRANT and REVOKE commands that restrict access to the tables containing sensitive data.  
+**D.** Define access privileges to the tables containing sensitive data in the pg_hba.conf file.  
+
+**Q#157**  
+A database professional must setup an Amazon RDS for MySQL DB instance to automatically terminate idle non-interactive connections after 900 seconds.  
+
+What is the database specialist's role in completing this task?  
+
+>**A.** Create a custom DB parameter group and set the wait_timeout parameter value to 900. Associate the DB instance with the custom parameter group.  
+**B.** Connect to the MySQL database and run the SET SESSION wait_timeout=900 command.  
+**C.** Edit the my.cnf file and set the wait_timeout parameter value to 900. Restart the DB instance.  
+**D.** Modify the default DB parameter group and set the wait_timeout parameter value to 900.  
+
+**Q#158**  
+A business is developing a new online platform in which user requests initiate an AWS Lambda function that inserts data into an Amazon Aurora MySQL DB cluster. Initial testing on the new platform with less than ten users revealed successful execution and rapid response times. However, when testing with the real objective of 3,000 concurrent users, Lambda functions fail to connect to the database cluster and get an excessive number of connection failures.  
+
+Which of the following is the most appropriate solution to this problem?  
+
+>**A.** Edit the my.cnf file for the DB cluster to increase max_connections  
+**B.** Increase the instance size of the DB cluster  
+**C.** Change the DB cluster to Multi-AZ  
+**D.** Increase the number of Aurora Replicas  
+
+**Q#159**  
+An worldwide gaming company's development team is experimenting with using Amazon DynamoDB to store in-game events for three mobile titles. Maximum concurrent users for the most popular game is 500,000, while the least popular game is 10,000. The typical event is 20 KB in size, while the average user session generates one event each second. Each event is assigned a millisecond time stamp and a globally unique identification.  
+The lead developer generated a single DynamoDB database with the following structure for the events:  
+
+- Partition key: game name  
+- Sort key: event identifier  
+- Local secondary index: player identifier  
+- Event time  
+
+In a small-scale development setting, the tests were successful. When the application was deployed to production, however, new events were not being added to the database, and the logs indicated DynamoDB failures with the ItemCollectionSizeLimitExceededException issue code.  
+
+Which design modification should a database professional offer to the development team?  
+
+>**A.** Use the player identifier as the partition key. Use the event time as the sort key. Add a global secondary index with the game name as the partition key and the event time as the sort key.  
+**B.** Create two tables. Use the game name as the partition key in both tables. Use the event time as the sort key for the first table. Use the player identifier as the sort key for the second table.  
+**C.** Replace the sort key with a compound value consisting of the player identifier collated with the event time, separated by a dash. Add a local secondary index with the player identifier as the sort key.  
+**D.** Create one table for each game. Use the player identifier as the partition key. Use the event time as the sort key.  
+
+**Q#160**  
+A business's mission-critical production workload is being operated on a 500 GB Amazon Aurora MySQL DB cluster. A database engineer must migrate the workload without causing data loss to a new Amazon Aurora Serverless MySQL DB cluster.  
+
+Which approach will result in the LEAST amount of downtime and the LEAST amount of application impact?  
+
+>**A.** Modify the existing DB cluster and update the Aurora configuration to "Serverless."  
+**B.** Create a snapshot of the existing DB cluster and restore it to a new Aurora Serverless DB cluster.  
+**C.** Create an Aurora Serverless replica from the existing DB cluster and promote it to primary when the replica lag is minimal.  
+**D.** Replicate the data between the existing DB cluster and a new Aurora Serverless DB cluster by using AWS Database Migration Service (AWS DMS) with change data capture (CDC) enabled.  
+
+**Q#161**  
+A business's production databases are housed on a 3 TB Amazon Aurora MySQL DB cluster. The database cluster is installed in the region us-east-1. For disaster recovery (DR) requirements, the company's database expert needs to fast deploy the DB cluster in another AWS Region to handle the production load with an RTO of less than two hours.  
+
+Which approach is the MOST OPERATIONALLY EFFECTIVE in meeting these requirements?  
+
+>**A.** Implement an AWS Lambda function to take a snapshot of the production DB cluster every 2 hours, and copy that snapshot to an Amazon S3 bucket in the DR Region. Restore the snapshot to an appropriately sized DB cluster in the DR Region.  
+**B.** Add a cross-Region read replica in the DR Region with the same instance type as the current primary instance. If the read replica in the DR Region needs to be used for production, promote the read replica to become a standalone DB cluster.  
+**C.** Create a smaller DB cluster in the DR Region. Configure an AWS Database Migration Service (AWS DMS) task with change data capture (CDC) enabled to replicate data from the current production DB cluster to the DB cluster in the DR Region.  
+**D.** Create an Aurora global database that spans two Regions. Use AWS Database Migration Service (AWS DMS) to migrate the existing database to the new global database.  
+
+Community vote distribution : B (100%)  
+
+**Q#162**  
+For internal applications, a business use an Amazon RDS for MySQL DB instance. According to a security assessment, the database instance is not encrypted at rest. The company's application development team must encrypt the database instance.  
+
+What actions should the team do to comply with this requirement?  
+
+>**A.** Stop the DB instance and modify it to enable encryption. Apply this setting immediately without waiting for the next scheduled RDS maintenance window.  
+**B.** Stop the DB instance and create an encrypted snapshot. Restore the encrypted snapshot to a new encrypted DB instance. Delete the original DB instance, and update the applications to point to the new encrypted DB instance.  
+**C.** Stop the DB instance and create a snapshot. Copy the snapshot into another encrypted snapshot. Restore the encrypted snapshot to a new encrypted DB instance. Delete the original DB instance, and update the applications to point to the new encrypted DB instance.  
+**D.** Create an encrypted read replica of the DB instance. Promote the read replica to master. Delete the original DB instance, and update the applications to point to the new encrypted DB instance.  
+
+**Q#163**  
+A Database Specialist is responsible for expediting any failovers on an Amazon Aurora PostgreSQL DB cluster. At the moment, the Aurora DB cluster consists of a main instance and three Aurora Replicas.  
+
+How can the Database Specialist guarantee that failovers occur with minimal application downtime?  
+
+>**A.** Set the TCP keepalive parameters low  
+**B.** Call the AWS CLI failover-db-cluster command  
+**C.** Enable Enhanced Monitoring on the DB cluster  
+**D.** Start a database activity stream on the DB cluster  
+
+**Q#164**  
+After restoring a three-day-old Amazon RDS snapshot, a company's development team is unable to connect to the restored RDS database instance.  
+
+What is the most probable source of this issue?  
+
+>**A.** The restored DB instance does not have Enhanced Monitoring enabled  
+**B.** The production DB instance is using a custom parameter group  
+**C.** The restored DB instance is using the default security group  
+**D.** The production DB instance is using a custom option group  
+
+**Q#165**  
+Over the course of many hours under steady demand, an Amazon RDS EBS-optimized instance with Provisioned IOPS (PIOPS) storage consumes less than half of its allotted IOPS. While the RDS instance has multiple-second read and write latency and utilizes all of its maximum bandwidth for read throughput, it consumes less than half of its CPU and RAM resources.  
+
+What should a Database Specialist do in this case to boost speed and restore sub-second latency?  
+
+>**A.** Increase the size of the DB instance storage  
+**B.** Change the underlying EBS storage type to General Purpose SSD (gp2)  
+**C.** Disable EBS optimization on the DB instance  
+**D.** Change the DB instance to an instance class with a higher maximum bandwidth  
+
+**Q#166**  
+A retail firm is in the process of migrating its online and mobile stores to Amazon Web Services. The CEO of the firm has strategic ambitions to expand the brand abroad. A database specialist has been tasked with the responsibility of delivering predictable read and write database performance with the least amount of operational overhead possible.  
+
+What actions should the Database Specialist do to ensure compliance with these requirements?  
+
+>**A.** Use Amazon DynamoDB global tables to synchronize transactions  
+**B.** Use Amazon EMR to copy the orders table data across Regions  
+**C.** Use Amazon Aurora Global Database to synchronize all transactions  
+**D.** Use Amazon DynamoDB Streams to replicate all DynamoDB transactions and sync them  
+
+**Q#167**  
+A Database Specialist is utilizing AWS DMS to migrate a 2 TB Amazon RDS for Oracle database instance to an RDS for PostgreSQL database instance. The RDS Oracle DB instance that is the source is located in a VPC in the us-east-1 Region. The RDS instance for the PostgreSQL database is located in a VPC in the use-west-2 Region.  
+
+Which AWS DMS replication instance should be located for the BEST performance?  
+
+>**A.** In the same Region and VPC of the source DB instance  
+**B.** In the same Region and VPC as the target DB instance  
+**C.** In the same VPC and Availability Zone as the target DB instance  
+**D.** In the same VPC and Availability Zone as the source DB instance  
+
+**Q#168**  
+A financial company's security staff was told of an internal security compromise that occurred three weeks ago. A Database Specialist must begin providing audit logs from the production Amazon Aurora PostgreSQL cluster for monitoring and alerting purposes by the Security team. The Security team is needed to provide real-time alerting and monitoring outside the Aurora DB cluster and wishes for the cluster to send encrypted data to the selected solution.  
+
+Which strategy will satisfy these criteria?  
+
+>**A.** Use pg_audit to generate audit logs and send the logs to the Security team.  
+**B.** Use AWS CloudTrail to audit the DB cluster and the Security team will get data from Amazon S3.  
+**C.** Set up database activity streams and connect the data stream from Amazon Kinesis to consumer applications.  
+**D.** Turn on verbose logging and set up a schedule for the logs to be dumped out for the Security team.  
+
+**Q#169**  
+A corporation wishes to move a 1 TB Oracle database from its current location to an Amazon Aurora PostgreSQL DB cluster. The database specialist at the firm noticed that the Oracle database stores 100 GB of large binary objects (LOBs) across many tables. The Oracle database supports LOBs up to 500 MB in size and an average of 350 MB. AWS DMS was picked by the Database Specialist to transfer the data with the most replication instances.  
+
+How should the database specialist improve the transfer of the database to AWS DMS?  
+
+>**A.** Create a single task using full LOB mode with a LOB chunk size of 500 MB to migrate the data and LOBs together  
+**B.** Create two tasks: task1 with LOB tables using full LOB mode with a LOB chunk size of 500 MB and task2 without LOBs  
+**C.** Create two tasks: task1 with LOB tables using limited LOB mode with a maximum LOB size of 500 MB and task 2 without LOBs  
+**D.** Create a single task using limited LOB mode with a maximum LOB size of 500 MB to migrate data and LOBs together  
+
+**Q#170**  
+A single MySQL database was moved to Amazon Aurora by a business. The production data is stored in a database cluster in VPC PROD, whereas 12 testing environments are hosted in VPC TEST with the same AWS account. Testing has a negligible effect on the test data. The development team requires that each environment be updated nightly to ensure that each test database has daily production data.  
+
+Which migration strategy will be the quickest and least expensive to implement?  
+
+>**A.** Run the master in Amazon Aurora MySQL. Create 12 clones in VPC_TEST, and script the clones to be deleted and re-created nightly.  
+**B.** Run the master in Amazon Aurora MySQL. Take a nightly snapshot, and restore it into 12 databases in VPC_TEST using Aurora Serverless.  
+**C.** Run the master in Amazon Aurora MySQL. Create 12 Aurora Replicas in VPC_TEST, and script the replicas to be deleted and re-created nightly.  
+**D.** Run the master in Amazon Aurora MySQL using Aurora Serverless. Create 12 clones in VPC_TEST, and script the clones to be deleted and re-created nightly.  
+
+**Q#171**  
+A financial institution want to store sensitive user data in a cluster of Amazon Aurora PostgreSQL DBs. The database will be accessible by a variety of applications within the organization. The corporation requires that all interactions with the database be encrypted and that the server's identity be verified. Any connections that are not encrypted using SSL should be denied access to the database.  
+
+Which solution satisfies these criteria?  
+
+>**A.** Set the rds.force_ssl=0 parameter in DB parameter groups. Download and use the Amazon RDS certificate bundle and configure the PostgreSQL connection string with sslmode=allow.  
+**B.** Set the rds.force_ssl=1 parameter in DB parameter groups. Download and use the Amazon RDS certificate bundle and configure the PostgreSQL connection string with sslmode=disable.  
+**C.** Set the rds.force_ssl=0 parameter in DB parameter groups. Download and use the Amazon RDS certificate bundle and configure the PostgreSQL connection string with sslmode=verify-ca.  
+**D.** Set the rds.force_ssl=1 parameter in DB parameter groups. Download and use the Amazon RDS certificate bundle and configure the PostgreSQL connection string with sslmode=verify-full.  
+
+**Q#172**  
+A business is developing a new survey application for use in conjunction with a weekly television game show. Each week, the application will be accessible for two hours. Each week, the firm anticipates receiving over 500,000 submissions, with each user being asked 2-3 multiple choice questions. To accommodate the projected load, a database specialist must choose a platform that is highly scalable for a big number of concurrent writes.  
+
+Which Amazon Web Services (AWS) services should a database specialist consider? (Select two.)  
+
+>**A.** Amazon DynamoDB  
+**B.** Amazon Redshift  
+**C.** Amazon Neptune  
+**D.** Amazon Elasticsearch Service  
+**E.** Amazon ElastiCache  
+
+**Q#173**  
+A Database Specialist is constructing a new Amazon Neptune DB cluster and tries to load fata from Amazon S3 using the Neptune bulk loader API. The Database Specialist is confronted with the following error message:  
+- Unable to establish a connection to the s3 endpoint. The source URL is s3:/mybucket/graphdata/ and the region code is us-east-1. Kindly confirm your  
+
+Configuration S3.  
+
+Which of the following activities should the Database Specialist take to resolve the issue? (Select two.)  
+
+>**A.** Check that Amazon S3 has an IAM role granting read access to Neptune  
+**B.** Check that an Amazon S3 VPC endpoint exists  
+**C.** Check that a Neptune VPC endpoint exists  
+**D.** Check that Amazon EC2 has an IAM role granting read access to Amazon S3  
+**E.** Check that Neptune has an IAM role granting read access to Amazon S3  
+
+**Q#174**  
+A business created a new application that is being deployed on Amazon EC2 instances behind an Application Load Balancer. The Amazon EC2 instances are assigned to the security group sg-application-servers. The business need a database to hold the application's data and chooses to utilize an Amazon RDS for MySQL DB instance. The database instance is installed on a dedicated database subnet.  
+
+Which configuration setting for the DB instance security group is the MOST restrictive?  
+
+>**A.** Only allow incoming traffic from the sg-application-servers security group on port 3306.  
+**B.** Only allow incoming traffic from the sg-application-servers security group on port 443.  
+**C.** Only allow incoming traffic from the subnet of the application servers on port 3306.  
+**D.** Only allow incoming traffic from the subnet of the application servers on port 443.  
+
+**Q#175**  
+A Database Specialist is moving an on-premises Microsoft SQL Server application database to Amazon RDS for PostgreSQL using Amazon Web Services Database Management Service (AWS DMS). When the RDS DB instance becomes online, the application needs little downtime.  
+
+What modification should the Database Specialist make in order to facilitate the migration?  
+
+>**A.** Configure the on-premises application database to act as a source for an AWS DMS full load with ongoing change data capture (CDC)  
+**B.** Configure the AWS DMS replication instance to allow both full load and ongoing change data capture (CDC)  
+**C.** Configure the AWS DMS task to generate full logs to allow for ongoing change data capture (CDC)  
+**D.** Configure the AWS DMS connections to allow two-way communication to allow for ongoing change data capture (CDC)  
+
+**Q#176**  
+A business wishes to transfer its on-premises Microsoft SQL Server Enterprise Edition database instance to AWS. Following a thorough evaluation, the AWS Schema Conversion Tool (AWS SCT) suggests operating this workload on Amazon RDS for SQL Server Enterprise Edition, Amazon RDS for SQL Server Standard Edition, Amazon Aurora MySQL, or Amazon Aurora PostgreSQL. The organization does not want to utilize its own SQL server license or to migrate away from Microsoft SQL Server.  
+
+Which approach is the MOST COST-EFFECTIVE AND OPERATIONALLY EFFECTIVE?  
+
+>**A.** Run SQL Server Enterprise Edition on Amazon EC2.  
+**B.** Run SQL Server Standard Edition on Amazon RDS.  
+**C.** Run SQL Server Enterprise Edition on Amazon RDS.  
+**D.** Run Amazon Aurora MySQL leveraging SQL Server on Linux compatibility libraries.  
+
+**Q#177**  
+A Database Specialist is utilizing a development AWS account to create Amazon DynamoDB tables, Amazon CloudWatch alerts, and related infrastructure for an Application team. The team is looking for a deployment mechanism that will standardize the solution's basic components while handling environment-specific settings independently, with the goal of minimizing rework caused by configuration issues.  
+
+Which procedure should the Database Specialist suggest to satisfy these requirements?  
+
+>**A.** Organize common and environmental-specific parameters hierarchically in the AWS Systems Manager Parameter Store, then reference the parameters dynamically from an AWS CloudFormation template. Deploy the CloudFormation stack using the environment name as a parameter.  
+**B.** Create a parameterized AWS CloudFormation template that builds the required objects. Keep separate environment parameter files in separate Amazon S3 buckets. Provide an AWS CLI command that deploys the CloudFormation stack directly referencing the appropriate parameter bucket.  
+**C.** Create a parameterized AWS CloudFormation template that builds the required objects. Import the template into the CloudFormation interface in the AWS Management Console. Make the required changes to the parameters and deploy the CloudFormation stack.  
+**D.** Create an AWS Lambda function that builds the required objects using an AWS SDK. Set the required parameter values in a test event in the Lambda console for each environment that the Application team can modify, as needed. Deploy the infrastructure by triggering the test event in the console.  
+
+**Q#178**  
+A database administrator wishes to construct a read replica of an existing Amazon RDS for MySQL Multi-AZ database instance. When the Database Specialist does this activity through the AWS Management Console, he or she notices that the source RDS DB instance does not display in the read replica source selection box, and so the read replica cannot be generated.  
+
+What is the most probable explanation for this?  
+
+>**A.** The source DB instance has to be converted to Single-AZ first to create a read replica from it.  
+**B.** Enhanced Monitoring is not enabled on the source DB instance.  
+**C.** The minor MySQL version in the source DB instance does not support read replicas.  
+**D.** Automated backups are not enabled on the source DB instance.  
+
+**Q#179**  
+A business is migrating its fraud detection program from on-premises to the AWS Cloud and storing data in Amazon Neptune. The organization has established a 1 Gbps AWS Direct Connect connection for the purpose of migrating 25 TB of fraud detection data from the on-premises data center to a Neptune DB server. The organization already has an Amazon S3 bucket and an S3 Virtual Private Cloud endpoint, and 80 percent of the network capacity is accessible.  
+
+How should the business go about doing this data load?  
+
+>**A.** Use an AWS SDK with a multipart upload to transfer the data from on premises to the S3 bucket. Use the Copy command for Neptune to move the data in bulk from the S3 bucket to the Neptune DB instance.  
+**B.** Use AWS Database Migration Service (AWS DMS) to transfer the data from on premises to the S3 bucket. Use the Loader command for Neptune to move the data in bulk from the S3 bucket to the Neptune DB instance.  
+**C.** Use AWS DataSync to transfer the data from on premises to the S3 bucket. Use the Loader command for Neptune to move the data in bulk from the S3 bucket to the Neptune DB instance.  
+**D.** Use the AWS CLI to transfer the data from on premises to the S3 bucket. Use the Copy command for Neptune to move the data in bulk from the S3 bucket to the Neptune DB instance.  
+
+**Q#180**  
+An internet advertising firm stores its data in an Amazon DynamoDb table. Amazon DynamoDB Streams are enabled on the table, and one of the keys has a global secondary index. The table is encrypted using a customer-managed AWS Key Management Service (AWS KMS) key.  
+The firm has chosen to grow worldwide and want to duplicate the database using DynamoDB global tables in a new AWS Region.  
+An administrator observes the following upon review:  
+
+- No role with the dynamodb: CreateGlobalTable permission exists in the account.  
+- An empty table with the same name exists in the new Region where replication is desired.  
+- A global secondary index with the same partition key but a different sort key exists in the new Region where replication is desired.  
+
+Which settings will prevent you from creating a global table or replica in the new Region? (Select two.)  
+
+>**A.** A global secondary index with the same partition key but a different sort key exists in the new Region where replication is desired.  
+**B.** An empty table with the same name exists in the Region where replication is desired.  
+**C.** No role with the dynamodb:CreateGlobalTable permission exists in the account.  
+**D.** DynamoDB Streams is enabled for the table.  
+**E.** The table is encrypted using a KMS customer managed key.  
+
+**Q#181**  
+A business in us-east-1 utilizes the Amazon DynamoDB database contractDB for their contract system, which has the following schema:  
+orderID (primary key)  
+timestamp (sort key)  
+contract (map)  
+createdBy (string)  
+customerEmail (string)  
+Following a production issue, the operations team requested that a database expert create an IAM policy allowing them access read things from the database in order to diagnose the application. Additionally, to maintain compliance, the developer is not permitted to read the value of the customerEmail field.  
+
+Which IAM policy should be used by the database professional to meet these requirements?  
+>**A.**  
+**B.**  
+**C.**  
+**D.**  
+
+**Q#182**  
+A business wishes to automate the production of secure test databases using randomly generated credentials that can be securely retained for future use. The credentials should include enough information about each test database to allow for connection establishment and automatic credential rotation. Credentials should not be recorded or kept in an unencrypted format anywhere.  
+
+Which measures should a Database Specialist take to comply with these standards while using an AWS CloudFormation template?  
+
+>**A.** Create the database with the MasterUserName and MasterUserPassword properties set to the default values. Then, create the secret with the user name and password set to the same default values. Add a Secret Target Attachment resource with the SecretId and TargetId properties set to the Amazon Resource Names (ARNs) of the secret and the database. Finally, update the secret's password value with a randomly generated string set by the GenerateSecretString property.  
+**B.** Add a Mapping property from the database Amazon Resource Name (ARN) to the secret ARN. Then, create the secret with a chosen user name and a randomly generated password set by the GenerateSecretString property. Add the database with the MasterUserName and MasterUserPassword properties set to the user name of the secret.  
+**C.** Add a resource of type AWS::SecretsManager::Secret and specify the GenerateSecretString property. Then, define the database user name in the SecureStringTemplate template. Create a resource for the database and reference the secret string for the MasterUserName and MasterUserPassword properties. Then, add a resource of type AWS::SecretsManagerSecretTargetAttachment with the SecretId and TargetId properties set to the Amazon Resource Names (ARNs) of the secret and the database.  
+**D.** Create the secret with a chosen user name and a randomly generated password set by the GenerateSecretString property. Add an SecretTargetAttachment resource with the SecretId property set to the Amazon Resource Name (ARN) of the secret and the TargetId property set to a parameter value matching the desired database ARN. Then, create a database with the MasterUserName and MasterUserPassword properties set to the previously created values in the secret.  
+
+**Q#183**  
+A firm may have two distinct Amazon Web Services accounts: one for each business unit and another for corporate analytics. The organization wishes to replicate data from its business units stored in Amazon RDS for MySQL in us-east-1 to its corporate analytics Amazon Redshift environment in us-west-1 using Amazon RDS for MySQL. The organization intends to use AWS DMS, with Amazon RDS serving as the source endpoint and Amazon Redshift serving as the destination endpoint.  
+
+Which action enables AVS DMS to replicate?  
+
+>**A.** Configure the AWS DMS replication instance in the same account and Region as Amazon Redshift.  
+**B.** Configure the AWS DMS replication instance in the same account as Amazon Redshift and in the same Region as Amazon RDS.  
+**C.** Configure the AWS DMS replication instance in its own account and in the same Region as Amazon Redshift.  
+**D.** Configure the AWS DMS replication instance in the same account and Region as Amazon RDS.  
+
+Community vote distribution : A (100%)  
+
+**Q#184**  
+A firm is developing a new tool that will enable customers to view the components of their on-premises and cloud networking infrastructure. The business anticipates storing billions of components and expecting millisecond replies. The application should be able to determine  
+- The networks and routes affected if a particular component fails.  
+- The networks that have redundant routes between them.  
+- The networks that do not have redundant routes between them.  
+- The fastest path between two networks.  
+
+Which database engine satisfies these criteria.  
+
+>**A.** Amazon Aurora MySQL  
+**B.** Amazon Neptune  
+**C.** Amazon ElastiCache for Redis  
+**D.** Amazon DynamoDB  
+
+**Q#185**  
+A firm uses a heterogeneous six-node production Amazon Aurora DB cluster to manage online transaction processing (OLTP) for its core business and OLAP reports for its human resources department. To better match compute resources to use cases, the firm has opted to direct the human resources department's reporting burden to two tiny nodes in the Aurora DB cluster, while the rest of the workload is distributed over four big nodes in the same DB cluster.  
+
+Which of the following options would guarantee that the right nodes are always accessible for the appropriate workload while achieving these requirements?  
+
+>**A.** Use the writer endpoint for OLTP and the reader endpoint for the OLAP reporting workload.  
+**B.** Use automatic scaling for the Aurora Replica to have the appropriate number of replicas for the desired workload.  
+**C.** Create additional readers to cater to the different scenarios.  
+**D.** Use custom endpoints to satisfy the different workloads.  
