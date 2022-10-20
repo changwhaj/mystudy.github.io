@@ -1,4 +1,4 @@
-const PASSKEY = "tuning";
+const PASSKEY = "TSS";
 
 // Usage
 // zeroPad(1,10);   //=> 01
