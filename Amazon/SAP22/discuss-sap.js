@@ -1,4 +1,4 @@
-const PASSKEY = "tuning";
+const PASSKEY = "TSS";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -204,7 +204,7 @@ var passwd = getCookie('passsap22');
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
 
-    if (passwd.toLowerCase() == PASSKEY) {
+    if (passwd.toUpperCase() == PASSKEY) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
