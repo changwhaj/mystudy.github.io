@@ -203,7 +203,7 @@ var passwd = getCookie('passsap');
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
 
-    if (passwd.toLowerCase() == "tssadm") {
+    if (passwd.toUpperCase() == "TSS") {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
