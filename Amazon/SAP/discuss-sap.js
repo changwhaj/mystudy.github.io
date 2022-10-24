@@ -68,7 +68,7 @@ function changeTable() {
 }
 
 function buildTable(id, data) {
-    var nrows = 40;
+    var nrows = 50;
     var ncols = 19;
     var table = document.getElementById('table1')
     var btnText = "오답노트"
