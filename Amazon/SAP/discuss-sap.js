@@ -1,3 +1,4 @@
+const PASSKEY = "TSS";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -159,20 +160,20 @@ function NewTab(question_id, discuss_id) {
         }
 
         //var url = "https://aws.amazon.com/"
-        //if (passwd == "tssadm") {
-        if (discuss_id == "") {
+        if (passwd == PASSKEY) {
+        // if (discuss_id == "") {
             // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
-            url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
-                + String(parseInt(question_id/10+0.9)) +
-                "/";
+            // url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
+            //     + String(parseInt(question_id/10+0.9)) +
+            //     "/";
             url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
+            url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
                 "-exam-aws-certified-solutions-architect-professional-topic-1/";
-            url = "https://changwhaj.github.io/assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
         }
         // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
         //winDiscuss = window.open(url, "discuss");
@@ -203,7 +204,7 @@ var passwd = getCookie('passsap');
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
 
-    if (passwd.toUpperCase() == "TSS") {
+    if (passwd.toUpperCase() == PASSKEY) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
