@@ -1,4 +1,4 @@
-const PASSKEY = "TSS";
+const PASSKEY = "AWS";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -70,12 +70,11 @@ function changeTable() {
 
 function buildTable(id, data) {
     var ncols = 10;
-    var nrows = 27;
+    var nrows = nrows = Math.round(data.length / ncols);
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
-
-    nrows = data.length / ncols;
+    
     if (id == "X") { 
         btnText = "문제풀이"
         txtColor = "red"
