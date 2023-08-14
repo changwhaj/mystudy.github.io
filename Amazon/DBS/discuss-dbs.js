@@ -70,11 +70,12 @@ function changeTable() {
 
 function buildTable(id, data) {
     var ncols = 10;
-    var nrows = data.length / ncols;
+    var nrows = 27;
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
 
+    nrows = data.length / ncols;
     if (id == "X") { 
         btnText = "문제풀이"
         txtColor = "red"
