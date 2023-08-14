@@ -1,0 +1,8 @@
+{
+    "git.path": "C:\Program Files\Git\cmd\\git.exe"
+    "search.useGlobalIgnoreFiles": true,
+    "github.codespaces.defaultExtensions": [
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github"
+    ]
+}
