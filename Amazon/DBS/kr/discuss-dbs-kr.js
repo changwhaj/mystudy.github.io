@@ -165,7 +165,7 @@ function NewTab(question_id, discuss_id) {
             url = "https://changwhaj.github.io/assets/exam/aws/DBS/page/DBS-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-            url = "https://changwhaj.github.io/assets/exam/aws/DBS/kr/DBS-Q" + question_id + "-kr.html"
+            url = "https://changwhaj.github.io/assets/exam/aws/DBS/kr/DBS-Q" + question_id + "-KR.html"
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/"
                 + discuss_id +
