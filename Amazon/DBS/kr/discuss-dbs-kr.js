@@ -70,7 +70,7 @@ function changeTable() {
 
 function buildTable(id, data) {
     var ncols = 10;
-    var nrows = nrows = Math.round(data.length / ncols);
+    var nrows = Math.round(data.length / ncols);
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
@@ -90,7 +90,7 @@ function buildTable(id, data) {
         varray = vlist.split(',');
     }
 
-    for (var i=0; i < (data.length/ncols)+1; i++) { 
+    for (var i=0; i < nrows; i++) { 
         row += "<tr>"
         for (var c=0; c < ncols; c++) {
             var idx = i+nrows*c
