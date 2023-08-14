@@ -100,10 +100,10 @@ function buildTable(id, data) {
                     // console.log(data[idx].QID + ":" + varray.indexOf(data[idx].QID))
                     fstyle += "color:" + txtColor + "; font-weight:bold; "
                 }
-                if (data[idx].NQID == "" || data[idx].DID == "") {
-                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].NQID+"\", \""+data[idx].DID+"\");'><font style='color:cyan; font-style:italic; text-decoration: underline;'>#"+data[idx].QID+"</font></td>"
+                if (data[idx].DID == "") {
+                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='color:cyan; font-style:italic; text-decoration: underline;'>#"+data[idx].QID+"</font></td>"
                 } else {
-                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].NQID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' target='_self'>#"+data[idx].QID+"</font></td>"
+                    row += "<td onClick='NewTab(\""+data[idx].QID+"\", \""+data[idx].DID+"\");'><font style='" + fstyle + "' target='_self'>#"+data[idx].QID+"</font></td>"
                 }
             }
         }
@@ -140,7 +140,7 @@ function setVlist(question_id, vlist, toggle) {
     }
 }
 
-function NewTab(question_id, new_question_id, discuss_id) {
+function NewTab(question_id, discuss_id) {
     var seq = document.getElementById("seq").innerHTML
     var vlist = getCookie("DBS"+seq);
     var varray = []
@@ -148,7 +148,7 @@ function NewTab(question_id, new_question_id, discuss_id) {
     if (vlist != undefined) {
         varray = vlist.split(',');
     }
-    // console.log("Clicked QID: " + question_id + ", NQID: " + new_question_id + ", DID: " + discuss_id)
+    // console.log("Clicked QID: " + question_id + ", DID: " + discuss_id)
     
     if (cntrlIsPressed || seq == "X") {
         let newList = setVlist(question_id, vlist, true);
