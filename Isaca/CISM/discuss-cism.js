@@ -83,7 +83,7 @@ function buildTable(id, data) {
                 "</label>&nbsp </th></tr>"
     
     // alert(document.cookie); // 모든 쿠키 보여주기
-    var vlist = getCookie("CISA"+id);
+    var vlist = getCookie("CISM"+id);
     var varray = [];
     
     if (vlist != undefined) {
@@ -116,7 +116,7 @@ function setSequence(seq, vlist) {
     var expDate = new Date();
     expDate.setMonth(expDate.getMonth() + 1);
     expDate = expDate.toUTCString();
-    setCookie("CISA"+seq, vlist, {secure: true, 'expires': expDate});
+    setCookie("CISM"+seq, vlist, {secure: true, 'expires': expDate});
 }
 
 function setVlist(question_id, vlist, toggle) {
@@ -142,7 +142,7 @@ function setVlist(question_id, vlist, toggle) {
 
 function NewTab(question_id, discuss_id) {
     var seq = document.getElementById("seq").innerHTML
-    var vlist = getCookie("CISA"+seq);
+    var vlist = getCookie("CISM"+seq);
     var varray = []
             
     if (vlist != undefined) {
@@ -162,14 +162,14 @@ function NewTab(question_id, discuss_id) {
         var url = "https://www.isaca.org/"
         if (passwd == PASSKEY) {
         // if (discuss_id == "") {
-            url = "https://changwhaj.github.io/assets/exam/isaca/CISA/page/CISA-P" 
+            url = "https://changwhaj.github.io/assets/exam/isaca/CISM/page/CISM-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-            url = "https://changwhaj.github.io/assets/exam/isaca/CISA/kr/CISA-Q" + question_id + "-KR.html"
+            url = "https://changwhaj.github.io/assets/exam/isaca/CISM/CISM-Q" + question_id + ".html"
         } else {
             url = "https://www.examtopics.com/discussions/isaca/view/"
                 + discuss_id +
-                "-exam-cisa-topic-1-question-" + String(parseInt(question_id)) + "-discussion/";
+                "-exam-cism-topic-1-question-" + String(parseInt(question_id)) + "-discussion/";
         }
         
         var winDiscuss = window.open(url, "discuss");
@@ -188,7 +188,7 @@ function NewTab(question_id, discuss_id) {
     buildTable(seq, myArray);
 }
 
-var passwd = getCookie('passcisa');
+var passwd = getCookie('passcism');
 
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
@@ -197,7 +197,7 @@ if (passwd == undefined) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
-        setCookie('passcisa', passwd, {secure: true, 'expires': expDate});
+        setCookie('passcism', passwd, {secure: true, 'expires': expDate});
     }
 }
-passwd = getCookie('passcisa');
+passwd = getCookie('passcism');
