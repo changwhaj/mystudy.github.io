@@ -1,4 +1,4 @@
-const PASSKEY = "TSS";
+const PASSKEY = "SAP2";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -69,8 +69,10 @@ function changeTable() {
 }
 
 function buildTable(id, data) {
-    var nrows = 38;
-    var ncols = 25;
+    var ncols = 15;
+    var nrows = Math.round(data.length / ncols);
+    //var nrows = 38;
+    //var ncols = 25;
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
@@ -83,7 +85,7 @@ function buildTable(id, data) {
                 "</label>&nbsp </th></tr>"
     
     // alert(document.cookie); // 모든 쿠키 보여주기
-    var vlist = getCookie("SAP"+id);
+    var vlist = getCookie("SAP2"+id);
     var varray = [];
     
     if (vlist != undefined) {
@@ -116,7 +118,7 @@ function setSequence(seq, vlist) {
     var expDate = new Date();
     expDate.setMonth(expDate.getMonth() + 1);
     expDate = expDate.toUTCString();
-    setCookie("SAP"+seq, vlist, {secure: true, 'expires': expDate});
+    setCookie("SAP2"+seq, vlist, {secure: true, 'expires': expDate});
 }
 
 function setVlist(question_id, vlist, toggle) {
@@ -142,7 +144,7 @@ function setVlist(question_id, vlist, toggle) {
 
 function NewTab(question_id, discuss_id) {
     var seq = document.getElementById("seq").innerHTML
-    var vlist = getCookie("SAP"+seq);
+    var vlist = getCookie("SAP2"+seq);
     var varray = []
             
     if (vlist != undefined) {
@@ -166,10 +168,10 @@ function NewTab(question_id, discuss_id) {
             // url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
             //     + String(parseInt(question_id/10+0.9)) +
             //     "/";
-            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP/SAP-P" 
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP_C02/SAP2-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP/SAP-Q" + question_id + ".html"
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP_C02/SAP2-Q" + question_id + ".html"
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +

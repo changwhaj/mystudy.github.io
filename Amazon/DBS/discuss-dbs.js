@@ -162,10 +162,10 @@ function NewTab(question_id, discuss_id) {
         var url = "https://aws.amazon.com/"
         if (passwd == PASSKEY) {
         // if (discuss_id == "") {
-            url = "https://changwhaj.github.io/assets/exam/aws/DBS/page/DBS-P" 
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/DBS/page/DBS-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-            url = "https://changwhaj.github.io/assets/exam/aws/DBS/DBS-Q" + question_id + ".html"
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/DBS/DBS-Q" + question_id + ".html"
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/"
                 + discuss_id +
