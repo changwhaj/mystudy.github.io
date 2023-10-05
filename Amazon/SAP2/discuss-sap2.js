@@ -71,8 +71,6 @@ function changeTable() {
 function buildTable(id, data) {
     var ncols = 15;
     var nrows = Math.round(data.length / ncols);
-    //var nrows = 38;
-    //var ncols = 25;
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"

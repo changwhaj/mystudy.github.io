@@ -1,4 +1,4 @@
-const PASSKEY = "TSS";
+const PASSKEY = "SAP";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -69,8 +69,8 @@ function changeTable() {
 }
 
 function buildTable(id, data) {
-    var nrows = 38;
     var ncols = 25;
+    var nrows = Math.round(data.length / ncols);
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
