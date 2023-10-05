@@ -201,7 +201,7 @@ function NewTab(question_id, discuss_id) {
     buildTable(seq, myArray);
 }
 
-var passwd = getCookie('passsap');
+var passwd = getCookie('passsap2');
 
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
@@ -210,7 +210,7 @@ if (passwd == undefined) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
-        setCookie('passsap', passwd, {secure: true, 'expires': expDate});
+        setCookie('passsap2', passwd, {secure: true, 'expires': expDate});
     }
 }
-passwd = getCookie('passsap');
+passwd = getCookie('passsap2');
