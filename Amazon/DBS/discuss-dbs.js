@@ -1,4 +1,4 @@
-const PASSKEY = "AWS";
+const PASSKEY = "DBS";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -69,12 +69,12 @@ function changeTable() {
 }
 
 function buildTable(id, data) {
-    var ncols = 10;
+    var ncols = 15;
     var nrows = Math.round(data.length / ncols);
     var table = document.getElementById('table1')
     var btnText = "오답노트"
     var txtColor = "green"
-    
+
     if (id == "X") { 
         btnText = "문제풀이"
         txtColor = "red"
@@ -90,7 +90,7 @@ function buildTable(id, data) {
         varray = vlist.split(',');
     }
 
-    for (var i=0; i < nrows; i++) { 
+    for (var i=0; i < (data.length/ncols); i++) { 
         row += "<tr>"
         for (var c=0; c < ncols; c++) {
             var idx = i+nrows*c
@@ -159,22 +159,29 @@ function NewTab(question_id, discuss_id) {
             setSequence(seq, newList)
         }
 
-        var url = "https://aws.amazon.com/"
+        //var url = "https://aws.amazon.com/"
         if (passwd == PASSKEY) {
         // if (discuss_id == "") {
-            url = "https://changwhaj.github.io/exam-assets/exam/aws/DBS/page/DBS-P" 
+            // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
+            // url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
+            //     + String(parseInt(question_id/10+0.9)) +
+            //     "/";
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/DBS/DBS-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
             url = "https://changwhaj.github.io/exam-assets/exam/aws/DBS/DBS-Q" + question_id + ".html"
         } else {
-            url = "https://www.examtopics.com/discussions/amazon/view/"
+            url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
-                "-exam-aws-certified-database-specialty-topic-1-question-" + String(parseInt(question_id)) + "/";
-            // console.log("Clicked QID: " + question_id + ", GID: " + String(parseInt(question_id/10+0.9)))
-            //url = "https://www.examtopics.com/exams/amazon/aws-certified-database-specialty/view/" 
-            //    + String(parseInt(question_id/4+0.9)) +
-            //    "/";
+                "-exam-aws-certified-database-specialty-topic-1-question/";
         }
+
+        // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
+        //winDiscuss = window.open(url, "discuss");
+        //setTimeout(1000);
+        ////WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
+        //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
+        //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
         
         var winDiscuss = window.open(url, "discuss");
         var teste = function(){

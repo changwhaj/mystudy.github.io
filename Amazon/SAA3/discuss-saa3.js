@@ -1,4 +1,4 @@
-const PASSKEY = "SAP2";
+const PASSKEY = "SAA3";
 
 // Usage
 // zeroPad(1,10);   //=> 01
@@ -83,7 +83,7 @@ function buildTable(id, data) {
                 "</label>&nbsp </th></tr>"
     
     // alert(document.cookie); // 모든 쿠키 보여주기
-    var vlist = getCookie("SAP2"+id);
+    var vlist = getCookie("SAA3"+id);
     var varray = [];
     
     if (vlist != undefined) {
@@ -116,7 +116,7 @@ function setSequence(seq, vlist) {
     var expDate = new Date();
     expDate.setMonth(expDate.getMonth() + 1);
     expDate = expDate.toUTCString();
-    setCookie("SAP2"+seq, vlist, {secure: true, 'expires': expDate});
+    setCookie("SAA3"+seq, vlist, {secure: true, 'expires': expDate});
 }
 
 function setVlist(question_id, vlist, toggle) {
@@ -142,7 +142,7 @@ function setVlist(question_id, vlist, toggle) {
 
 function NewTab(question_id, discuss_id) {
     var seq = document.getElementById("seq").innerHTML
-    var vlist = getCookie("SAP2"+seq);
+    var vlist = getCookie("SAA3"+seq);
     var varray = []
             
     if (vlist != undefined) {
@@ -166,14 +166,14 @@ function NewTab(question_id, discuss_id) {
             // url = "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/" 
             //     + String(parseInt(question_id/10+0.9)) +
             //     "/";
-            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP_C02/SAP2-P" 
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAA_C03/SAA3-P" 
                 + String(parseInt(question_id/10+0.9)) +
                 ".html";
-            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAP_C02/SAP2-Q" + question_id + ".html"
+            url = "https://changwhaj.github.io/exam-assets/exam/aws/SAA_C03/SAA3-Q" + question_id + ".html"
         } else {
             url = "https://www.examtopics.com/discussions/amazon/view/" 
                 + discuss_id +
-                "-exam-aws-certified-solutions-architect-professional-sap-c02/";
+                "-exam-aws-certified-solutions-architect-associate-saa-c03/";
         }
 
         // url = "http://webcache.googleusercontent.com/search?q=cache:" + url;
@@ -200,7 +200,7 @@ function NewTab(question_id, discuss_id) {
     buildTable(seq, myArray);
 }
 
-var passwd = getCookie('passsap2');
+var passwd = getCookie('passsaa3');
 
 if (passwd == undefined) {
     let passwd = prompt("Please enter password for use this page");
@@ -209,7 +209,7 @@ if (passwd == undefined) {
         var expDate = new Date();
         expDate.setMonth(expDate.getMonth() + 1);
         expDate = expDate.toUTCString();
-        setCookie('passsap2', passwd, {secure: true, 'expires': expDate});
+        setCookie('passsaa3', passwd, {secure: true, 'expires': expDate});
     }
 }
-passwd = getCookie('passsap2');
+passwd = getCookie('passsaa3');
