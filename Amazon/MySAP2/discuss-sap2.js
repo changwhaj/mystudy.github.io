@@ -197,8 +197,11 @@ function NewTab(question_id, discuss_id) {
         //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
         //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
         
-        var winDiscuss = window.open(url, "discuss");
-        winDiscuss.focus();
+        var pageExam = window.open(url, "pageExam");
+        pageExam.onload = function() {
+            pageExam.focus();
+            pageExam.document.title = "SAP2-Q#"  +question_id;
+        };
         var teste = function(){
             //console.log("Find Element for google-cache-hdr");
             window.parent.postMessage({ childData : 'test data' }, '*');
