@@ -198,6 +198,7 @@ function NewTab(question_id, discuss_id) {
         //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
         
         var winDiscuss = window.open(url, "discuss");
+        winDiscuss.focus();
         var teste = function(){
             //console.log("Find Element for google-cache-hdr");
             window.parent.postMessage({ childData : 'test data' }, '*');
