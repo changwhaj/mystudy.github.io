@@ -196,12 +196,21 @@ function NewTab(question_id, discuss_id) {
         ////WinDiscuss.document.select("div:matches($google-cache-hdr)").innerHTML = ""
         //console.log(winDiscuss.document.select("#bN015htcoyT__google-cache-hdr").innerHTML);
         //winDiscuss.document.select("div#bN015htcoyT__google-cache-hdr").innerHTML = "X";
-        
+
         var pageExam = window.open(url, "pageExam");
-        pageExam.onload = function() {
-            pageExam.focus();
-            pageExam.document.title = "SAP2-Q#"  +question_id;
-        };
+
+        // 새 탭이 열린 후 일정 시간 후 포커스를 설정합니다.
+        setTimeout(() => {
+            if (pageExam) {
+                pageExam.focus();
+                pageExam.document.title = "SAP2-Q#" + question_id;
+            }
+        }, 100); // 약간의 지연을 주어 새 탭이 완전히 열리도록 함
+
+        // pageExam.onload = function() {
+        //     pageExam.focus();
+        //     pageExam.document.title = "SAP2-Q#" + question_id;
+        // };
         var teste = function(){
             //console.log("Find Element for google-cache-hdr");
             window.parent.postMessage({ childData : 'test data' }, '*');
